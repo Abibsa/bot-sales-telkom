@@ -1,0 +1,559 @@
+import logging
+import os
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
+from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES
+
+# -----------------------------------------------------------------------------
+# KONFIGURASI
+# -----------------------------------------------------------------------------
+# Ganti 'YOUR_TOKEN_HERE' dengan token bot Telegram Anda yang didapat dari @BotFather
+TOKEN = '7980438548:AAHLWDNnfVmj9pRNixpgPVVe35kpAIMP-qY'
+
+# Konfigurasi Logging - set ke DEBUG untuk melihat detail error
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.DEBUG
+)
+
+# -----------------------------------------------------------------------------
+# FUNGSI BANTUAN
+# -----------------------------------------------------------------------------
+def get_main_menu_keyboard():
+    """Mengembalikan keyboard untuk menu utama."""
+    keyboard = [
+        [InlineKeyboardButton("🔍 Cari Produk", callback_data='m_search')],
+        [InlineKeyboardButton("📦 Daftar Produk Digital", callback_data='m_products')],
+        [InlineKeyboardButton("⚖️ Bandingkan Indibiz", callback_data='m_compare_indibiz')],
+        [InlineKeyboardButton("📚 Materi Penjualan", callback_data='m_materials')],
+        [InlineKeyboardButton("❓ FAQ Internal", callback_data='m_faq')],
+        [InlineKeyboardButton("📢 Update Produk", callback_data='m_updates')],
+        [InlineKeyboardButton("📞 Kontak PIC Produk", callback_data='m_pic')],
+        [InlineKeyboardButton("☎️ Call Center 24/7", callback_data='m_callcenter')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def get_back_button(callback_data='back_main', text="<< Kembali ke Menu Utama"):
+    """Tombol kembali standar."""
+    return [InlineKeyboardButton(text, callback_data=callback_data)]
+
+# -----------------------------------------------------------------------------
+# HANDLERS UTAMA
+# -----------------------------------------------------------------------------
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Menangani perintah /start."""
+    user = update.effective_user
+    welcome_message = (
+        f"Halo, {user.first_name}! 👋\n\n"
+        "Selamat datang di **Bot Sales Internal Telkom Indonesia**.\n"
+        "Bot ini dirancang untuk membantu rekan sales mempelajari produk digital Telkom dengan cepat.\n\n"
+        "Silakan pilih menu di bawah ini untuk memulai:"
+    )
+    if update.callback_query:
+         await update.callback_query.edit_message_text(
+            text=welcome_message,
+            reply_markup=get_main_menu_keyboard(),
+            parse_mode='Markdown'
+        )
+    else:
+        await update.message.reply_text(
+            text=welcome_message,
+            reply_markup=get_main_menu_keyboard(),
+            parse_mode='Markdown'
+        )
+
+async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Menangani navigasi menu utama."""
+    query = update.callback_query
+    await query.answer()
+
+    data = query.data
+    
+    # Log untuk debugging
+    logging.info(f"Callback data received: {data}")
+
+    # --- MENU PRODUK ---
+    if data == 'm_products':
+        keyboard = []
+        # Buat tombol untuk setiap produk
+        for key, product in PRODUCTS.items():
+            keyboard.append([InlineKeyboardButton(product['name'], callback_data=f'p_{key}')])
+        
+        keyboard.append(get_back_button())
+        
+        # Cek apakah pesan asli adalah foto (dari produk dengan visual)
+        if query.message.photo:
+            # Kirim pesan baru jika dari produk dengan visual
+            await query.message.reply_text(
+                text="📂 **Daftar Produk Digital Telkom**\n\nPilih produk untuk melihat detail lengkap:",
+                reply_markup=InlineKeyboardMarkup(keyboard),
+                parse_mode='Markdown'
+            )
+        else:
+            # Edit pesan jika dari produk tanpa visual
+            await query.edit_message_text(
+                text="📂 **Daftar Produk Digital Telkom**\n\nPilih produk untuk melihat detail lengkap:",
+                reply_markup=InlineKeyboardMarkup(keyboard),
+                parse_mode='Markdown'
+            )
+
+    # --- MENU DETAIL PRODUK ---
+    elif data.startswith('p_'):
+        # Format data: p_productkey (misal: p_indibiz)
+        product_key = data.split('_', 1)[1]  # Changed to split only once
+        
+        logging.info(f"Product key: {product_key}")
+        logging.info(f"Available products: {list(PRODUCTS.keys())}")
+        
+        if product_key in PRODUCTS:
+            product = PRODUCTS[product_key]
+            product_name = product['name']
+            
+            keyboard = [
+                [InlineKeyboardButton("📝 Deskripsi Produk", callback_data=f'pd_{product_key}_desc')],
+                [InlineKeyboardButton("⭐ Fitur Utama", callback_data=f'pd_{product_key}_feat')],
+                [InlineKeyboardButton("💰 Skema Harga", callback_data=f'pd_{product_key}_price')],
+                [InlineKeyboardButton("🎯 Target Customer", callback_data=f'pd_{product_key}_target')],
+                [InlineKeyboardButton("💡 Use Case / Contoh", callback_data=f'pd_{product_key}_use')],
+                [InlineKeyboardButton("✨ Selling Point", callback_data=f'pd_{product_key}_sell')],
+                [InlineKeyboardButton("<< Kembali ke Daftar Produk", callback_data='m_products')],
+                get_back_button()
+            ]
+
+            # Cek apakah produk memiliki gambar visual
+            if product_key in PRODUCT_IMAGES:
+                image_data = PRODUCT_IMAGES[product_key]
+                image_path = image_data['path']
+                
+                # Cek apakah file gambar ada
+                if os.path.exists(image_path):
+                    # Kirim gambar produk terlebih dahulu
+                    with open(image_path, 'rb') as photo_file:
+                        await query.message.reply_photo(
+                            photo=photo_file,
+                            caption=f"📦 **{product_name}**\n\n{image_data['caption']}\n\nApa yang ingin Anda ketahui tentang produk ini?",
+                            reply_markup=InlineKeyboardMarkup(keyboard),
+                            parse_mode='Markdown'
+                        )
+                    
+                    # Hapus pesan menu sebelumnya
+                    await query.message.delete()
+                else:
+                    # Jika file tidak ada, tampilkan teks biasa
+                    await query.edit_message_text(
+                        text=f"📦 **{product_name}**\n\nApa yang ingin Anda ketahui tentang produk ini?",
+                        reply_markup=InlineKeyboardMarkup(keyboard),
+                        parse_mode='Markdown'
+                    )
+            else:
+                # Jika tidak ada gambar, tampilkan teks biasa
+                await query.edit_message_text(
+                    text=f"📦 **{product_name}**\n\nApa yang ingin Anda ketahui tentang produk ini?",
+                    reply_markup=InlineKeyboardMarkup(keyboard),
+                    parse_mode='Markdown'
+                )
+        else:
+            logging.error(f"Product key '{product_key}' not found in PRODUCTS")
+            await query.answer("Produk tidak ditemukan.", show_alert=True)
+
+    # --- DETAIL KONTEN PRODUK ---
+    elif data.startswith('pd_'):
+        # Format: pd_productkey_detailtype
+        # Contoh: pd_oca_i_desc, pd_oca_b_feat, pd_pijar_price
+        # Hapus prefix 'pd_' dulu
+        data_without_prefix = data[3:]  # Remove 'pd_'
+        # Split dari kanan (rsplit) untuk mendapatkan detail_type
+        parts = data_without_prefix.rsplit('_', 1)  # Split dari kanan, maksimal 1 kali
+        
+        if len(parts) == 2:
+            product_key = parts[0]  # oca_i, oca_b, pijar, netmonk
+            detail_type = parts[1]  # desc, feat, price, target, use, sell
+        else:
+            logging.error(f"Invalid callback data format: {data}")
+            await query.answer("Format data tidak valid.", show_alert=True)
+            return
+        
+        logging.info(f"Product detail - key: {product_key}, type: {detail_type}")
+        
+        if product_key in PRODUCTS:
+            product = PRODUCTS[product_key]
+            content = ""
+            title = ""
+            
+            if detail_type == 'desc':
+                title = "Deskripsi Produk"
+                content = product['description']
+            elif detail_type == 'feat':
+                title = "Fitur Utama"
+                content = "\n".join([f"- {f}" for f in product['features']])
+            elif detail_type == 'price':
+                title = "Skema Harga"
+                content = product['pricing']
+            elif detail_type == 'target':
+                title = "Target Customer"
+                content = product['target']
+            elif detail_type == 'use':
+                title = "Use Case / Contoh Implementasi"
+                content = product['use_case']
+            elif detail_type == 'sell':
+                title = "Selling Point"
+                content = product['selling_point']
+            
+            text_response = f"📦 **{product['name']}** - {title}\n\n{content}"
+            
+            keyboard = [
+                [InlineKeyboardButton(f"<< Kembali ke {product['name']}", callback_data=f'p_{product_key}')],
+                get_back_button()
+            ]
+
+            # Cek apakah pesan asli adalah foto (produk dengan visual)
+            # Jika ya, kirim pesan baru karena tidak bisa edit photo caption menjadi text
+            if query.message.photo:
+                # Kirim pesan baru
+                await query.message.reply_text(
+                    text=text_response,
+                    reply_markup=InlineKeyboardMarkup(keyboard),
+                    parse_mode='Markdown'
+                )
+            else:
+                # Edit pesan yang sudah ada (untuk produk tanpa visual)
+                await query.edit_message_text(
+                    text=text_response,
+                    reply_markup=InlineKeyboardMarkup(keyboard),
+                    parse_mode='Markdown'
+                )
+
+
+
+    # --- MENU MATERI PENJUALAN ---
+    elif data == 'm_materials':
+        text_response = "📚 **Materi Penjualan**\n\nPilih produk untuk mendapatkan materi penjualan dalam format PDF:\n"
+        
+        keyboard = []
+        for key, product in PRODUCTS.items():
+            if key in SALES_MATERIALS_FILES:
+                keyboard.append([InlineKeyboardButton(f"📄 {product['name']}", callback_data=f'mat_{key}')])
+        
+        keyboard.append(get_back_button())
+        
+        await query.edit_message_text(
+            text=text_response,
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode='Markdown'
+        )
+    
+    # --- KIRIM FILE MATERI PENJUALAN ---
+    elif data.startswith('mat_'):
+        product_key = data[4:]  # Remove 'mat_' prefix
+        
+        if product_key in SALES_MATERIALS_FILES:
+            material = SALES_MATERIALS_FILES[product_key]
+            product_name = PRODUCTS[product_key]['name']
+            file_path = material['path']
+            
+            # Cek apakah file ada
+            if os.path.exists(file_path):
+                await query.answer("Mengirim file... Mohon tunggu sebentar.", show_alert=False)
+                
+                # Kirim file PDF
+                # Kirim file (PDF atau Gambar)
+                _, list_ext = os.path.splitext(file_path)
+                ext = list_ext.lower()
+                
+                with open(file_path, 'rb') as file_obj:
+                    if ext in ['.jpg', '.jpeg', '.png']:
+                        await query.message.reply_photo(
+                            photo=file_obj,
+                            caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini untuk membantu proses penjualan.",
+                            parse_mode='Markdown'
+                        )
+                    else:
+                        await query.message.reply_document(
+                            document=file_obj,
+                            filename=material['filename'],
+                            caption=f"📄 **Materi Penjualan: {product_name}**\n\nSilakan download dan pelajari materi ini untuk membantu proses penjualan.",
+                            parse_mode='Markdown'
+                        )
+                
+                # Kirim pesan konfirmasi
+                keyboard = [
+                    [InlineKeyboardButton("<< Kembali ke Materi Penjualan", callback_data='m_materials')],
+                    get_back_button()
+                ]
+                await query.edit_message_text(
+                    text=f"✅ File materi **{product_name}** telah dikirim!\n\nCek pesan di atas untuk download file PDF.",
+                    reply_markup=InlineKeyboardMarkup(keyboard),
+                    parse_mode='Markdown'
+                )
+            else:
+                await query.answer(f"File tidak ditemukan: {file_path}", show_alert=True)
+                logging.error(f"File not found: {file_path}")
+        else:
+            await query.answer("Materi untuk produk ini belum tersedia.", show_alert=True)
+
+    # --- MENU FAQ ---
+    elif data == 'm_faq':
+        text_response = "❓ **FAQ Internal (Frequently Asked Questions)**\n\n"
+        for item in FAQ:
+            text_response += f"Q: {item['q']}\nA: {item['a']}\n\n"
+            
+        keyboard = [get_back_button()]
+        await query.edit_message_text(
+            text=text_response,
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode='Markdown'
+        )
+
+    # --- MENU UPDATE PRODUK ---
+    elif data == 'm_updates':
+        text_response = (
+            "📢 **Update Produk Terbaru**\n\n"
+            "1. **OCA Interaction Lite:** Fitur baru Auto-reply AI sudah tersedia.\n"
+            "2. **OCA Blast Lite:** Integrasi dengan Instagram Direct sudah live.\n"
+            "3. **PIJAR:** Modul baru untuk ujian adaptif (adaptive testing).\n"
+            "4. **Netmonk Hi:** Dashboard baru dengan visualisasi real-time lebih interaktif.\n\n"
+            "_Pantau terus menu ini untuk informasi terbaru!_"
+        )
+        keyboard = [get_back_button()]
+        await query.edit_message_text(
+            text=text_response,
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode='Markdown'
+        )
+
+    # --- MENU KONTAK PIC ---
+    elif data == 'm_pic':
+        text_response = "📞 **Kontak PIC Produk**\n\nHubungi PIC berikut jika ada pertanyaan mendalam atau eskalasi:\n\n"
+        for key, contact in PIC_CONTACTS.items():
+            # Produk key ke Nama Produk yang nice
+            p_name = PRODUCTS.get(key, {}).get('name', key.title())
+            text_response += f"🔹 **{p_name}**: {contact}\n"
+            
+        keyboard = [get_back_button()]
+        await query.edit_message_text(
+            text=text_response,
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode='Markdown'
+        )
+    
+    # --- MENU CALL CENTER ---
+    elif data == 'm_callcenter':
+        keyboard = [get_back_button()]
+        await query.edit_message_text(
+            text=CALL_CENTER_INFO,
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode='Markdown'
+        )
+    
+    # --- MENU PENCARIAN ---
+    elif data == 'm_search':
+        text_response = (
+            "🔍 **Pencarian Produk**\n\n"
+            "Ketik keyword untuk mencari produk:\n\n"
+            "Contoh:\n"
+            "• `/cari internet` - Cari produk internet\n"
+            "• `/cari crm` - Cari produk CRM\n"
+            "• `/cari pendidikan` - Cari produk pendidikan\n"
+            "• `/cari monitoring` - Cari produk monitoring\n\n"
+            "Atau pilih kategori di bawah:"
+        )
+        
+        keyboard = [
+            [InlineKeyboardButton("🌐 Internet & Konektivitas", callback_data='search_internet')],
+            [InlineKeyboardButton("💬 Komunikasi & CRM", callback_data='search_crm')],
+            [InlineKeyboardButton("🎓 Pendidikan", callback_data='search_education')],
+            [InlineKeyboardButton("📊 Monitoring & Analytics", callback_data='search_monitoring')],
+            get_back_button()
+        ]
+        
+        await query.edit_message_text(
+            text=text_response,
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode='Markdown'
+        )
+    
+    # --- PENCARIAN BERDASARKAN KATEGORI ---
+    elif data.startswith('search_'):
+        category = data.replace('search_', '')
+        results = []
+        
+        if category == 'internet':
+            results = ['indibiz_basic', 'indibiz_bisnis']
+        elif category == 'crm':
+            results = ['oca_i', 'oca_b']
+        elif category == 'education':
+            results = ['pijar']
+        elif category == 'monitoring':
+            results = ['netmonk']
+        
+        keyboard = []
+        for key in results:
+            if key in PRODUCTS:
+                keyboard.append([InlineKeyboardButton(PRODUCTS[key]['name'], callback_data=f'p_{key}')])
+        
+        keyboard.append([InlineKeyboardButton("<< Kembali ke Pencarian", callback_data='m_search')])
+        keyboard.append(get_back_button())
+        
+        category_names = {
+            'internet': 'Internet & Konektivitas',
+            'crm': 'Komunikasi & CRM',
+            'education': 'Pendidikan',
+            'monitoring': 'Monitoring & Analytics'
+        }
+        
+        await query.edit_message_text(
+            text=f"🔍 **Hasil Pencarian: {category_names.get(category, category)}**\n\nPilih produk untuk melihat detail:",
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode='Markdown'
+        )
+    
+    # --- MENU PERBANDINGAN INDIBIZ ---
+    elif data == 'm_compare_indibiz':
+        comparison_text = (
+            "⚖️ **Perbandingan Indibiz Paket Basic vs Bisnis**\n\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            "**🔑 PERBEDAAN UTAMA:**\n\n"
+            "📊 **Rasio Kecepatan**\n"
+            "• Basic: 1:2 (Upload setengah dari Download)\n"
+            "• Bisnis: 1:1 (Upload = Download)\n\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            "💰 **HARGA PROMO (s.d 28 Feb 2026):**\n\n"
+            "**50 Mbps:**\n"
+            "• Basic: Rp 320.000/bln (upload ~25 Mbps)\n"
+            "• Bisnis: Rp 355.000/bln (upload 50 Mbps)\n"
+            "• Selisih: Rp 35.000\n\n"
+            "**75 Mbps:**\n"
+            "• Basic: Rp 365.000/bln (upload ~37 Mbps)\n"
+            "• Bisnis: Rp 415.000/bln (upload 75 Mbps)\n"
+            "• Selisih: Rp 50.000\n\n"
+            "**100 Mbps:**\n"
+            "• Basic: Rp 440.000/bln (upload ~50 Mbps)\n"
+            "• Bisnis: Rp 535.000/bln (upload 100 Mbps)\n"
+            "• Selisih: Rp 95.000\n\n"
+            "**150 Mbps:**\n"
+            "• Basic: Rp 540.000/bln (upload ~75 Mbps)\n"
+            "• Bisnis: Rp 620.000/bln (upload 150 Mbps)\n"
+            "• Selisih: Rp 80.000\n\n"
+            "**200 Mbps:**\n"
+            "• Basic: Rp 675.000/bln (upload ~100 Mbps)\n"
+            "• Bisnis: Rp 790.000/bln (upload 200 Mbps)\n"
+            "• Selisih: Rp 115.000\n\n"
+            "**300 Mbps:**\n"
+            "• Basic: Rp 950.000/bln (upload ~150 Mbps)\n"
+            "• Bisnis: Rp 1.130.000/bln (upload 300 Mbps)\n"
+            "• Selisih: Rp 180.000\n\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            "🎯 **REKOMENDASI:**\n\n"
+            "**Pilih BASIC jika:**\n"
+            "✅ Bisnis fokus browsing, email, transaksi online\n"
+            "✅ Jarang upload file besar\n"
+            "✅ Budget terbatas\n"
+            "✅ UMKM, retail, warung, toko\n\n"
+            "**Pilih BISNIS jika:**\n"
+            "✅ Sering video conference/meeting online\n"
+            "✅ Upload file besar ke cloud\n"
+            "✅ Hosting server/aplikasi\n"
+            "✅ Kantor, startup tech, developer\n\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            "💡 **TIPS CLOSING:**\n"
+            "\"Selisih hanya Rp 35rb-180rb/bulan, tapi upload speed 2x lipat!\n"
+            "Investasi kecil untuk produktivitas maksimal.\"\n\n"
+            "📝 PSB: Rp 150.000 (semua paket)\n"
+            "⚠️ Harga belum termasuk PPN 11%"
+        )
+        
+        keyboard = [
+            [InlineKeyboardButton("📦 Lihat Detail Basic", callback_data='p_indibiz_basic')],
+            [InlineKeyboardButton("📦 Lihat Detail Bisnis", callback_data='p_indibiz_bisnis')],
+            get_back_button()
+        ]
+        
+        await query.edit_message_text(
+            text=comparison_text,
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode='Markdown'
+        )
+        
+    # --- TOMBOL KEMBALI KE MAIN MENU ---
+    elif data == 'back_main':
+        await start(update, context)
+
+async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Menangani command /cari untuk pencarian produk."""
+    # Ambil keyword dari command
+    if context.args:
+        keyword = ' '.join(context.args).lower()
+    else:
+        await update.message.reply_text(
+            "🔍 **Cara Menggunakan Pencarian:**\n\n"
+            "Ketik: `/cari [keyword]`\n\n"
+            "Contoh:\n"
+            "• `/cari internet`\n"
+            "• `/cari crm`\n"
+            "• `/cari pendidikan`\n"
+            "• `/cari monitoring`\n\n"
+            "Atau gunakan menu 🔍 Cari Produk dari menu utama.",
+            parse_mode='Markdown'
+        )
+        return
+    
+    # Cari produk berdasarkan keyword
+    results = []
+    for key, product in PRODUCTS.items():
+        # Cari di nama, deskripsi, dan fitur
+        search_text = (
+            product['name'] + ' ' + 
+            product['description'] + ' ' + 
+            ' '.join(product['features']) + ' ' +
+            product['target']
+        ).lower()
+        
+        if keyword in search_text:
+            results.append(key)
+    
+    if results:
+        keyboard = []
+        for key in results:
+            keyboard.append([InlineKeyboardButton(PRODUCTS[key]['name'], callback_data=f'p_{key}')])
+        
+        keyboard.append([InlineKeyboardButton("<< Kembali ke Menu Utama", callback_data='back_main')])
+        
+        await update.message.reply_text(
+            f"🔍 **Hasil Pencarian: \"{keyword}\"**\n\n"
+            f"Ditemukan {len(results)} produk:\n\n"
+            "Pilih produk untuk melihat detail:",
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode='Markdown'
+        )
+    else:
+        await update.message.reply_text(
+            f"🔍 **Hasil Pencarian: \"{keyword}\"**\n\n"
+            "❌ Tidak ada produk yang cocok dengan keyword tersebut.\n\n"
+            "Coba keyword lain atau gunakan menu 🔍 Cari Produk untuk melihat kategori.",
+            parse_mode='Markdown'
+        )
+
+
+# -----------------------------------------------------------------------------
+# MAIN PROGRAM
+# -----------------------------------------------------------------------------
+if __name__ == '__main__':
+    if TOKEN == 'YOUR_TOKEN_HERE':
+        print("ERROR: Token Telegram belum diisi. Silakan edit file bot.py dan isi variabel TOKEN.")
+    else:
+        print("Bot sedang berjalan...")
+        application = ApplicationBuilder().token(TOKEN).build()
+        
+        # Handler untuk command /start
+        start_handler = CommandHandler('start', start)
+        application.add_handler(start_handler)
+        
+        # Handler untuk command /cari
+        search_handler = CommandHandler('cari', search_command)
+        application.add_handler(search_handler)
+        
+        # Handler untuk semua tombol callback
+        application.add_handler(CallbackQueryHandler(menu_handler))
+        
+        # Jalankan bot
+        application.run_polling()
