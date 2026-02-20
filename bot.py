@@ -24,7 +24,7 @@ def get_main_menu_keyboard():
     keyboard = [
         [InlineKeyboardButton("🌐 Internet", callback_data='m_internet')],
         [InlineKeyboardButton("📦 Prodigi", callback_data='m_products')],
-        [InlineKeyboardButton("⚖️ Indibiz Basic dan Bisnis", callback_data='m_compare_indibiz')],
+        [InlineKeyboardButton("⚖️ Perbandingan Indibiz Basic dan Bisnis", callback_data='m_compare_indibiz')],
         [InlineKeyboardButton("📚 Proposal Product", callback_data='m_materials')],
         [InlineKeyboardButton("❓ FAQ Internal", callback_data='m_faq')],
         [InlineKeyboardButton("📢 Update Produk", callback_data='m_updates')],
@@ -412,28 +412,22 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "💰 **HARGA PROMO (s.d 28 Feb 2026):**\n\n"
             "**50 Mbps:**\n"
             "• Basic: Rp 320.000/bln (upload ~25 Mbps)\n"
-            "• Bisnis: Rp 355.000/bln (upload 50 Mbps)\n"
-            "• Selisih: Rp 35.000\n\n"
+            "• Bisnis: Rp 355.000/bln (upload 50 Mbps)\n\n"
             "**75 Mbps:**\n"
             "• Basic: Rp 365.000/bln (upload ~37 Mbps)\n"
-            "• Bisnis: Rp 415.000/bln (upload 75 Mbps)\n"
-            "• Selisih: Rp 50.000\n\n"
+            "• Bisnis: Rp 415.000/bln (upload 75 Mbps)\n\n"
             "**100 Mbps:**\n"
             "• Basic: Rp 440.000/bln (upload ~50 Mbps)\n"
-            "• Bisnis: Rp 535.000/bln (upload 100 Mbps)\n"
-            "• Selisih: Rp 95.000\n\n"
+            "• Bisnis: Rp 535.000/bln (upload 100 Mbps)\n\n"
             "**150 Mbps:**\n"
             "• Basic: Rp 540.000/bln (upload ~75 Mbps)\n"
-            "• Bisnis: Rp 620.000/bln (upload 150 Mbps)\n"
-            "• Selisih: Rp 80.000\n\n"
+            "• Bisnis: Rp 620.000/bln (upload 150 Mbps)\n\n"
             "**200 Mbps:**\n"
             "• Basic: Rp 675.000/bln (upload ~100 Mbps)\n"
-            "• Bisnis: Rp 790.000/bln (upload 200 Mbps)\n"
-            "• Selisih: Rp 115.000\n\n"
+            "• Bisnis: Rp 790.000/bln (upload 200 Mbps)\n\n"
             "**300 Mbps:**\n"
             "• Basic: Rp 950.000/bln (upload ~150 Mbps)\n"
-            "• Bisnis: Rp 1.130.000/bln (upload 300 Mbps)\n"
-            "• Selisih: Rp 180.000\n\n"
+            "• Bisnis: Rp 1.130.000/bln (upload 300 Mbps)\n\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
             "🎯 **REKOMENDASI:**\n\n"
             "**Pilih BASIC jika:**\n"
@@ -448,7 +442,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "✅ Kantor, startup tech, developer\n\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
             "💡 **TIPS CLOSING:**\n"
-            "\"Selisih hanya Rp 35rb-180rb/bulan, tapi upload speed 2x lipat!\n"
+            "\"Upgrade ke paket bisnis hanya beda tipis secara harga, tapi upload speed 2x lipat!\n"
             "Investasi kecil untuk produktivitas maksimal.\"\n\n"
             "📝 PSB: Rp 150.000 (semua paket)\n"
             "⚠️ Harga belum termasuk PPN 11%"
