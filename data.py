@@ -6,51 +6,50 @@
 PRODUCTS = {
     "oca_i": {
         "name": "OCA Interaction Lite",
-        "description": "Solusi komunikasi digital untuk mengelola interaksi pelanggan melalui berbagai channel social media dalam satu platform terintegrasi. Cocok untuk bisnis dengan skala interaksi kecil hingga menengah.",
+        "description": "OCA Interaction Lite memungkinkan bisnis berkomunikasi dengan pelanggan melalui berbagai social media dalam satu dashboard. Dirancang untuk SME (Small Medium Enterprise) dengan skala interaksi kecil, produk ini memberi pengalaman \"SME Rasa Enterprise\" — mudah digunakan dari mana saja dan kapan saja. Hanya dapat dibeli secara bundling bersama Indibiz.",
         "features": [
-            "Multi-channel messaging (WhatsApp, Instagram, Facebook, Telegram)",
-            "Unified inbox untuk semua channel",
-            "Auto-reply dan chatbot sederhana",
-            "Manajemen tim customer service",
-            "Reporting dan analytics dasar",
-            "Integrasi dengan CRM"
+            "📥 **Inbox All-in-One**\nSatu dashboard untuk semua pesan dari Instagram, Facebook Messenger, dan WhatsApp. Tidak perlu buka banyak aplikasi.",
+            "🏷️ **Contact Tagging**\nSimpan informasi lengkap pelanggan dalam satu tempat. Beri prioritas pada kontak tertentu dengan 5 kuota Contact Tagging + data channel favorit terpusat.",
+            "🤖 **AI Assistant**\nBantu merancang balasan, meningkatkan kualitas pesan, dan merangkum percakapan hanya dalam satu klik — tanpa perlu berpikir panjang saat berhadapan dengan pelanggan.",
+            "📊 **Report & Analytics**\nLihat performa setiap agen (Performance, Insight, riwayat percakapan, laporan ticket, label & channel favorit) dalam satu dashboard evaluasi.",
+            "📖 **Knowledge Base**\nSediakan catatan produk, SOP, dan info penting untuk mempermudah kerja agen. (5 artikel Knowledge Base; Unlimited tersedia sebagai add-on)"
         ],
-        "pricing": "Paket bundling dengan IndiBiz. Harga mulai dari Rp 500.000/bulan untuk paket basic.",
-        "target": "UMKM, Bisnis Kecil Menengah, Online Shop, Customer Service Team.",
-        "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nBanyak pesan pelanggan dari WhatsApp, Instagram DM, dan Facebook yang membludak. Admin kewalahan dan banyak calon pembeli komplain telat direspons.\n\n💡 **Solusi OCA Interaction:**\nDengan satu dashboard cerdas, semua chat dari seluruh aplikasi terkumpul menjadi satu pintu! Tidak ada lagi keluhan lupa balas!",
-        "selling_point": "One-stop-solution komunikasi digital yang fleksibel, mudah digunakan, dan terintegrasi dengan produk Telkom lainnya. Hemat waktu dan maksimalkan pelayanan pelanggan.",
+        "pricing": "💰 **Harga Paket Bundling Indibiz x OCA Interaction Lite:**\n\n• **50 Mbps:** Rp 492.950/bln\n• **75 Mbps:** Rp 582.950/bln\n• **100 Mbps:** Rp 692.950/bln\n• **150 Mbps:** Rp 902.950/bln\n\n🔹 Add-on OCA Interaction Lite saja: Rp 108.000/bln (via SCONE/MyIndibiz)\n🔹 PSB (Biaya Pasang Baru) add-on: Rp 0\n\n⚠️ Harga belum termasuk PPN\n\n📋 **Fitur Dasar yang Sudah Termasuk:**\n• 1 Lisensi User (Administrator)\n• 3 Integrasi Social Media\n• 5 Artikel Knowledge Base\n• 5 Kuota Label\n• 5 Template Quick Reply\n• 1 Main Department\n• 1 Chat Distribution (Open Assignment)\n\n🔧 **Add-on Fitur (Segera Hadir):**\n• Unlimited Social Media: Rp 145.000/bln\n• Unlimited Label: Rp 145.000/bln\n• Unlimited Knowledge Base: Rp 145.000/bln\n• Unlimited Quick Reply: Rp 236.000/bln\n• Ticketing: Rp 236.000/bln",
+        "target": "UMKM, SME (bisnis kecil-menengah), Online Shop, bisnis dengan tim customer service yang membutuhkan pengelolaan multi-channel komunikasi dalam satu dashboard.",
+        "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nBanyak pesan pelanggan dari WhatsApp, Instagram DM, dan Facebook Messenger membludak bersamaan. Admin kewalahan karena harus buka-tutup banyak aplikasi, akibatnya banyak calon pembeli komplain respons lambat atau bahkan tidak dibalas.\n\n💡 **Solusi OCA Interaction Lite:**\nDengan satu dashboard cerdas, semua chat dari Instagram, Facebook Messenger, dan WhatsApp terkumpul dalam satu pintu! Fitur AI Assistant bahkan bisa membantu merancang balasan hanya dalam SATU KLIK. Tidak ada lagi keluhan lupa balas!",
+        "selling_point": "SME Rasa Enterprise! Satu dashboard untuk semua channel komunikasi pelanggan, dilengkapi AI Assistant, Contact Tagging, dan Report Analytics — dengan harga bundling Indibiz mulai Rp 492.950/bln. Registrasi mudah via MyIndibiz, PSB add-on gratis Rp 0!",
     },
     "oca_b": {
         "name": "OCA Blast Lite",
-        "description": "Platform broadcast messaging untuk mengirim pesan promosi, notifikasi, atau informasi penting ke banyak pelanggan sekaligus melalui WhatsApp dan channel lainnya.",
+        "description": "OCA Blast Lite memungkinkan bisnis mengirim pesan massal ke ribuan kontak melalui WhatsApp, SMS, dan Email — hanya dari satu dashboard. Dirancang untuk SME yang ingin menjangkau pelanggan secara cepat dan efisien: dari promosi produk, pengumuman, hingga pemberitahuan penting — semua bisa dikirim dalam hitungan detik.",
         "features": [
-            "Broadcast WhatsApp massal",
-            "Template pesan yang dapat dikustomisasi",
-            "Penjadwalan pengiriman pesan",
-            "Segmentasi audience",
-            "Tracking delivery dan read status",
-            "Contact management"
+            "📱 **WhatsApp Blast**\nKirim pesan promo ke ribuan kontak via WhatsApp dengan Instant Broadcast, Broadcast Scheduler, Generate Report, dan template pesan yang bisa dikustomisasi.",
+            "📬 **SMS Blast**\nJangkau lebih banyak pelanggan via SMS. Dilengkapi Instant Broadcast dan Broadcast Scheduler.",
+            "📧 **Email Blast**\nSebar informasi penting melalui Email secara massal, terjadwal, dengan unlimited template.",
+            "👥 **Contact Management**\nKelola data pelanggan secara efektif. Win back lost customer dengan promo khusus. Fitur Group Contact untuk kirim pesan ke segmen pelanggan tertentu.",
+            "🗂️ **File Management**\nKelola dan simpan file media kebutuhan broadcast secara terstruktur dalam satu sumber (50MB Storage bawaan).",
+            "📊 **Dashboard Overview**\nPantau semua aktivitas blast: sisa kuota per channel, persentase keberhasilan pengiriman, dan riwayat aktivitas blast terakhir."
         ],
-        "pricing": "Berbasis jumlah pesan yang dikirim. Paket mulai dari Rp 300.000 untuk 1000 pesan.",
-        "target": "Retail, E-commerce, Event Organizer, Lembaga Pendidikan, Institusi yang butuh broadcast.",
-        "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nSebuah perusahaan ingin menyebarkan katalog produk baru serta diskon spesial kepada 5000 kontak pelanggan sekaligus dengan waktu singkat, tanpa risiko terblokir WhatsApp.\n\n💡 **Solusi OCA Blast:**\nCukup beberapa klik di OCA Blast, 5000 pesan akan otomatis terkirim. Pesan WhatsApp dijamin aman dari pemblokiran karena menggunakan jalur resmi, lengkap dengan fitur untuk melacak siapa saja pelanggan yang sudah membaca penawarannya!",
-        "selling_point": "Jangkauan luas dengan delivery rate tinggi, mudah digunakan, dan compliance dengan regulasi WhatsApp Business API.",
+        "pricing": "💰 **Harga Bundling Indibiz x OCA Blast Lite:**\n\n**HSI Bisnis (HSIE):**\n• 50 Mbps: Rp 668.900/bln\n• 75 Mbps: Rp 746.900/bln\n• 100 Mbps: Rp 891.900/bln\n• 150 Mbps: Rp 1.036.900/bln\n• 200 Mbps: Rp 1.261.900/bln\n• 300 Mbps: Rp 1.708.900/bln\n\n**HSI Basic (HSIEF):**\n• 50 Mbps: Rp 623.900/bln\n• 75 Mbps: Rp 676.900/bln\n• 100 Mbps: Rp 781.900/bln\n• 150 Mbps: Rp 916.900/bln\n• 200 Mbps: Rp 1.094.900/bln\n• 300 Mbps: Rp 1.470.900/bln\n\n🔹 **Add-On OCA Blast Lite (standalone): Rp 263.000/bln**\n   Sudah termasuk: 50 Kuota WA + 50 Kuota SMS + 50 Kuota Email\n   5 Template SMS, WA & Email | 1 Contact Group | 50MB Storage\n\n⚠️ Harga belum termasuk PPN\n🔗 Order via SC One, MyIndibiz, atau Landing Page Creator EBIS",
+        "target": "SME, Online Shop, Bimbingan Belajar, Restoran, Koperasi, Event Organizer, Lembaga Pendidikan, dan bisnis yang butuh distribusi pesan massal ke banyak pelanggan.",
+        "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nSebuah perusahaan ingin menyebarkan katalog produk baru dan diskon spesial kepada 5.000 kontak pelanggan sekaligus, secepat mungkin, tanpa risiko nomor WA terblokir.\n\n💡 **Solusi OCA Blast Lite:**\nCukup beberapa klik di OCA Blast, 5.000 pesan otomatis terkirim melalui jalur resmi WhatsApp Business API — aman dari pemblokiran! Tidak hanya WA, bisa juga via SMS dan Email sekaligus. Lengkap dengan laporan berapa persen pesan yang berhasil diterima dan dibaca!",
+        "selling_point": "Blast ke ribuan pelanggan via WhatsApp, SMS, dan Email — cukup dari satu dashboard! Harga add-on mulai Rp 263.000/bln atau bundling Indibiz mulai Rp 623.900/bln. Cocok untuk SME (online shop, resto, koperasi, bimbel) yang ingin jangkauan luas tanpa ribet.",
     },
     "pijar": {
-        "name": "PIJAR (Platform Integrasi Jelajah Administrasi)",
-        "description": "Platform digital terintegrasi untuk pendidikan yang menggabungkan proses belajar mengajar, ujian, penilaian, laporan, absensi, dan administrasi sekolah dalam satu ekosistem digital yang kolaboratif.",
+        "name": "PIJAR (Platform Digital Pendidikan Terintegrasi)",
+        "description": "PIJAR adalah platform digital untuk pendidikan yang mengintegrasikan proses ujian, presensi, tugas, laporan belajar, dan administrasi sekolah dalam satu sistem yang komprehensif dan kolaboratif. Menghubungkan guru, siswa, kepala sekolah, orang tua, dan Dinas Pendidikan dalam satu ekosistem digital. Hadir dengan paket layanan Indibiz Telkom.",
         "features": [
-            "🎓 **CBT (Computer Based Test)**\nUjian online dengan Anti-Cheating System terpusat, pengacakan soal otomatis, dan penilaian real-time yang menghemat puluhan jam kerja guru.",
-            "🏫 **Presensi Digital Cerdas**\nPresensi harian per sesi yang otomatis terekam dan direkap dalam satu klik, membangun budaya tertib sekolah.",
-            "📚 **Tugas & Konten Belajar**\nRuang belajar terpusat dengan penugasan terjadwal yang terhubung ke modul penilaian otomatis (Hemat waku 40 jam guru/semester).",
-            "📊 **Laporan Belajar (Rapor Digital)**\nLaporan kompetensi (CP/KD/TP) yang dikonversi ke PDF otomatis demi transparansi orang tua.",
-            "⚙️ **Pencatatan Administrasi Terpadu**\nSinkronisasi pengelolaan data Siswa, Guru, Jadwal, hingga Keuangan sekolah (Terintegrasi Dapodik).",
-            "🌐 **Dashboard Pemerintah**\nDasbor monitoring spesifik untuk Pemda (Dinas Pendidikan) demi pemetaan performansi agregat dari seluruh sekolah di wilayah (Kab/Kota)."
+            "🎓 **CBT (Computer Based Test)** — *Hemat ±20-25 jam guru/semester*\nUjian online terjadwal dengan Anti-Cheating System, acak soal otomatis, penilaian real-time, bank soal terstruktur, dan laporan rekap siap unduh (Excel/PDF). Bisa diakses di laptop, PC, tablet, dan smartphone.",
+            "🏫 **Presensi Digital Cerdas** — *Hemat ±27 jam guru/semester*\nPresensi harian per sesi otomatis terekam. Laporan kehadiran harian & bulanan dalam sekali klik, visualisasi data real-time, terdistribusi ke orang tua dan sekolah.",
+            "📚 **Tugas & Konten Belajar** — *Hemat ±40 jam guru/semester*\nPenugasan terjadwal, unggah & bagikan materi, penilaian otomatis, dan umpan balik terintegrasi. Dashboard guru dan manajemen untuk monitoring kinerja siswa.",
+            "📊 **Laporan Belajar (Rapor Digital)** — *Hemat ±62,5 jam guru/semester*\nRekap nilai otomatis (harian, tugas, ujian), export PDF/Excel, capaian kompetensi per CP/KD/TP, akses real-time untuk wali murid. Terintegrasi dengan Dapodik & E-Rapor (ongoing).",
+            "⚙️ **Pencatatan Administrasi Terpadu** — *Hemat ±52 jam guru/semester*\nManajemen data siswa & guru, penjadwalan tanpa bentrok, administrasi keuangan & BOS, rapor digital siap cetak, sinkronisasi Dapodik.",
+            "🌐 **Dashboard Dinas Pendidikan (Pemda)**\nMonitoring agregat seluruh sekolah di satu wilayah: jumlah sekolah/guru/siswa, nilai rata-rata per jenjang, produktivitas sekolah berdasarkan fitur Tugas & Ujian. Dapat diajukan via APBD (E-Katalog LKPP)."
         ],
-        "pricing": "Bisa dibundling dengan IndiBiz. Layanan PIJAR dirancang relevan dan terjangkau, serta legal digunakan di program pengadaan Pemerintah lewat Skema APBD via LKPP/E-katalog untuk level Kota & Provinsi.",
-        "target": "Sekolah/Madrasah dari SD-SMA (Guru, Operator, Kepala Sekolah, Siswa, Orang Tua), Lembaga Yayasan, serta Dinas Pendidikan Daerah/Pemda.",
-        "use_case": "❓ **Tantangan Pendidikan & Guru:**\nKerja guru begitu berat sampai kehabisan waktu mengajar karena terbebani puluhan hingga ratusan jam semesteran murni (hanya) untuk mengurus presensi manual, rekap soal, serta urus rapor cetak.\n\n💡 **Solusi PIJAR Digital:**\nSegalanya terdigitalisasi (*Paperless*)! Dengan Pijar, guru secara drastis dapat menghemat kerja repetitif hingga lebih dari 200 Jam/Semester yang diambil dari otomasi CBT (Ujian) dan Penilaian! \"PIJAR mengembalikan waktu guru untuk sepenuhnya mendidik!\" PIJAR juga menawarkan dashboard untuk monitor dinas pendidikan secara terpusat.",
-        "selling_point": "Tidak sekedar mendigitalisasi pembelajaran, tetapi memerdekakan birokrasi guru secara keseluruhan! Didukung keamanan data tertinggi BUMN (Telkom). \"Saat guru diberikan alat yang tepat, murid mendapatkan pendidikan yang layak!\"",
+        "pricing": "Bisa dibundling dengan Indibiz Telkom. PIJAR dirancang terjangkau dan legal untuk pengadaan pemerintah melalui skema APBD via LKPP/E-Katalog tingkat Kota & Provinsi.\n\n📍 **Implementasi saat ini:**\n• Pemprov DKI Jakarta: 1.987 sekolah\n• Pemkot Semarang: 335 sekolah\n• Pemkot Balikpapan: 185 sekolah\n• Pemkab Jembrana: 33 sekolah\n• Pemkab Boalemo: 28 sekolah\n\n📞 Helpdesk: +62 812-8899-9576 (chat only)\n🌐 www.pijarsekolah.id",
+        "target": "Sekolah & Madrasah SD-SMA (Guru, Operator, Kepala Sekolah, Siswa, Orang Tua), Lembaga Yayasan, serta Dinas Pendidikan & Pemda yang ingin monitoring agregat sekolah di wilayahnya.",
+        "use_case": "❓ **Tantangan Pendidikan & Guru:**\nGuru menghabiskan ratusan jam per semester HANYA untuk mengurus presensi manual, rekap soal ujian, dan cetak rapor — padahal itu semua bukan kegiatan mendidik. Kepala sekolah kesulitan memantau ujian dan progres belajar secara aktual. Orang tua minim akses informasi perkembangan anak.\n\n💡 **Solusi PIJAR:**\nTotal penghematan waktu guru bisa mencapai *200+ jam/semester* dari gabungan seluruh fitur (CBT, Presensi, Tugas, Laporan, Administrasi). *\u201cSaat guru diberikan alat yang tepat, murid mendapatkan pendidikan yang layak.\u201d* PIJAR juga menyediakan Dashboard khusus Dinas Pendidikan untuk monitoring kualitas pendidikan seluruh sekolah dalam satu wilayah.",
+        "selling_point": "Total hemat 200+ jam kerja guru per semester! PIJAR bukan sekadar digitalisasi pembelajaran — tapi membebaskan guru dari beban administratif agar bisa fokus mendidik. Didukung keamanan data BUMN Telkom, sudah digunakan di 2.500+ sekolah seluruh Indonesia, dan legal untuk pengadaan via APBD (E-Katalog LKPP).",
     },
     "netmonk": {
         "name": "Netmonk Hi (High Speed Internet Monitoring)",
@@ -246,19 +245,19 @@ TESTIMONIALS = {
 # Visual Produk - Gambar untuk ditampilkan di bagian HARGA produk
 PRODUCT_IMAGES = {
     "indibiz_basic": {
-        "path": "Materi/indibiz paket basic.jpg",
+        "path": "assets/images/paket/indibiz_paket_basic.jpg",
         "caption": "Indibiz Paket Basic - Internet Bisnis Ekonomis"
     },
     "indibiz_bisnis": {
-        "path": "Materi/indibiz paket bisnis.jpg",
+        "path": "assets/images/paket/indibiz_paket_bisnis.jpg",
         "caption": "Indibiz Paket Bisnis - Internet Premium 1:1"
     },
     "oca_i": {
-        "path": "Materi/Paket Indibiz X OCA Interaction Lite.png",
+        "path": "assets/images/paket/paket_indibiz_oca_interaction_lite.png",
         "caption": "Paket Bundling Indibiz x OCA Interaction Lite"
     },
     "oca_b": {
-        "path": "Materi/Paket Indibix x OCA Blast Lite.png",
+        "path": "assets/images/paket/paket_indibiz_oca_blast_lite.png",
         "caption": "Paket Bundling Indibiz x OCA Blast Lite"
     },
 }
@@ -266,19 +265,19 @@ PRODUCT_IMAGES = {
 # Gambar Profil Produk - ditampilkan saat pertama membuka halaman produk
 PRODUCT_PROFILE_IMAGES = {
     "oca_i": {
-        "path": "Materi/Profil OCA Interaction Lite.png",
+        "path": "assets/images/profil/profil_oca_interaction_lite.png",
         "caption": "OCA Interaction Lite - Solusi Multi-Channel Komunikasi"
     },
     "oca_b": {
-        "path": "Materi/Profil OCA Blast Lite.png",
+        "path": "assets/images/profil/profil_oca_blast_lite.png",
         "caption": "OCA Blast Lite - Platform Broadcast Messaging"
     },
     "pijar": {
-        "path": "Materi/Profil Pijar.png",
+        "path": "assets/images/profil/profil_pijar.png",
         "caption": "PIJAR - Platform Digital Pendidikan Terintegrasi"
     },
     "netmonk": {
-        "path": "Materi/Profil Netmonk Hi.png",
+        "path": "assets/images/profil/profil_netmonk_hi.png",
         "caption": "Netmonk Hi - Internet Monitoring Real-Time"
     },
 }
@@ -286,66 +285,66 @@ PRODUCT_PROFILE_IMAGES = {
 # Gambar Perbandingan Paketisasi per produk
 PRODUCT_COMPARISON_IMAGES = {
     "oca_i": [
-        "Materi/Perbandingan Paketisasi Oca Interaction (1).png",
-        "Materi/Perbandingan Paketisasi Oca Interaction (2).png",
+        "assets/images/perbandingan/perbandingan_oca_interaction_1.png",
+        "assets/images/perbandingan/perbandingan_oca_interaction_2.png",
     ],
     "oca_b": [
-        "Materi/Perbandingan Paketisasi OCA Blast (1).png",
-        "Materi/Perbandingan Paketisasi OCA Blast (2).png",
+        "assets/images/perbandingan/perbandingan_oca_blast_1.png",
+        "assets/images/perbandingan/perbandingan_oca_blast_2.png",
     ],
 }
 
 # Gambar 9 Modul Fitur Netmonk Hi (dikirim sebagai album saat klik Fitur)
 NETMONK_FEATURE_IMAGES = [
-    {"path": "Materi/Fitur Modul Netmonk Hi (1) Seamless Login.png",
+    {"path": "assets/images/fitur/netmonk_hi/netmonk_hi_01_seamless_login.png",
      "caption": "🔑 **1. Seamless Login**\nLogin aman dengan OTP via Email/WhatsApp. Tanpa password tambahan."},
-    {"path": "Materi/Fitur Modul Netmonk Hi (2) Dashboard.png",
+    {"path": "assets/images/fitur/netmonk_hi/netmonk_hi_02_dashboard.png",
      "caption": "📊 **2. Dashboard**\nSpeedometer semua nomor internet: total, hidup & mati secara real-time."},
-    {"path": "Materi/Fitur Modul Netmonk Hi (3) Internet Status.png",
+    {"path": "assets/images/fitur/netmonk_hi/netmonk_hi_03_internet_status.png",
      "caption": "📶 **3. Internet Status**\nTabel status (Online/Stop/Unknown) & kualitas internet dengan filter cerdas."},
-    {"path": "Materi/Fitur Modul Netmonk Hi (4) Internet Status - view.png",
+    {"path": "assets/images/fitur/netmonk_hi/netmonk_hi_04_internet_status_view.png",
      "caption": "📈 **4. Internet Status - View**\nGrafik historis status per nomor internet + nilai SLA availability."},
-    {"path": "Materi/Fitur Modul Netmonk Hi (5) Internet Quality - view.png",
+    {"path": "assets/images/fitur/netmonk_hi/netmonk_hi_05_internet_quality_view.png",
      "caption": "💯 **5. Internet Quality - View**\nGrafik historis kualitas internet + persentase kualitas per periode waktu."},
-    {"path": "Materi/Fitur Modul Netmonk Hi (6) Reporting Availability.png",
+    {"path": "assets/images/fitur/netmonk_hi/netmonk_hi_06_reporting_availability.png",
      "caption": "📅 **6. Reporting Availability**\nUnduh laporan SLA otomatis (Active Hours & All Hours) format Excel."},
-    {"path": "Materi/Fitur Modul Netmonk Hi (7) Traffic Bandwidth .png",
+    {"path": "assets/images/fitur/netmonk_hi/netmonk_hi_07_traffic_bandwidth.png",
      "caption": "💻 **7. Traffic & Bandwidth**\nGrafik historis penggunaan data (download/upload) per nomor internet."},
-    {"path": "Materi/Fitur Modul Netmonk Hi (8) Proactive Reporting.png",
+    {"path": "assets/images/fitur/netmonk_hi/netmonk_hi_08_proactive_reporting.png",
      "caption": "📢 **8. Proactive Reporting**\nLaporan bulanan otomatis via WhatsApp: availability & jumlah nomor selama 30 hari."},
-    {"path": "Materi/Fitur Modul Netmonk Hi (9) Alerting.png",
+    {"path": "assets/images/fitur/netmonk_hi/netmonk_hi_09_alerting.png",
      "caption": "🔔 **9. Alerting**\nNotifikasi otomatis ke Telegram/Email saat internet mati & hidup kembali."},
 ]
 
 # Materi Penjualan - Mapping produk ke file PDF
 SALES_MATERIALS_FILES = {
     "oca_i": {
-        "filename": "7. OCA Interaction Lite 2025.pdf",
-        "path": "Materi/7. OCA Interaction Lite 2025.pdf"
+        "filename": "oca_interaction_lite_2025.pdf",
+        "path": "assets/pdf/produk/oca_interaction_lite_2025.pdf"
     },
     "oca_b": {
-        "filename": "8. OCA Blast Lite 2025.pdf",
-        "path": "Materi/8. OCA Blast Lite 2025.pdf"
+        "filename": "oca_blast_lite_2025.pdf",
+        "path": "assets/pdf/produk/oca_blast_lite_2025.pdf"
     },
     "pijar": {
-        "filename": "Materi Sosialisasi PIJAR 2025.pptx.pdf",
-        "path": "Materi/Materi Sosialisasi PIJAR 2025.pptx.pdf"
+        "filename": "pijar_sosialisasi_2025.pdf",
+        "path": "assets/pdf/produk/pijar_sosialisasi_2025.pdf"
     },
     "netmonk": {
-        "filename": "Proposal Netmonk Hi- Updated  (1).pdf",
-        "path": "Materi/Proposal Netmonk Hi- Updated  (1).pdf"
+        "filename": "proposal_netmonk_hi_updated.pdf",
+        "path": "assets/pdf/proposal/proposal_netmonk_hi_updated.pdf"
     },
     "indibiz_basic": {
-        "filename": "indibiz paket basic.jpg",
-        "path": "Materi/indibiz paket basic.jpg"
+        "filename": "indibiz_paket_basic.jpg",
+        "path": "assets/images/paket/indibiz_paket_basic.jpg"
     },
     "indibiz_bisnis": {
-        "filename": "indibiz paket bisnis.jpg",
-        "path": "Materi/indibiz paket bisnis.jpg"
+        "filename": "indibiz_paket_bisnis.jpg",
+        "path": "assets/images/paket/indibiz_paket_bisnis.jpg"
     },
     "oca_breaker": {
-        "filename": "OCA Breaker.pdf",
-        "path": "Materi/OCA Breaker.pdf"
+        "filename": "oca_breaker.pdf",
+        "path": "assets/pdf/produk/oca_breaker.pdf"
     }
 }
 

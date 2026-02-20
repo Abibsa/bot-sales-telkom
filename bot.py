@@ -1,6 +1,7 @@
 import logging
 import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
+from telegram.error import BadRequest
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
 from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, PRODUCT_COMPARISON_IMAGES, NETMONK_FEATURE_IMAGES
 
@@ -73,10 +74,18 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Menangani navigasi menu utama."""
     query = update.callback_query
-    await query.answer()
+
+    # Jawab callback query — abaikan jika sudah expired (query lama saat bot restart)
+    try:
+        await query.answer()
+    except BadRequest as e:
+        if "query is too old" in str(e).lower() or "query id" in str(e).lower():
+            logging.warning(f"Stale callback query diabaikan: {e}")
+            return
+        raise  # Lempar ulang error lain yang tidak terduga
 
     data = query.data
-    
+
     # Log untuk debugging
     logging.info(f"Callback data received: {data}")
 
@@ -120,15 +129,12 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             
             keyboard = [
                 [InlineKeyboardButton("⭐ Fitur", callback_data=f'pd_{product_key}_feat')],
-                [InlineKeyboardButton("💰 Harga", callback_data=f'pd_{product_key}_price')],
+                [InlineKeyboardButton("💰 Harga & Paket", callback_data=f'pd_{product_key}_price')],
                 [InlineKeyboardButton("🎯 Target Customer", callback_data=f'pd_{product_key}_target')],
                 [InlineKeyboardButton("💡 Use Case / Contoh", callback_data=f'pd_{product_key}_use')],
                 [InlineKeyboardButton("✨ Selling Point", callback_data=f'pd_{product_key}_sell')],
                 [InlineKeyboardButton("💬 Testimoni", callback_data=f'pd_{product_key}_testi')],
             ]
-            # Tambah tombol Paket & Perbandingan untuk produk yang punya gambar perbandingan
-            if product_key in PRODUCT_COMPARISON_IMAGES:
-                keyboard.append([InlineKeyboardButton("📊 Paket & Perbandingan", callback_data=f'pd_{product_key}_paket')])
 
             keyboard.append([InlineKeyboardButton("<< Kembali ke PRODIGI", callback_data='m_products')])
             keyboard.append(get_back_button())
@@ -200,7 +206,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 title = "Fitur"
                 content = "\n".join([f"- {f}" for f in product['features']])
             elif detail_type == 'price':
-                title = "Harga"
+                title = "Harga & Paket"
                 content = product['pricing']
             elif detail_type == 'target':
                 title = "Target Customer"
@@ -214,7 +220,8 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             elif detail_type == 'testi':
                 title = "Testimoni Pelanggan"
                 content = TESTIMONIALS.get(product_key, "_Testimoni untuk produk ini belum tersedia._")
-            
+
+
             text_response = f"📦 **{product['name']}** - {title}\n\n{content}"
             
             keyboard_detail = [
@@ -246,11 +253,20 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             send_photo = False
             image_path = ""
-            if detail_type == 'price' and product_key in ['indibiz_basic', 'indibiz_bisnis', 'oca_i', 'oca_b']:
+            comparison_paths = []
+
+            if detail_type == 'price':
+                # Gambar paket (indibiz / oca bundling)
                 if product_key in PRODUCT_IMAGES:
                     image_path = PRODUCT_IMAGES[product_key]['path']
                     if os.path.exists(image_path):
                         send_photo = True
+                # Gambar perbandingan paketisasi (kirim sebagai album tambahan)
+                if product_key in PRODUCT_COMPARISON_IMAGES:
+                    comparison_paths = [
+                        p for p in PRODUCT_COMPARISON_IMAGES[product_key]
+                        if os.path.exists(p)
+                    ]
 
             if send_photo:
                 try:
@@ -261,8 +277,20 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                             reply_markup=InlineKeyboardMarkup(keyboard_detail),
                             parse_mode='Markdown'
                         )
-                    # Hapus pesan sebelumnya agar tidak menumpuk status media
                     await query.message.delete()
+                    # Kirim gambar perbandingan sebagai album tambahan (jika ada)
+                    if comparison_paths:
+                        try:
+                            media_group = []
+                            for i, path in enumerate(comparison_paths):
+                                with open(path, 'rb') as f:
+                                    media_group.append(InputMediaPhoto(
+                                        media=f.read(),
+                                        caption=f"📊 Perbandingan Paketisasi {product['name']} - Halaman {i+1}" if i == 0 else ""
+                                    ))
+                            await query.message.reply_media_group(media=media_group)
+                        except Exception as e:
+                            logging.error(f"Error sending comparison images: {e}")
                 except Exception as e:
                     logging.error(f"Error sending price photo: {e}")
                     # Jika gagal mengirim gambar, fallback ke teks
@@ -290,65 +318,6 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await query.edit_message_text(
                     text=text_response,
                     reply_markup=InlineKeyboardMarkup(keyboard_detail),
-                    parse_mode='Markdown'
-                )
-
-
-
-    # --- PAKET & PERBANDINGAN (generik untuk semua produk) ---
-    elif data.startswith('pd_') and data.endswith('_paket'):
-        await query.answer()
-        # Ambil product_key dari format pd_PRODUCTKEY_paket
-        data_without_prefix = data[3:]  # Remove 'pd_'
-        product_key = data_without_prefix.rsplit('_', 1)[0]  # Remove '_paket'
-        
-        paths = [p for p in PRODUCT_COMPARISON_IMAGES.get(product_key, []) if os.path.exists(p)]
-        product_name = PRODUCTS.get(product_key, {}).get('name', product_key)
-        keyboard = [
-            [InlineKeyboardButton(f"<< Kembali ke {product_name}", callback_data=f'p_{product_key}')],
-            get_back_button()
-        ]
-        if paths:
-            try:
-                media_group = []
-                for i, path in enumerate(paths):
-                    with open(path, 'rb') as f:
-                        media_group.append(InputMediaPhoto(
-                            media=f.read(),
-                            caption=f"📊 Perbandingan Paketisasi {product_name} - Halaman {i+1}" if i == 0 else ""
-                        ))
-                await query.message.reply_media_group(media=media_group)
-                await query.message.reply_text(
-                    text=f"📊 **Paket & Perbandingan {product_name}**\n\nLihat gambar di atas untuk detail paketisasi dan perbandingan harga yang tersedia.",
-                    reply_markup=InlineKeyboardMarkup(keyboard),
-                    parse_mode='Markdown'
-                )
-                await query.message.delete()
-            except Exception as e:
-                logging.error(f"Error sending comparison images: {e}")
-                if query.message.photo:
-                    await query.message.reply_text(
-                        text="⚠️ Gambar perbandingan tidak dapat ditampilkan saat ini.",
-                        reply_markup=InlineKeyboardMarkup(keyboard),
-                        parse_mode='Markdown'
-                    )
-                else:
-                    await query.edit_message_text(
-                        text="⚠️ Gambar perbandingan tidak dapat ditampilkan saat ini.",
-                        reply_markup=InlineKeyboardMarkup(keyboard),
-                        parse_mode='Markdown'
-                    )
-        else:
-            if query.message.photo:
-                await query.message.reply_text(
-                    text="⚠️ File gambar perbandingan tidak ditemukan.",
-                    reply_markup=InlineKeyboardMarkup(keyboard),
-                    parse_mode='Markdown'
-                )
-            else:
-                await query.edit_message_text(
-                    text="⚠️ File gambar perbandingan tidak ditemukan.",
-                    reply_markup=InlineKeyboardMarkup(keyboard),
                     parse_mode='Markdown'
                 )
 
