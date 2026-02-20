@@ -140,10 +140,17 @@ Bot telegram Sales Telkom/
 ├── requirements.txt          # Library Python yang wajib diinstall (telegram-bot, httpx)
 ├── Procfile                  # File pemicu build cloud services (Railway/Heroku/Render)
 ├── START_BOT.bat             # Shortcut lokal Windows
-├── README.md                 # Dokumentasi ini
+├── README.md                 # Dokumentasi sistem bot
+├── .gitignore                # Konfigurasi file & folder yang diabaikan Git
 ├── assets/                   # Folder terpusat untuk semua media aset
-│   ├── images/               # Kategori gambar (fitur, paket, perbandingan, profil)
+│   ├── paths.py              # Konfigurasi konstanta path direktori media aset
+│   ├── images/               # Kategori gambar utama
+│   │   ├── fitur/            # Koleksi gambar deskripsi fitur/modul produk
+│   │   ├── paket/            # Brosur dan materi penawaran harga
+│   │   ├── perbandingan/     # Grafik komparatif spesifikasi antar paket
+│   │   └── profil/           # Kumpulan avatar/logo identitas produk
 │   └── pdf/                  # Repository brosur & proposal official Telkom
+├── __pycache__/              # [Ignored] Cache kompilasi Python internal
 └── .venv/                    # [Ignored] Virtual environment Python
 ```
 
