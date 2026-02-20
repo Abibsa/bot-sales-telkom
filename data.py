@@ -255,6 +255,10 @@ PRODUCT_IMAGES = {
         "path": "Materi/Paket Indibiz X OCA Interaction Lite.png",
         "caption": "Paket Bundling Indibiz x OCA Interaction Lite"
     },
+    "oca_b": {
+        "path": "Materi/Paket Indibix x OCA Blast Lite.png",
+        "caption": "Paket Bundling Indibiz x OCA Blast Lite"
+    },
 }
 
 # Gambar Profil Produk - ditampilkan saat pertama membuka halaman produk
@@ -263,13 +267,23 @@ PRODUCT_PROFILE_IMAGES = {
         "path": "Materi/Profil OCA Interaction Lite.png",
         "caption": "OCA Interaction Lite - Solusi Multi-Channel Komunikasi"
     },
+    "oca_b": {
+        "path": "Materi/Profil OCA Blast Lite.png",
+        "caption": "OCA Blast Lite - Platform Broadcast Messaging"
+    },
 }
 
-# Gambar Perbandingan Paketisasi - untuk OCA Interaction
-OCA_COMPARISON_IMAGES = [
-    "Materi/Perbandingan Paketisasi Oca Interaction (1).png",
-    "Materi/Perbandingan Paketisasi Oca Interaction (2).png",
-]
+# Gambar Perbandingan Paketisasi per produk
+PRODUCT_COMPARISON_IMAGES = {
+    "oca_i": [
+        "Materi/Perbandingan Paketisasi Oca Interaction (1).png",
+        "Materi/Perbandingan Paketisasi Oca Interaction (2).png",
+    ],
+    "oca_b": [
+        "Materi/Perbandingan Paketisasi OCA Blast (1).png",
+        "Materi/Perbandingan Paketisasi OCA Blast (2).png",
+    ],
+}
 
 # Materi Penjualan - Mapping produk ke file PDF
 SALES_MATERIALS_FILES = {

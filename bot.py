@@ -2,7 +2,7 @@ import logging
 import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
-from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, OCA_COMPARISON_IMAGES
+from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, PRODUCT_COMPARISON_IMAGES
 
 # -----------------------------------------------------------------------------
 # KONFIGURASI
@@ -126,9 +126,10 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("✨ Selling Point", callback_data=f'pd_{product_key}_sell')],
                 [InlineKeyboardButton("💬 Testimoni", callback_data=f'pd_{product_key}_testi')],
             ]
-            # Tambah tombol Paket & Perbandingan khusus untuk OCA Interaction
-            if product_key == 'oca_i':
-                keyboard.append([InlineKeyboardButton("📊 Paket & Perbandingan", callback_data='pd_oca_i_paket')])
+            # Tambah tombol Paket & Perbandingan untuk produk yang punya gambar perbandingan
+            if product_key in PRODUCT_COMPARISON_IMAGES:
+                keyboard.append([InlineKeyboardButton("📊 Paket & Perbandingan", callback_data=f'pd_{product_key}_paket')])
+
             keyboard.append([InlineKeyboardButton("<< Kembali ke PRODIGI", callback_data='m_products')])
             keyboard.append(get_back_button())
 
@@ -223,7 +224,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             send_photo = False
             image_path = ""
-            if detail_type == 'price' and product_key in ['indibiz_basic', 'indibiz_bisnis', 'oca_i']:
+            if detail_type == 'price' and product_key in ['indibiz_basic', 'indibiz_bisnis', 'oca_i', 'oca_b']:
                 if product_key in PRODUCT_IMAGES:
                     image_path = PRODUCT_IMAGES[product_key]['path']
                     if os.path.exists(image_path):
@@ -272,12 +273,17 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 
-    # --- PAKET & PERBANDINGAN OCA INTERACTION ---
-    elif data == 'pd_oca_i_paket':
+    # --- PAKET & PERBANDINGAN (generik untuk semua produk) ---
+    elif data.startswith('pd_') and data.endswith('_paket'):
         await query.answer()
-        paths = [p for p in OCA_COMPARISON_IMAGES if os.path.exists(p)]
+        # Ambil product_key dari format pd_PRODUCTKEY_paket
+        data_without_prefix = data[3:]  # Remove 'pd_'
+        product_key = data_without_prefix.rsplit('_', 1)[0]  # Remove '_paket'
+        
+        paths = [p for p in PRODUCT_COMPARISON_IMAGES.get(product_key, []) if os.path.exists(p)]
+        product_name = PRODUCTS.get(product_key, {}).get('name', product_key)
         keyboard = [
-            [InlineKeyboardButton("<< Kembali ke OCA Interaction", callback_data='p_oca_i')],
+            [InlineKeyboardButton(f"<< Kembali ke {product_name}", callback_data=f'p_{product_key}')],
             get_back_button()
         ]
         if paths:
@@ -285,27 +291,44 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 media_group = []
                 for i, path in enumerate(paths):
                     with open(path, 'rb') as f:
-                        media_group.append(InputMediaPhoto(media=f.read(), caption=f"📊 Perbandingan Paketisasi OCA Interaction Lite - Halaman {i+1}" if i == 0 else ""))
+                        media_group.append(InputMediaPhoto(
+                            media=f.read(),
+                            caption=f"📊 Perbandingan Paketisasi {product_name} - Halaman {i+1}" if i == 0 else ""
+                        ))
                 await query.message.reply_media_group(media=media_group)
                 await query.message.reply_text(
-                    text="📊 **Paket & Perbandingan OCA Interaction Lite**\n\nLihat gambar di atas untuk detail paketisasi dan perbandingan harga yang tersedia.",
+                    text=f"📊 **Paket & Perbandingan {product_name}**\n\nLihat gambar di atas untuk detail paketisasi dan perbandingan harga yang tersedia.",
                     reply_markup=InlineKeyboardMarkup(keyboard),
                     parse_mode='Markdown'
                 )
                 await query.message.delete()
             except Exception as e:
                 logging.error(f"Error sending comparison images: {e}")
-                await query.edit_message_text(
-                    text="⚠️ Gambar perbandingan tidak dapat ditampilkan saat ini.",
+                if query.message.photo:
+                    await query.message.reply_text(
+                        text="⚠️ Gambar perbandingan tidak dapat ditampilkan saat ini.",
+                        reply_markup=InlineKeyboardMarkup(keyboard),
+                        parse_mode='Markdown'
+                    )
+                else:
+                    await query.edit_message_text(
+                        text="⚠️ Gambar perbandingan tidak dapat ditampilkan saat ini.",
+                        reply_markup=InlineKeyboardMarkup(keyboard),
+                        parse_mode='Markdown'
+                    )
+        else:
+            if query.message.photo:
+                await query.message.reply_text(
+                    text="⚠️ File gambar perbandingan tidak ditemukan.",
                     reply_markup=InlineKeyboardMarkup(keyboard),
                     parse_mode='Markdown'
                 )
-        else:
-            await query.edit_message_text(
-                text="⚠️ File gambar perbandingan tidak ditemukan.",
-                reply_markup=InlineKeyboardMarkup(keyboard),
-                parse_mode='Markdown'
-            )
+            else:
+                await query.edit_message_text(
+                    text="⚠️ File gambar perbandingan tidak ditemukan.",
+                    reply_markup=InlineKeyboardMarkup(keyboard),
+                    parse_mode='Markdown'
+                )
 
     # --- MENU PROPOSAL PRODIGI ---
     elif data == 'm_materials':
