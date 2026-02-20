@@ -50,11 +50,19 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Silakan pilih menu di bawah ini untuk memulai:"
     )
     if update.callback_query:
-         await update.callback_query.edit_message_text(
-            text=welcome_message,
-            reply_markup=get_main_menu_keyboard(),
-            parse_mode='Markdown'
-        )
+        if update.callback_query.message.photo:
+            await update.callback_query.message.reply_text(
+                text=welcome_message,
+                reply_markup=get_main_menu_keyboard(),
+                parse_mode='Markdown'
+            )
+            await update.callback_query.message.delete()
+        else:
+            await update.callback_query.edit_message_text(
+                text=welcome_message,
+                reply_markup=get_main_menu_keyboard(),
+                parse_mode='Markdown'
+            )
     else:
         await update.message.reply_text(
             text=welcome_message,
@@ -89,6 +97,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 reply_markup=InlineKeyboardMarkup(keyboard),
                 parse_mode='Markdown'
             )
+            await query.message.delete()
         else:
             # Edit pesan jika dari produk tanpa visual
             await query.edit_message_text(
@@ -119,35 +128,18 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 get_back_button()
             ]
 
-            # Cek apakah produk memiliki gambar visual
-            if product_key in PRODUCT_IMAGES:
-                image_data = PRODUCT_IMAGES[product_key]
-                image_path = image_data['path']
-                
-                # Cek apakah file gambar ada
-                if os.path.exists(image_path):
-                    # Kirim gambar produk terlebih dahulu
-                    with open(image_path, 'rb') as photo_file:
-                        await query.message.reply_photo(
-                            photo=photo_file,
-                            caption=f"📦 **{product_name}**\n\n{image_data['caption']}\n\n**Deskripsi:**\n{product['description']}\n\nApa yang ingin Anda ketahui tentang produk ini?",
-                            reply_markup=InlineKeyboardMarkup(keyboard),
-                            parse_mode='Markdown'
-                        )
-                    
-                    # Hapus pesan menu sebelumnya
-                    await query.message.delete()
-                else:
-                    # Jika file tidak ada, tampilkan teks biasa
-                    await query.edit_message_text(
-                        text=f"📦 **{product_name}**\n\n**Deskripsi:**\n{product['description']}\n\nApa yang ingin Anda ketahui tentang produk ini?",
-                        reply_markup=InlineKeyboardMarkup(keyboard),
-                        parse_mode='Markdown'
-                    )
+            text_response = f"📦 **{product_name}**\n\n**Deskripsi:**\n{product['description']}\n\nApa yang ingin Anda ketahui tentang produk ini?"
+            
+            if query.message.photo:
+                await query.message.reply_text(
+                    text=text_response,
+                    reply_markup=InlineKeyboardMarkup(keyboard),
+                    parse_mode='Markdown'
+                )
+                await query.message.delete()
             else:
-                # Jika tidak ada gambar, tampilkan teks biasa
                 await query.edit_message_text(
-                    text=f"📦 **{product_name}**\n\n**Deskripsi:**\n{product['description']}\n\nApa yang ingin Anda ketahui tentang produk ini?",
+                    text=text_response,
                     reply_markup=InlineKeyboardMarkup(keyboard),
                     parse_mode='Markdown'
                 )
