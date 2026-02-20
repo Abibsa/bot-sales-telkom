@@ -40,12 +40,12 @@ PRODUCTS = {
         "name": "PIJAR (Platform Integrasi Jelajah Administrasi)",
         "description": "Platform digital terintegrasi untuk pendidikan yang menggabungkan proses belajar mengajar, ujian, penilaian, laporan, absensi, dan administrasi sekolah dalam satu ekosistem digital yang kolaboratif.",
         "features": [
-            "🎓 **CBT (Computer Based Test)**: Ujian online dengan Anti-Cheating System terpusat, pengacakan soal otomatis, dan penilaian real-time yang menghemat puluhan jam kerja guru.",
-            "🏫 **Presensi Digital Cerdas**: Presensi harian per sesi yang otomatis terekam dan direkap dalam satu klik, membangun budaya tertib sekolah.",
-            "📚 **Tugas & Konten Belajar**: Ruang belajar terpusat dengan penugasan terjadwal yang terhubung ke modul penilaian otomatis (Hemat waku 40 jam guru/semester).",
-            "📊 **Laporan Belajar (Rapor Digital)**: Laporan kompetensi (CP/KD/TP) yang dikonversi ke PDF otomatis demi transparansi orang tua.",
-            "⚙️ **Pencatatan Administrasi Terpadu**: Sinkronisasi pengelolaan data Siswa, Guru, Jadwal, hingga Keuangan sekolah (Terintegrasi Dapodik).",
-            "🌐 **Dashboard Pemerintah**: Dasbor monitoring spesifik untuk Pemda (Dinas Pendidikan) demi pemetaan performansi agregat dari seluruh sekolah di wilayah (Kab/Kota)."
+            "🎓 **CBT (Computer Based Test)**\nUjian online dengan Anti-Cheating System terpusat, pengacakan soal otomatis, dan penilaian real-time yang menghemat puluhan jam kerja guru.",
+            "🏫 **Presensi Digital Cerdas**\nPresensi harian per sesi yang otomatis terekam dan direkap dalam satu klik, membangun budaya tertib sekolah.",
+            "📚 **Tugas & Konten Belajar**\nRuang belajar terpusat dengan penugasan terjadwal yang terhubung ke modul penilaian otomatis (Hemat waku 40 jam guru/semester).",
+            "📊 **Laporan Belajar (Rapor Digital)**\nLaporan kompetensi (CP/KD/TP) yang dikonversi ke PDF otomatis demi transparansi orang tua.",
+            "⚙️ **Pencatatan Administrasi Terpadu**\nSinkronisasi pengelolaan data Siswa, Guru, Jadwal, hingga Keuangan sekolah (Terintegrasi Dapodik).",
+            "🌐 **Dashboard Pemerintah**\nDasbor monitoring spesifik untuk Pemda (Dinas Pendidikan) demi pemetaan performansi agregat dari seluruh sekolah di wilayah (Kab/Kota)."
         ],
         "pricing": "Bisa dibundling dengan IndiBiz. Layanan PIJAR dirancang relevan dan terjangkau, serta legal digunakan di program pengadaan Pemerintah lewat Skema APBD via LKPP/E-katalog untuk level Kota & Provinsi.",
         "target": "Sekolah/Madrasah dari SD-SMA (Guru, Operator, Kepala Sekolah, Siswa, Orang Tua), Lembaga Yayasan, serta Dinas Pendidikan Daerah/Pemda.",
