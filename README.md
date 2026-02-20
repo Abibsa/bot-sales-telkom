@@ -66,25 +66,42 @@ Bot ini sudah mendukung instruksi deploy instan `Procfile`.
 
 ## 📖 Panduan Penggunaan
 
-### ⚖️ Cara Menggunakan Perbandingan Indibiz
+### 🧭 Navigasi Menu Utama
+1. Buka *room chat* dengan bot di Telegram.
+2. Ketik perintah `/start` untuk memulai percakapan atau me-_refresh_ sesi.
+3. Bot akan membalas dengan **Menu Utama** yang terdiri dari:
+   - 🌐 **Internet**: Lihat detail ringkas terkait *core* konektivitas (Indibiz Basic & Bisnis).
+   - 📦 **PRODIGI**: Akses katalog produk digital terintegrasi (OCA, PIJAR, Netmonk Hi, dll).
+   - ⚖️ **Perbandingan Indibiz Basic dan Bisnis**: Fitur komparasi *tier* rasio kecepatan paket internet.
+   - 📚 **Proposal PRODIGI**: Cara instan mengunduh dokumen _pitch deck_/brosur formil PDF _official_.
+   - ❓ **FAQ Internal**: Cari tahu jawaban kebijakan _Sales_ internal, Trial/POC, SLA, Eskalasi, dsb.
+   - 📞 **Call Center / Eskalasi**: Daftar nomor bantuan pelanggan (TENESA, L0 DOA, MyIndibiz) & kontak PIC masing-masing produk digital.
 
-1. Klik tombol **⚖️ Perbandingan Indibiz Basic dan Bisnis** dari menu utama
-2. Bot akan menampilkan:
-   - Perbedaan rasio kecepatan (1:2 vs 1:1)
-   - Tabel harga lengkap semua tier dengan selisih
-   - Rekomendasi "Pilih Basic jika..." dan "Pilih Bisnis jika..."
-   - Script closing untuk sales
+### 🔍 Mengeksplorasi Detail Produk
+Saat Anda memilih salah satu produk di _layer_ kedua (misal **📦 PRODIGI** >> **OCA Interaction Lite**), Bot akan melontarkan ringkasan produk disertai tombol-tombol _inline_ yang lebih presisi:
+- ⭐ **Fitur**: Membaca modul mendalam layanan (pada Netmonk Hi mengirim 9 album visual panel sistem otomatis).
+- 💰 **Harga**: Melihat _price-list_ lengkap, tambahan (add-on), dan bagan komparatif antar paket.
+- 🎯 **Target Customer** & 💡 **Use Case**
+- ✨ **Selling Point** & **Testimoni**
 
-**Contoh Output:**
-```
+### ⚖️ Menggunakan Perbandingan Indibiz
+Bila prospek klien (*customer*) ragu antara Indibiz biasa atau premium, gunakan menu pahlawan ini!
+1. Klik tombol **⚖️ Perbandingan Indibiz Basic dan Bisnis** dari layer utama.
+2. Bot akan merender ulang format kalkulasi:
+   - Penjelasan teknis rasio kecepatan (1:2 vs 1:1)
+   - Selisih tabel harga komprehensif pada setiap Mbps
+   - Panduan skenario prospek (*"Pilih Basic jika...", "Pilih Bisnis jika..."*)
+   - Rekomendasi naskah **Tips Closing**.
+
+**Contoh Output Naskah Closing:**
+```text
 100 Mbps:
 • Basic: Rp 440.000/bln (upload ~50 Mbps)
 • Bisnis: Rp 535.000/bln (upload 100 Mbps)
 • Selisih: Rp 95.000
 
 💡 TIPS CLOSING:
-"Selisih hanya Rp 95rb/bulan, tapi upload speed 2x lipat!
-Investasi kecil untuk produktivitas maksimal."
+"Selisih cuma tambah investasi Rp 95rb/bulan, tapi operasional upload speed dapat 2x lipat! Sangat esensial untuk backup video & cctv 24 jam."
 ```
 
 ---
