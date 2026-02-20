@@ -17,7 +17,7 @@ PRODUCTS = {
         ],
         "pricing": "Paket bundling dengan IndiBiz. Harga mulai dari Rp 500.000/bulan untuk paket basic.",
         "target": "UMKM, Bisnis Kecil Menengah, Online Shop, Customer Service Team.",
-        "use_case": "Sebuah toko online fashion mengelola pertanyaan pelanggan dari WhatsApp, Instagram DM, dan Facebook Messenger dalam satu dashboard, sehingga tidak ada chat yang terlewat.",
+        "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nBanyak pesan pelanggan dari WhatsApp, Instagram DM, dan Facebook yang membludak. Admin kewalahan dan banyak calon pembeli komplain telat direspons.\n\n💡 **Solusi OCA Interaction:**\nDengan satu dashboard cerdas, semua chat dari seluruh aplikasi terkumpul menjadi satu pintu! Ditambah fitur chatbot sederhana, bot langsung membalas pelanggan sebelum dialihkan ke manusia. Tidak ada lagi keluhan lupa balas!",
         "selling_point": "One-stop-solution komunikasi digital yang fleksibel, mudah digunakan, dan terintegrasi dengan produk Telkom lainnya. Hemat waktu dan maksimalkan pelayanan pelanggan.",
     },
     "oca_b": {
@@ -33,7 +33,7 @@ PRODUCTS = {
         ],
         "pricing": "Berbasis jumlah pesan yang dikirim. Paket mulai dari Rp 300.000 untuk 1000 pesan.",
         "target": "Retail, E-commerce, Event Organizer, Lembaga Pendidikan, Institusi yang butuh broadcast.",
-        "use_case": "Sebuah restoran ingin mengirim promo spesial weekend ke 5000 pelanggan setia mereka via WhatsApp dengan pesan personal dan gambar menu.",
+        "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nSebuah perusahaan ingin menyebarkan katalog produk baru serta diskon spesial kepada 5000 kontak pelanggan sekaligus dengan waktu singkat, tanpa risiko terblokir WhatsApp.\n\n💡 **Solusi OCA Blast:**\nCukup beberapa klik di OCA Blast, 5000 pesan akan otomatis terkirim. Pesan WhatsApp dijamin aman dari pemblokiran karena menggunakan jalur resmi, lengkap dengan fitur untuk melacak siapa saja pelanggan yang sudah membaca penawarannya!",
         "selling_point": "Jangkauan luas dengan delivery rate tinggi, mudah digunakan, dan compliance dengan regulasi WhatsApp Business API.",
     },
     "pijar": {
@@ -50,7 +50,7 @@ PRODUCTS = {
         ],
         "pricing": "Paket bundling dengan akses IndiBiz (internet FTTH). Harga disesuaikan dengan jumlah siswa dan fitur yang dipilih.",
         "target": "Sekolah (SD, SMP, SMA), Lembaga Pendidikan, Yayasan Pendidikan.",
-        "use_case": "Sebuah SMA dengan 1000 siswa menggunakan PIJAR untuk ujian online, absensi digital, dan komunikasi orangtua-guru, sehingga mengurangi penggunaan kertas dan meningkatkan efisiensi administrasi.",
+        "use_case": "❓ **Tantangan Pendidikan Saat Ini:**\nPihak sekolah sering kesulitan merekap izin absen ratusan siswa satu per satu, boros anggaran fotocopy kertas soal ujian, dan kesulitan menyebarluaskan rapor hasil secara merata.\n\n💡 **Solusi PIJAR Digital:**\nSeluruh operasional sekolah menjadi 100% *Paperless* (Bebas Kertas)! Siswa ujian melalui komputer dan nilai langsung direkap otomatis, sistem absensi siswa dan guru secara digital, serta guru bisa langsung memberitahu rekap akademik ke HP orang tua!",
         "selling_point": "Solusi pendidikan digital all-in-one yang didukung BUMN, compliance dengan standar pendidikan nasional, data aman, dan dukungan teknis berkelanjutan.",
     },
     "netmonk": {
@@ -66,7 +66,7 @@ PRODUCTS = {
         ],
         "pricing": "Berbasis jumlah site/lokasi yang dimonitor. Harga mulai dari Rp 1.000.000/bulan untuk 10 site.",
         "target": "Enterprise dengan banyak cabang, Retail chain, Bank, Instansi Pemerintah, Perusahaan Logistik.",
-        "use_case": "Sebuah bank dengan 100 cabang menggunakan Netmonk Hi untuk memantau koneksi internet di seluruh cabang, sehingga bisa langsung mendeteksi dan mengatasi gangguan sebelum berdampak ke operasional.",
+        "use_case": "❓ **Tantangan IT / Operasional:**\nJaringan internet di puluhan hingga kantor cabang perbankan mendadak putus sehingga teller tidak bisa melayani nasabah yang mulai antre penuh di lobi. Pihak operasional dan IT lambat tahu.\n\n💡 **Solusi Netmonk Hi:**\nTim IT mendapatkan Notifikasi *Real-Time* (seketika) ketika ada server / internet cabang yang down! Tim bisa proaktif melihat masalah sebelum mendapatkan komplain lebih lanjut, dan menindaklanjutinya dengan cepat demi kenyamanan pelanggan di seluruh cabang.",
         "selling_point": "Efisiensi operasional dengan monitoring end-to-end, pembuatan laporan SLA otomatis, dan deteksi proaktif untuk maintenance yang lebih baik.",
     },
     "indibiz_basic": {
@@ -81,9 +81,9 @@ PRODUCTS = {
             "Dapat bundling dengan solusi digital (OCA, Eazy, Pijar, Netmonk)",
             "Tagihan bulanan flat"
         ],
-        "pricing": "Harga PROMO (s.d 28 Feb 2026): Mulai Rp 320rb/bln (50 Mbps), Rp 365rb (75 Mbps), Rp 440rb (100 Mbps), Rp 540rb (150 Mbps), Rp 675rb (200 Mbps), Rp 950rb (300 Mbps). PSB Rp 150.000. Harga belum termasuk PPN 11%.",
+        "pricing": "💰 **Harga PROMO (s.d 28 Feb 2026):**\n\n• **50 Mbps:** Rp 320.000/bln\n• **75 Mbps:** Rp 365.000/bln\n• **100 Mbps:** Rp 440.000/bln\n• **150 Mbps:** Rp 540.000/bln\n• **200 Mbps:** Rp 675.000/bln\n• **300 Mbps:** Rp 950.000/bln\n\n📝 PSB: Rp 150.000 (semua paket)\n⚠️ Harga belum termasuk PPN 11%",
         "target": "Small Medium Enterprise (SME), UMKM, Warung/Kedai, Toko Retail, Klinik Kecil, Startup.",
-        "use_case": "Sebuah toko retail dengan 5 karyawan membutuhkan internet stabil untuk kasir digital, cek stok online, dan komunikasi WhatsApp dengan supplier. Paket 75 Mbps Basic sudah cukup untuk kebutuhan tersebut.",
+        "use_case": "❓ **Kebutuhan:**\nPak Budi membuka minimarket baru dengan belasan karyawan kasir. Ia sangat butuh WiFi yang stabil khusus untuk memperlancar aplikasi kasir pembayaran online, dan sinkronisasi stok ke Cloud.\n\n💡 **Solusi Indibiz Basic:**\nPaket Indibiz Basic (Rasio 1:2) merupakan pilihan paling akurat dan ekonomis. Aktifitas operasional kasir (*download/browsing*) akan berjalan lancar 24 jam nonstop karena menggunakan sambungan kelas bisnis meskipun harga paket super bersahabat untuk efisiensi budget kas.",
         "selling_point": "Harga paling ekonomis dengan kualitas Telkom, unlimited tanpa kuota, cocok untuk bisnis yang butuh internet stabil tanpa perlu upload speed tinggi. Promo spesial hingga 28 Februari 2026!",
     },
     "indibiz_bisnis": {
@@ -99,9 +99,9 @@ PRODUCTS = {
             "Dapat bundling dengan solusi digital (OCA, Eazy, Pijar, Netmonk)",
             "Opsi IP Static tersedia (add-on)"
         ],
-        "pricing": "Harga PROMO (s.d 28 Feb 2026): Mulai Rp 355rb/bln (50 Mbps), Rp 415rb (75 Mbps), Rp 535rb (100 Mbps), Rp 620rb (150 Mbps), Rp 790rb (200 Mbps), Rp 1.130rb (300 Mbps). PSB Rp 150.000. Harga belum termasuk PPN 11%.",
+        "pricing": "💰 **Harga PROMO (s.d 28 Feb 2026):**\n\n• **50 Mbps:** Rp 355.000/bln\n• **75 Mbps:** Rp 415.000/bln\n• **100 Mbps:** Rp 535.000/bln\n• **150 Mbps:** Rp 620.000/bln\n• **200 Mbps:** Rp 790.000/bln\n• **300 Mbps:** Rp 1.130.000/bln\n\n📝 PSB: Rp 150.000 (semua paket)\n⚠️ Harga belum termasuk PPN 11%",
         "target": "Kantor, Startup Tech, Co-working Space, Rumah Sakit/Klinik, Restoran dengan Live Streaming, Sekolah/Kampus, Developer/Programmer.",
-        "use_case": "Sebuah kantor startup tech dengan 20 karyawan sering melakukan video conference dengan klien luar negeri dan upload code ke cloud server. Mereka butuh upload speed tinggi agar tidak lag saat presentasi atau push data. Paket Bisnis 150 Mbps (1:1) memberikan 150 Mbps upload DAN download.",
+        "use_case": "❓ **Kebutuhan:**\nSebuah Perusahaan Agensi Kreatif (seperti tim Video Editor / Startup) sering terhambat atau *lag* saat *video conference* bersama klien, terutama karena harus sembari _upload file_ aset video bergiga-giga byte ke Drive.\n\n💡 **Solusi Indibiz Bisnis (Premium):**\nSolusi mutlak dengan Indibiz Bisnis (Rasio 1:1)! Kecepatan internet dijamin seimbang antara _Download_ dan **_Upload_**. Tim bebas mengunggah ratusan gigabyte data tanpa takut membekukan (*freeze*) jaringa WiFi teman sekantor yang sedang rapat Zoom di waktu yang sama!",
         "selling_point": "Upload speed SAMA CEPAT dengan download (1:1)! Tidak ada lag saat video call, upload file besar, atau backup ke cloud. Investasi terbaik untuk bisnis yang serius dengan produktivitas digital. Promo spesial hingga 28 Februari 2026!",
     }
 }
