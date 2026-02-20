@@ -17,7 +17,7 @@ PRODUCTS = {
         ],
         "pricing": "Paket bundling dengan IndiBiz. Harga mulai dari Rp 500.000/bulan untuk paket basic.",
         "target": "UMKM, Bisnis Kecil Menengah, Online Shop, Customer Service Team.",
-        "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nBanyak pesan pelanggan dari WhatsApp, Instagram DM, dan Facebook yang membludak. Admin kewalahan dan banyak calon pembeli komplain telat direspons.\n\n💡 **Solusi OCA Interaction:**\nDengan satu dashboard cerdas, semua chat dari seluruh aplikasi terkumpul menjadi satu pintu! Ditambah fitur chatbot sederhana, bot langsung membalas pelanggan sebelum dialihkan ke manusia. Tidak ada lagi keluhan lupa balas!",
+        "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nBanyak pesan pelanggan dari WhatsApp, Instagram DM, dan Facebook yang membludak. Admin kewalahan dan banyak calon pembeli komplain telat direspons.\n\n💡 **Solusi OCA Interaction:**\nDengan satu dashboard cerdas, semua chat dari seluruh aplikasi terkumpul menjadi satu pintu! Tidak ada lagi keluhan lupa balas!",
         "selling_point": "One-stop-solution komunikasi digital yang fleksibel, mudah digunakan, dan terintegrasi dengan produk Telkom lainnya. Hemat waktu dan maksimalkan pelayanan pelanggan.",
     },
     "oca_b": {
