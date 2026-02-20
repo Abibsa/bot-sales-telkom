@@ -102,6 +102,21 @@ PRODUCTS = {
         "target": "Kantor, Startup Tech, Co-working Space, Rumah Sakit/Klinik, Restoran dengan Live Streaming, Sekolah/Kampus, Developer/Programmer.",
         "use_case": "❓ **Kebutuhan:**\nSebuah Perusahaan Agensi Kreatif (seperti tim Video Editor / Startup) sering terhambat atau *lag* saat *video conference* bersama klien, terutama karena harus sembari _upload file_ aset video bergiga-giga byte ke Drive.\n\n💡 **Solusi Indibiz Bisnis (Premium):**\nSolusi mutlak dengan Indibiz Bisnis (Rasio 1:1)! Kecepatan internet dijamin seimbang antara _Download_ dan **_Upload_**. Tim bebas mengunggah ratusan gigabyte data tanpa takut membekukan (*freeze*) jaringa WiFi teman sekantor yang sedang rapat Zoom di waktu yang sama!",
         "selling_point": "Upload speed SAMA CEPAT dengan download (1:1)! Tidak ada lag saat video call, upload file besar, atau backup ke cloud. Investasi terbaik untuk bisnis yang serius dengan produktivitas digital. Promo spesial hingga 28 Februari 2026!",
+    },
+    "oca_breaker": {
+        "name": "OCA Breaker (Breach Checker)",
+        "description": "Layanan notifikasi keamanan digital yang mendeteksi apakah email Anda pernah terlibat dalam insiden kebocoran data (data breach). Dilengkapi laporan rutin dan tips pencegahan agar Anda bisa bertindak cepat menjaga keamanan data pribadi.",
+        "features": [
+            "🔔 **Notifikasi Alert Data Breach**\nMendeteksi sumber platform digital penyebab kebocoran dan langsung memberikan peringatan via Email & WhatsApp jika email Anda terdeteksi terlibat data breach.",
+            "📊 **Monitoring Report Bulanan**\nSetiap akhir bulan Anda mendapatkan laporan lengkap rekap seluruh breach yang terjadi selama satu periode, sehingga bisa dipantau dan ditindaklanjuti.",
+            "💡 **Smart Tips for Prevention**\nInformasi edukasi berkala tentang keamanan data untuk meningkatkan literasi digital dan mencegah kebocoran data di masa mendatang.",
+            "🔍 **Pengecekan Berkala Otomatis**\nSistem memantau email secara rutin — Bulan pertama notifikasi via Email, bulan berikutnya via WhatsApp. Tidak perlu cek manual!",
+            "🛡️ **Deteksi Sumber Breach**\nBisa mengetahui platform digital mana yang menjadi penyebab kebocoran data email Anda secara spesifik."
+        ],
+        "pricing": "💰 **Harga Berlangganan (per Email/Bulan):**\n\n• **Harga Normal:** Rp 50.000/email/bulan _(Inc. Tax: Rp 55.500)_\n• **Harga Bundling Indibiz:** Rp 35.000/email/bulan\n\n📝 Tersedia sebagai *hard bundling* atau *add-on* dari paket IndiBiz\n🏪 Pembelian via OCA Home Dashboard / MyIndibiz",
+        "target": "UMKM Go Digital, pelaku bisnis yang menggunakan email untuk transaksi online, pelanggan IndiBiz yang ingin perlindungan keamanan data extra.",
+        "use_case": "❓ **Tantangan Keamanan Digital UMKM:**\nJutaan data pribadi \u2014 mulai email, password, hingga nomor telepon \u2014 secara rutin tersebar di forum terbuka tanpa sepengetahuan pemiliknya. Banyak pemilik UMKM tidak tahu data mereka sudah bocor hingga mengalami kerugian nyata.\n\n💡 **Solusi OCA Breaker:**\nCukup daftarkan email bisnis Anda dan OCA Breaker bekerja 24 jam! Sistem otomatis memantau jejak digital email Anda dan langsung mengirim notifikasi jika terdeteksi terlibat kebocoran data, lengkap dengan laporan bulanan dan tips perlindungan diri.",
+        "selling_point": "Proteksi keamanan data digital yang terjangkau khusus untuk UMKM! Didukung OCA Indonesia (Telkom Group) dengan harga bundling spesial hanya Rp 35.000/bulan. Lebih murah dari secangkir kopi, tapi nilainya tak ternilai untuk keamanan bisnis!",
     }
 }
 
@@ -207,6 +222,23 @@ TESTIMONIALS = {
         "Dengan Indibiz Bisnis, proses upload yang biasanya makan berjam-jam "
         "kini selesai 2x lebih cepat. Produktivitas tim kami melejit!\""
     ),
+    "oca_breaker": (
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Toko Online Pakaian, Surabaya*\n"
+        "\"Saya tidak pernah sadar akun email toko saya sudah bocor ke forum gelap! "
+        "Setelah pakai OCA Breaker, saya langsung dapat notifikasi dan bisa ganti "
+        "password sebelum ada yang menyalahgunakan. Layanan wajib buat pebisnis online!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Andi Wirawan – Pemilik UMKM Digital, Bandung*\n"
+        "\"Laporan bulanannya detail banget, bisa tahu platform mana yang jadi sumber "
+        "kebocoran. Smart Tips-nya juga membantu saya dan tim lebih sadar soal keamanan digital. "
+        "Worth it banget harganya!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Ibu Mega – Owner Catering & Event, Jakarta*\n"
+        "\"Tadinya ragu, tapi ternyata harga bundling Rp 35.000/bulan itu sangat terjangkau. "
+        "Notifikasinya cepat via WhatsApp, dan saya jadi lebih tenang menjalankan bisnis "
+        "karena tahu data email saya terpantau 24 jam!\""
+    ),
 }
 
 # Visual Produk - Gambar/Logo untuk ditampilkan di detail produk
@@ -263,6 +295,10 @@ SALES_MATERIALS_FILES = {
     "indibiz_bisnis": {
         "filename": "indibiz paket bisnis.jpg",
         "path": "Materi/indibiz paket bisnis.jpg"
+    },
+    "oca_breaker": {
+        "filename": "OCA Breaker.pdf",
+        "path": "Materi/OCA Breaker.pdf"
     }
 }
 
