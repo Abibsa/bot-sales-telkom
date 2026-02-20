@@ -23,9 +23,9 @@ def get_main_menu_keyboard():
     """Mengembalikan keyboard untuk menu utama."""
     keyboard = [
         [InlineKeyboardButton("🌐 Internet", callback_data='m_internet')],
-        [InlineKeyboardButton("📦 Prodigi", callback_data='m_products')],
+        [InlineKeyboardButton("📦 PRODIGI", callback_data='m_products')],
         [InlineKeyboardButton("⚖️ Perbandingan Indibiz Basic dan Bisnis", callback_data='m_compare_indibiz')],
-        [InlineKeyboardButton("📚 Proposal Product", callback_data='m_materials')],
+        [InlineKeyboardButton("📚 Proposal PRODIGI", callback_data='m_materials')],
         [InlineKeyboardButton("❓ FAQ Internal", callback_data='m_faq')],
         [InlineKeyboardButton("📢 Update Produk", callback_data='m_updates')],
         [InlineKeyboardButton("📞 Kontak PIC Produk", callback_data='m_pic')],
@@ -85,14 +85,14 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if query.message.photo:
             # Kirim pesan baru jika dari produk dengan visual
             await query.message.reply_text(
-                text="📂 **Prodigi**\n\nPilih produk untuk melihat detail lengkap:",
+                text="📂 **PRODIGI**\n\nPilih produk untuk melihat detail lengkap:",
                 reply_markup=InlineKeyboardMarkup(keyboard),
                 parse_mode='Markdown'
             )
         else:
             # Edit pesan jika dari produk tanpa visual
             await query.edit_message_text(
-                text="📂 **Prodigi**\n\nPilih produk untuk melihat detail lengkap:",
+                text="📂 **PRODIGI**\n\nPilih produk untuk melihat detail lengkap:",
                 reply_markup=InlineKeyboardMarkup(keyboard),
                 parse_mode='Markdown'
             )
@@ -116,7 +116,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("🎯 Target Customer", callback_data=f'pd_{product_key}_target')],
                 [InlineKeyboardButton("💡 Use Case / Contoh", callback_data=f'pd_{product_key}_use')],
                 [InlineKeyboardButton("✨ Selling Point", callback_data=f'pd_{product_key}_sell')],
-                [InlineKeyboardButton("<< Kembali ke Prodigi", callback_data='m_products')],
+                [InlineKeyboardButton("<< Kembali ke PRODIGI", callback_data='m_products')],
                 get_back_button()
             ]
 
@@ -257,9 +257,9 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 
-    # --- MENU PROPOSAL PRODUCT ---
+    # --- MENU PROPOSAL PRODIGI ---
     elif data == 'm_materials':
-        text_response = "📚 **Proposal Product**\n\nPilih produk untuk mendapatkan proposal product dalam format PDF:\n"
+        text_response = "📚 **Proposal PRODIGI**\n\nPilih produk untuk mendapatkan proposal PRODIGI dalam format PDF:\n"
         
         keyboard = []
         for key, product in PRODUCTS.items():
@@ -274,7 +274,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             parse_mode='Markdown'
         )
     
-    # --- KIRIM FILE PROPOSAL PRODUCT ---
+    # --- KIRIM FILE PROPOSAL PRODIGI ---
     elif data.startswith('mat_'):
         product_key = data[4:]  # Remove 'mat_' prefix
         
@@ -303,13 +303,13 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         await query.message.reply_document(
                             document=file_obj,
                             filename=material['filename'],
-                            caption=f"📄 **Proposal Product: {product_name}**\n\nSilakan download dan pelajari proposal ini untuk membantu proses penjualan.",
+                            caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan download dan pelajari proposal ini untuk membantu proses penjualan.",
                             parse_mode='Markdown'
                         )
                 
                 # Kirim pesan konfirmasi
                 keyboard = [
-                    [InlineKeyboardButton("<< Kembali ke Proposal Product", callback_data='m_materials')],
+                    [InlineKeyboardButton("<< Kembali ke Proposal PRODIGI", callback_data='m_materials')],
                     get_back_button()
                 ]
                 await query.edit_message_text(
