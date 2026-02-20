@@ -510,7 +510,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         keyboard = [
             [InlineKeyboardButton("📦 Indibiz Paket Basic", callback_data='p_indibiz_basic')],
-            [InlineKeyboardButton("� Indibiz Paket Bisnis", callback_data='p_indibiz_bisnis')],
+            [InlineKeyboardButton("📦 Indibiz Paket Bisnis", callback_data='p_indibiz_bisnis')],
             get_back_button()
         ]
         
