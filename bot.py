@@ -110,7 +110,6 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             product_name = product['name']
             
             keyboard = [
-                [InlineKeyboardButton("📝 Deskripsi Produk", callback_data=f'pd_{product_key}_desc')],
                 [InlineKeyboardButton("⭐ Fitur", callback_data=f'pd_{product_key}_feat')],
                 [InlineKeyboardButton("💰 Harga", callback_data=f'pd_{product_key}_price')],
                 [InlineKeyboardButton("🎯 Target Customer", callback_data=f'pd_{product_key}_target')],
@@ -131,7 +130,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     with open(image_path, 'rb') as photo_file:
                         await query.message.reply_photo(
                             photo=photo_file,
-                            caption=f"📦 **{product_name}**\n\n{image_data['caption']}\n\nApa yang ingin Anda ketahui tentang produk ini?",
+                            caption=f"📦 **{product_name}**\n\n{image_data['caption']}\n\n**Deskripsi:**\n{product['description']}\n\nApa yang ingin Anda ketahui tentang produk ini?",
                             reply_markup=InlineKeyboardMarkup(keyboard),
                             parse_mode='Markdown'
                         )
@@ -141,14 +140,14 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 else:
                     # Jika file tidak ada, tampilkan teks biasa
                     await query.edit_message_text(
-                        text=f"📦 **{product_name}**\n\nApa yang ingin Anda ketahui tentang produk ini?",
+                        text=f"📦 **{product_name}**\n\n**Deskripsi:**\n{product['description']}\n\nApa yang ingin Anda ketahui tentang produk ini?",
                         reply_markup=InlineKeyboardMarkup(keyboard),
                         parse_mode='Markdown'
                     )
             else:
                 # Jika tidak ada gambar, tampilkan teks biasa
                 await query.edit_message_text(
-                    text=f"📦 **{product_name}**\n\nApa yang ingin Anda ketahui tentang produk ini?",
+                    text=f"📦 **{product_name}**\n\n**Deskripsi:**\n{product['description']}\n\nApa yang ingin Anda ketahui tentang produk ini?",
                     reply_markup=InlineKeyboardMarkup(keyboard),
                     parse_mode='Markdown'
                 )
@@ -180,10 +179,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             content = ""
             title = ""
             
-            if detail_type == 'desc':
-                title = "Deskripsi Produk"
-                content = product['description']
-            elif detail_type == 'feat':
+            if detail_type == 'feat':
                 title = "Fitur"
                 content = "\n".join([f"- {f}" for f in product['features']])
             elif detail_type == 'price':
