@@ -40,18 +40,17 @@ PRODUCTS = {
         "name": "PIJAR (Platform Integrasi Jelajah Administrasi)",
         "description": "Platform digital terintegrasi untuk pendidikan yang menggabungkan proses belajar mengajar, ujian, penilaian, laporan, absensi, dan administrasi sekolah dalam satu ekosistem digital yang kolaboratif.",
         "features": [
-            "Computer Based Test (CBT) dengan auto-grading",
-            "Presensi digital untuk siswa dan guru",
-            "Manajemen tugas dan materi pembelajaran",
-            "Portal sekolah dan dashboard kepala sekolah",
-            "Bank soal digital",
-            "Laporan akademik otomatis",
-            "Komunikasi guru-siswa-orangtua"
+            "🎓 **CBT (Computer Based Test)**: Ujian online dengan Anti-Cheating System terpusat, pengacakan soal otomatis, dan penilaian real-time yang menghemat puluhan jam kerja guru.",
+            "🏫 **Presensi Digital Cerdas**: Presensi harian per sesi yang otomatis terekam dan direkap dalam satu klik, membangun budaya tertib sekolah.",
+            "📚 **Tugas & Konten Belajar**: Ruang belajar terpusat dengan penugasan terjadwal yang terhubung ke modul penilaian otomatis (Hemat waku 40 jam guru/semester).",
+            "📊 **Laporan Belajar (Rapor Digital)**: Laporan kompetensi (CP/KD/TP) yang dikonversi ke PDF otomatis demi transparansi orang tua.",
+            "⚙️ **Pencatatan Administrasi Terpadu**: Sinkronisasi pengelolaan data Siswa, Guru, Jadwal, hingga Keuangan sekolah (Terintegrasi Dapodik).",
+            "🌐 **Dashboard Pemerintah**: Dasbor monitoring spesifik untuk Pemda (Dinas Pendidikan) demi pemetaan performansi agregat dari seluruh sekolah di wilayah (Kab/Kota)."
         ],
-        "pricing": "Paket bundling dengan akses IndiBiz (internet FTTH). Harga disesuaikan dengan jumlah siswa dan fitur yang dipilih.",
-        "target": "Sekolah (SD, SMP, SMA), Lembaga Pendidikan, Yayasan Pendidikan.",
-        "use_case": "❓ **Tantangan Pendidikan Saat Ini:**\nPihak sekolah sering kesulitan merekap izin absen ratusan siswa satu per satu, boros anggaran fotocopy kertas soal ujian, dan kesulitan menyebarluaskan rapor hasil secara merata.\n\n💡 **Solusi PIJAR Digital:**\nSeluruh operasional sekolah menjadi 100% *Paperless* (Bebas Kertas)! Siswa ujian melalui komputer dan nilai langsung direkap otomatis, sistem absensi siswa dan guru secara digital, serta guru bisa langsung memberitahu rekap akademik ke HP orang tua!",
-        "selling_point": "Solusi pendidikan digital all-in-one yang didukung BUMN, compliance dengan standar pendidikan nasional, data aman, dan dukungan teknis berkelanjutan.",
+        "pricing": "Bisa dibundling dengan IndiBiz. Layanan PIJAR dirancang relevan dan terjangkau, serta legal digunakan di program pengadaan Pemerintah lewat Skema APBD via LKPP/E-katalog untuk level Kota & Provinsi.",
+        "target": "Sekolah/Madrasah dari SD-SMA (Guru, Operator, Kepala Sekolah, Siswa, Orang Tua), Lembaga Yayasan, serta Dinas Pendidikan Daerah/Pemda.",
+        "use_case": "❓ **Tantangan Pendidikan & Guru:**\nKerja guru begitu berat sampai kehabisan waktu mengajar karena terbebani puluhan hingga ratusan jam semesteran murni (hanya) untuk mengurus presensi manual, rekap soal, serta urus rapor cetak.\n\n💡 **Solusi PIJAR Digital:**\nSegalanya terdigitalisasi (*Paperless*)! Dengan Pijar, guru secara drastis dapat menghemat kerja repetitif hingga lebih dari 200 Jam/Semester yang diambil dari otomasi CBT (Ujian) dan Penilaian! \"PIJAR mengembalikan waktu guru untuk sepenuhnya mendidik!\" PIJAR juga menawarkan dashboard untuk monitor dinas pendidikan secara terpusat.",
+        "selling_point": "Tidak sekedar mendigitalisasi pembelajaran, tetapi memerdekakan birokrasi guru secara keseluruhan! Didukung keamanan data tertinggi BUMN (Telkom). \"Saat guru diberikan alat yang tepat, murid mendapatkan pendidikan yang layak!\"",
     },
     "netmonk": {
         "name": "Netmonk Hi (High Speed Internet Monitoring)",
