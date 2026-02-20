@@ -54,14 +54,16 @@ PRODUCTS = {
     },
     "netmonk": {
         "name": "Netmonk Hi (High Speed Internet Monitoring)",
-        "description": "Platform monitoring jaringan untuk memantau status dan performa layanan High Speed Internet (HSI/FTTH) Telkom secara real-time, membantu tim operasional mendeteksi gangguan lebih cepat.",
+        "description": "Netmonk Hi adalah aplikasi monitoring jaringan untuk mendeteksi status hidup/mati dan laporan performa SLA dari layanan broadband/FTTH Telkom. Dashboard Netmonk Hi digunakan di sisi customer agar dapat mengetahui status internet yang dimonitor, serta informasi SLA (availability) untuk all hour (24 jam) maupun active hour (jam operasional kerja).",
         "features": [
-            "Monitoring status hidup/mati layanan FTTH",
-            "Dashboard performa SLA real-time",
-            "Riwayat status internet",
-            "Proactive reporting otomatis",
-            "Alert notifikasi gangguan",
-            "Export laporan ke Excel"
+            "🔑 **Seamless Login (OTP)**\nLogin aman menggunakan one-time password (OTP) via Email atau WhatsApp. Tidak perlu password tambahan, lebih mudah dan lebih aman.",
+            "📊 **Dashboard Real-Time**\nSpeedometer chart dari semua nomor internet terdaftar, termasuk total nomor yang dipantau serta jumlah yang hidup dan mati secara aktual.",
+            "📶 **Internet Status**\nTampilkan status (Online/Stop/Unknown) dan kualitas internet (Excellent/Fair/On Checking) semua nomor dalam satu tabel dengan fitur filter cerdas.",
+            "📈 **Internet Status & Quality View**\nGrafik historis status dan kualitas internet per nomor dengan pilihan periode waktu bebas, lengkap dengan nilai SLA dan persentase kualitas.",
+            "📅 **Reporting Availability (Excel)**\nUnduh laporan SLA otomatis dalam 2 tipe: SLA Jam Kerja (active hours) dan SLA Harian (all hours) dalam format Excel sesuai periode yang dipilih.",
+            "💻 **Traffic & Bandwidth**\nGrafik historis penggunaan data (download/upload) per nomor internet untuk analisis performa jaringan dan pengambilan keputusan yang tepat.",
+            "📢 **Proactive Reporting (WhatsApp)**\nLaporan bulanan otomatis dikirim via WhatsApp: jumlah nomor dimonitor & persentase availability selama 30 hari terakhir.",
+            "🔔 **Alerting Real-Time**\nNotifikasi otomatis ke Telegram Group atau Email saat ada nomor internet yang terdeteksi mati, dan kembali aktif kembali \u2014 tanpa perlu standby di depan layar!"
         ],
         "pricing": "Berbasis jumlah site/lokasi yang dimonitor. Harga mulai dari Rp 1.000.000/bulan untuk 10 site.",
         "target": "Enterprise dengan banyak cabang, Retail chain, Bank, Instansi Pemerintah, Perusahaan Logistik.",
@@ -271,6 +273,14 @@ PRODUCT_PROFILE_IMAGES = {
         "path": "Materi/Profil OCA Blast Lite.png",
         "caption": "OCA Blast Lite - Platform Broadcast Messaging"
     },
+    "pijar": {
+        "path": "Materi/Profil Pijar.png",
+        "caption": "PIJAR - Platform Digital Pendidikan Terintegrasi"
+    },
+    "netmonk": {
+        "path": "Materi/Profil Netmonk Hi.png",
+        "caption": "Netmonk Hi - Internet Monitoring Real-Time"
+    },
 }
 
 # Gambar Perbandingan Paketisasi per produk
@@ -284,6 +294,28 @@ PRODUCT_COMPARISON_IMAGES = {
         "Materi/Perbandingan Paketisasi OCA Blast (2).png",
     ],
 }
+
+# Gambar 9 Modul Fitur Netmonk Hi (dikirim sebagai album saat klik Fitur)
+NETMONK_FEATURE_IMAGES = [
+    {"path": "Materi/Fitur Modul Netmonk Hi (1) Seamless Login.png",
+     "caption": "🔑 **1. Seamless Login**\nLogin aman dengan OTP via Email/WhatsApp. Tanpa password tambahan."},
+    {"path": "Materi/Fitur Modul Netmonk Hi (2) Dashboard.png",
+     "caption": "📊 **2. Dashboard**\nSpeedometer semua nomor internet: total, hidup & mati secara real-time."},
+    {"path": "Materi/Fitur Modul Netmonk Hi (3) Internet Status.png",
+     "caption": "📶 **3. Internet Status**\nTabel status (Online/Stop/Unknown) & kualitas internet dengan filter cerdas."},
+    {"path": "Materi/Fitur Modul Netmonk Hi (4) Internet Status - view.png",
+     "caption": "📈 **4. Internet Status - View**\nGrafik historis status per nomor internet + nilai SLA availability."},
+    {"path": "Materi/Fitur Modul Netmonk Hi (5) Internet Quality - view.png",
+     "caption": "💯 **5. Internet Quality - View**\nGrafik historis kualitas internet + persentase kualitas per periode waktu."},
+    {"path": "Materi/Fitur Modul Netmonk Hi (6) Reporting Availability.png",
+     "caption": "📅 **6. Reporting Availability**\nUnduh laporan SLA otomatis (Active Hours & All Hours) format Excel."},
+    {"path": "Materi/Fitur Modul Netmonk Hi (7) Traffic Bandwidth .png",
+     "caption": "💻 **7. Traffic & Bandwidth**\nGrafik historis penggunaan data (download/upload) per nomor internet."},
+    {"path": "Materi/Fitur Modul Netmonk Hi (8) Proactive Reporting.png",
+     "caption": "📢 **8. Proactive Reporting**\nLaporan bulanan otomatis via WhatsApp: availability & jumlah nomor selama 30 hari."},
+    {"path": "Materi/Fitur Modul Netmonk Hi (9) Alerting.png",
+     "caption": "🔔 **9. Alerting**\nNotifikasi otomatis ke Telegram/Email saat internet mati & hidup kembali."},
+]
 
 # Materi Penjualan - Mapping produk ke file PDF
 SALES_MATERIALS_FILES = {

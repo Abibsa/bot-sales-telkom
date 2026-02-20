@@ -2,7 +2,7 @@ import logging
 import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
-from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, PRODUCT_COMPARISON_IMAGES
+from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, PRODUCT_COMPARISON_IMAGES, NETMONK_FEATURE_IMAGES
 
 # -----------------------------------------------------------------------------
 # KONFIGURASI
@@ -217,10 +217,32 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             
             text_response = f"📦 **{product['name']}** - {title}\n\n{content}"
             
-            keyboard = [
+            keyboard_detail = [
                 [InlineKeyboardButton(f"<< Kembali ke {product['name']}", callback_data=f'p_{product_key}')],
                 get_back_button()
             ]
+
+            # Khusus Netmonk: kirim 9 gambar fitur modul sebagai foto individual
+            if detail_type == 'feat' and product_key == 'netmonk':
+                valid_imgs = [img for img in NETMONK_FEATURE_IMAGES if os.path.exists(img['path'])]
+                if valid_imgs:
+                    try:
+                        for img in valid_imgs:
+                            with open(img['path'], 'rb') as f:
+                                await query.message.reply_photo(
+                                    photo=f,
+                                    caption=img['caption'],
+                                    parse_mode='Markdown'
+                                )
+                        await query.message.reply_text(
+                            text=f"⭐ **{product['name']} - Fitur Modul**\n\nLihat gambar-gambar di atas untuk tampilan lengkap setiap modul Netmonk Hi.",
+                            reply_markup=InlineKeyboardMarkup(keyboard_detail),
+                            parse_mode='Markdown'
+                        )
+                        await query.message.delete()
+                        return
+                    except Exception as e:
+                        logging.error(f"Error sending Netmonk feature images: {e}")
 
             send_photo = False
             image_path = ""
@@ -236,7 +258,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         await query.message.reply_photo(
                             photo=photo_file,
                             caption=text_response,
-                            reply_markup=InlineKeyboardMarkup(keyboard),
+                            reply_markup=InlineKeyboardMarkup(keyboard_detail),
                             parse_mode='Markdown'
                         )
                     # Hapus pesan sebelumnya agar tidak menumpuk status media
@@ -247,27 +269,27 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     if query.message.photo:
                         await query.message.reply_text(
                             text=text_response,
-                            reply_markup=InlineKeyboardMarkup(keyboard),
+                            reply_markup=InlineKeyboardMarkup(keyboard_detail),
                             parse_mode='Markdown'
                         )
                     else:
                         await query.edit_message_text(
                             text=text_response,
-                            reply_markup=InlineKeyboardMarkup(keyboard),
+                            reply_markup=InlineKeyboardMarkup(keyboard_detail),
                             parse_mode='Markdown'
                         )
             elif query.message.photo:
                 # Kirim pesan baru
                 await query.message.reply_text(
                     text=text_response,
-                    reply_markup=InlineKeyboardMarkup(keyboard),
+                    reply_markup=InlineKeyboardMarkup(keyboard_detail),
                     parse_mode='Markdown'
                 )
             else:
                 # Edit pesan yang sudah ada (untuk produk tanpa visual)
                 await query.edit_message_text(
                     text=text_response,
-                    reply_markup=InlineKeyboardMarkup(keyboard),
+                    reply_markup=InlineKeyboardMarkup(keyboard_detail),
                     parse_mode='Markdown'
                 )
 
