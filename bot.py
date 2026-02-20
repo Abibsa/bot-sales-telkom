@@ -18,6 +18,12 @@ logging.basicConfig(
 )
 
 # -----------------------------------------------------------------------------
+# CACHE FILE TELEGRAM
+# -----------------------------------------------------------------------------
+# Dictionary untuk menyimpan file_id dari Telegram agar bot tidak perlu re-upload file
+FILE_CACHE = {}
+
+# -----------------------------------------------------------------------------
 # FUNGSI BANTUAN
 # -----------------------------------------------------------------------------
 def get_main_menu_keyboard():
@@ -129,7 +135,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             
             keyboard = [
                 [InlineKeyboardButton("⭐ Fitur", callback_data=f'pd_{product_key}_feat')],
-                [InlineKeyboardButton("💰 Harga & Paket", callback_data=f'pd_{product_key}_price')],
+                [InlineKeyboardButton("💰 Harga", callback_data=f'pd_{product_key}_price')],
                 [InlineKeyboardButton("🎯 Target Customer", callback_data=f'pd_{product_key}_target')],
                 [InlineKeyboardButton("💡 Use Case / Contoh", callback_data=f'pd_{product_key}_use')],
                 [InlineKeyboardButton("✨ Selling Point", callback_data=f'pd_{product_key}_sell')],
@@ -148,13 +154,23 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 prof_path = prof_data['path']
                 if os.path.exists(prof_path):
                     try:
-                        with open(prof_path, 'rb') as photo_file:
+                        if prof_path in FILE_CACHE:
                             await query.message.reply_photo(
-                                photo=photo_file,
+                                photo=FILE_CACHE[prof_path],
                                 caption=text_response,
                                 reply_markup=InlineKeyboardMarkup(keyboard),
                                 parse_mode='Markdown'
                             )
+                        else:
+                            with open(prof_path, 'rb') as photo_file:
+                                msg = await query.message.reply_photo(
+                                    photo=photo_file,
+                                    caption=text_response,
+                                    reply_markup=InlineKeyboardMarkup(keyboard),
+                                    parse_mode='Markdown'
+                                )
+                                FILE_CACHE[prof_path] = msg.photo[-1].file_id
+                                
                         await query.message.delete()
                         profile_sent = True
                     except Exception as e:
@@ -206,7 +222,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 title = "Fitur"
                 content = "\n".join([f"- {f}" for f in product['features']])
             elif detail_type == 'price':
-                title = "Harga & Paket"
+                title = "Harga"
                 content = product['pricing']
             elif detail_type == 'target':
                 title = "Target Customer"
@@ -235,12 +251,20 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 if valid_imgs:
                     try:
                         for img in valid_imgs:
-                            with open(img['path'], 'rb') as f:
+                            if img['path'] in FILE_CACHE:
                                 await query.message.reply_photo(
-                                    photo=f,
+                                    photo=FILE_CACHE[img['path']],
                                     caption=img['caption'],
                                     parse_mode='Markdown'
                                 )
+                            else:
+                                with open(img['path'], 'rb') as f:
+                                    msg = await query.message.reply_photo(
+                                        photo=f,
+                                        caption=img['caption'],
+                                        parse_mode='Markdown'
+                                    )
+                                    FILE_CACHE[img['path']] = msg.photo[-1].file_id
                         await query.message.reply_text(
                             text=f"⭐ **{product['name']} - Fitur Modul**\n\nLihat gambar-gambar di atas untuk tampilan lengkap setiap modul Netmonk Hi.",
                             reply_markup=InlineKeyboardMarkup(keyboard_detail),
@@ -270,25 +294,42 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             if send_photo:
                 try:
-                    with open(image_path, 'rb') as photo_file:
+                    if image_path in FILE_CACHE:
                         await query.message.reply_photo(
-                            photo=photo_file,
+                            photo=FILE_CACHE[image_path],
                             caption=text_response,
                             reply_markup=InlineKeyboardMarkup(keyboard_detail),
                             parse_mode='Markdown'
                         )
+                    else:
+                        with open(image_path, 'rb') as photo_file:
+                            msg = await query.message.reply_photo(
+                                photo=photo_file,
+                                caption=text_response,
+                                reply_markup=InlineKeyboardMarkup(keyboard_detail),
+                                parse_mode='Markdown'
+                            )
+                            FILE_CACHE[image_path] = msg.photo[-1].file_id
+                            
                     await query.message.delete()
                     # Kirim gambar perbandingan sebagai album tambahan (jika ada)
                     if comparison_paths:
                         try:
                             media_group = []
                             for i, path in enumerate(comparison_paths):
-                                with open(path, 'rb') as f:
-                                    media_group.append(InputMediaPhoto(
-                                        media=f.read(),
-                                        caption=f"📊 Perbandingan Paketisasi {product['name']} - Halaman {i+1}" if i == 0 else ""
-                                    ))
-                            await query.message.reply_media_group(media=media_group)
+                                caption = f"📊 Perbandingan Paketisasi {product['name']} - Halaman {i+1}" if i == 0 else ""
+                                if path in FILE_CACHE:
+                                    media_group.append(InputMediaPhoto(media=FILE_CACHE[path], caption=caption))
+                                else:
+                                    with open(path, 'rb') as f:
+                                        media_group.append(InputMediaPhoto(media=f.read(), caption=caption))
+                                        
+                            msgs = await query.message.reply_media_group(media=media_group)
+                            
+                            # Cache file media yang baru diupload
+                            for i, path in enumerate(comparison_paths):
+                                if path not in FILE_CACHE:
+                                    FILE_CACHE[path] = msgs[i].photo[-1].file_id
                         except Exception as e:
                             logging.error(f"Error sending comparison images: {e}")
                 except Exception as e:
@@ -356,20 +397,36 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 _, list_ext = os.path.splitext(file_path)
                 ext = list_ext.lower()
                 
-                with open(file_path, 'rb') as file_obj:
+                if file_path in FILE_CACHE:
                     if ext in ['.jpg', '.jpeg', '.png']:
                         await query.message.reply_photo(
-                            photo=file_obj,
+                            photo=FILE_CACHE[file_path],
                             caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini untuk membantu proses penjualan.",
                             parse_mode='Markdown'
                         )
                     else:
                         await query.message.reply_document(
-                            document=file_obj,
-                            filename=material['filename'],
+                            document=FILE_CACHE[file_path],
                             caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan download dan pelajari proposal ini untuk membantu proses penjualan.",
                             parse_mode='Markdown'
                         )
+                else:
+                    with open(file_path, 'rb') as file_obj:
+                        if ext in ['.jpg', '.jpeg', '.png']:
+                            msg = await query.message.reply_photo(
+                                photo=file_obj,
+                                caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini untuk membantu proses penjualan.",
+                                parse_mode='Markdown'
+                            )
+                            FILE_CACHE[file_path] = msg.photo[-1].file_id
+                        else:
+                            msg = await query.message.reply_document(
+                                document=file_obj,
+                                filename=material['filename'],
+                                caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan download dan pelajari proposal ini untuk membantu proses penjualan.",
+                                parse_mode='Markdown'
+                            )
+                            FILE_CACHE[file_path] = msg.document.file_id
                 
                 # Kirim pesan konfirmasi
                 keyboard = [

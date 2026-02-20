@@ -14,7 +14,28 @@ PRODUCTS = {
             "📊 **Report & Analytics**\nLihat performa setiap agen (Performance, Insight, riwayat percakapan, laporan ticket, label & channel favorit) dalam satu dashboard evaluasi.",
             "📖 **Knowledge Base**\nSediakan catatan produk, SOP, dan info penting untuk mempermudah kerja agen. (5 artikel Knowledge Base; Unlimited tersedia sebagai add-on)"
         ],
-        "pricing": "💰 **Harga Paket Bundling Indibiz x OCA Interaction Lite:**\n\n• **50 Mbps:** Rp 492.950/bln\n• **75 Mbps:** Rp 582.950/bln\n• **100 Mbps:** Rp 692.950/bln\n• **150 Mbps:** Rp 902.950/bln\n\n🔹 Add-on OCA Interaction Lite saja: Rp 108.000/bln (via SCONE/MyIndibiz)\n🔹 PSB (Biaya Pasang Baru) add-on: Rp 0\n\n⚠️ Harga belum termasuk PPN\n\n📋 **Fitur Dasar yang Sudah Termasuk:**\n• 1 Lisensi User (Administrator)\n• 3 Integrasi Social Media\n• 5 Artikel Knowledge Base\n• 5 Kuota Label\n• 5 Template Quick Reply\n• 1 Main Department\n• 1 Chat Distribution (Open Assignment)\n\n🔧 **Add-on Fitur (Segera Hadir):**\n• Unlimited Social Media: Rp 145.000/bln\n• Unlimited Label: Rp 145.000/bln\n• Unlimited Knowledge Base: Rp 145.000/bln\n• Unlimited Quick Reply: Rp 236.000/bln\n• Ticketing: Rp 236.000/bln",
+        "pricing": (
+            "💰 **Harga Bundling Indibiz x OCA Interaction Lite**\n\n"
+            "• **50 Mbps:** Rp 492.950/bln\n"
+            "• **75 Mbps:** Rp 582.950/bln\n"
+            "• **100 Mbps:** Rp 692.950/bln\n"
+            "• **150 Mbps:** Rp 902.950/bln\n\n"
+            "🔹 **Add-on OCA Interaction Lite Saja:**\n"
+            "**Rp 108.000/bln** _(via SCONE/MyIndibiz)_\n"
+            "⚡ PSB (Pasang Baru) Add-on: Rp 0\n"
+            "⚠️ _Harga belum termasuk PPN_\n\n"
+            "📋 **Fitur Dasar yang Didapat:**\n"
+            "- 1 Lisensi User Administrator\n"
+            "- 3 Integrasi Social Media\n"
+            "- 5 Artikel Knowledge Base\n"
+            "- 5 Kuota Label & Template Quick Reply\n"
+            "- 1 Main Department & Chat Distribution\n\n"
+            "🔧 **Pilihan Add-on Ekstra (Segera Hadir):**\n"
+            "- Unlimited Social Media/Label/KB: Rp 145.000/bln\n"
+            "- Unlimited Quick Reply/Ticketing/Observe: Rp 236.000/bln\n"
+            "- Distribute Chat/Wallboard: Rp 91.000/bln\n"
+            "- Survey: Rp 353.000/bln"
+        ),
         "target": "UMKM, SME (bisnis kecil-menengah), Online Shop, bisnis dengan tim customer service yang membutuhkan pengelolaan multi-channel komunikasi dalam satu dashboard.",
         "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nBanyak pesan pelanggan dari WhatsApp, Instagram DM, dan Facebook Messenger membludak bersamaan. Admin kewalahan karena harus buka-tutup banyak aplikasi, akibatnya banyak calon pembeli komplain respons lambat atau bahkan tidak dibalas.\n\n💡 **Solusi OCA Interaction Lite:**\nDengan satu dashboard cerdas, semua chat dari Instagram, Facebook Messenger, dan WhatsApp terkumpul dalam satu pintu! Fitur AI Assistant bahkan bisa membantu merancang balasan hanya dalam SATU KLIK. Tidak ada lagi keluhan lupa balas!",
         "selling_point": "SME Rasa Enterprise! Satu dashboard untuk semua channel komunikasi pelanggan, dilengkapi AI Assistant, Contact Tagging, dan Report Analytics — dengan harga bundling Indibiz mulai Rp 492.950/bln. Registrasi mudah via MyIndibiz, PSB add-on gratis Rp 0!",
@@ -30,7 +51,31 @@ PRODUCTS = {
             "🗂️ **File Management**\nKelola dan simpan file media kebutuhan broadcast secara terstruktur dalam satu sumber (50MB Storage bawaan).",
             "📊 **Dashboard Overview**\nPantau semua aktivitas blast: sisa kuota per channel, persentase keberhasilan pengiriman, dan riwayat aktivitas blast terakhir."
         ],
-        "pricing": "💰 **Harga Bundling Indibiz x OCA Blast Lite:**\n\n**HSI Bisnis (HSIE):**\n• 50 Mbps: Rp 668.900/bln\n• 75 Mbps: Rp 746.900/bln\n• 100 Mbps: Rp 891.900/bln\n• 150 Mbps: Rp 1.036.900/bln\n• 200 Mbps: Rp 1.261.900/bln\n• 300 Mbps: Rp 1.708.900/bln\n\n**HSI Basic (HSIEF):**\n• 50 Mbps: Rp 623.900/bln\n• 75 Mbps: Rp 676.900/bln\n• 100 Mbps: Rp 781.900/bln\n• 150 Mbps: Rp 916.900/bln\n• 200 Mbps: Rp 1.094.900/bln\n• 300 Mbps: Rp 1.470.900/bln\n\n🔹 **Add-On OCA Blast Lite (standalone): Rp 263.000/bln**\n   Sudah termasuk: 50 Kuota WA + 50 Kuota SMS + 50 Kuota Email\n   5 Template SMS, WA & Email | 1 Contact Group | 50MB Storage\n\n⚠️ Harga belum termasuk PPN\n🔗 Order via SC One, MyIndibiz, atau Landing Page Creator EBIS",
+        "pricing": (
+            "💰 **Harga Bundling Indibiz x OCA Blast Lite**\n\n"
+            "💼 **HSI Bisnis (HSIE):**\n"
+            "• **50 Mbps:** Rp 668.900/bln\n"
+            "• **75 Mbps:** Rp 746.900/bln\n"
+            "• **100 Mbps:** Rp 891.900/bln\n"
+            "• **150 Mbps:** Rp 1.036.900/bln\n"
+            "• **200 Mbps:** Rp 1.261.900/bln\n"
+            "• **300 Mbps:** Rp 1.708.900/bln\n\n"
+            "🏠 **HSI Basic (HSIEF):**\n"
+            "• **50 Mbps:** Rp 623.900/bln\n"
+            "• **75 Mbps:** Rp 676.900/bln\n"
+            "• **100 Mbps:** Rp 781.900/bln\n"
+            "• **150 Mbps:** Rp 916.900/bln\n"
+            "• **200 Mbps:** Rp 1.094.900/bln\n"
+            "• **300 Mbps:** Rp 1.470.900/bln\n\n"
+            "🔹 **Add-On OCA Blast Lite Saja (Standalone):**\n"
+            "**Rp 263.000/bln**\n"
+            "_Terdiri dari:_\n"
+            "- Masing-masing 50 Kuota WA, SMS & Email\n"
+            "- Masing-masing 5 Template WA, SMS & Email\n"
+            "- 1 Contact Group & 50MB Storage\n\n"
+            "⚠️ _Harga belum termasuk PPN_\n"
+            "🔗 _Order via SC One, MyIndibiz, atau LPC EBIS_"
+        ),
         "target": "SME, Online Shop, Bimbingan Belajar, Restoran, Koperasi, Event Organizer, Lembaga Pendidikan, dan bisnis yang butuh distribusi pesan massal ke banyak pelanggan.",
         "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nSebuah perusahaan ingin menyebarkan katalog produk baru dan diskon spesial kepada 5.000 kontak pelanggan sekaligus, secepat mungkin, tanpa risiko nomor WA terblokir.\n\n💡 **Solusi OCA Blast Lite:**\nCukup beberapa klik di OCA Blast, 5.000 pesan otomatis terkirim melalui jalur resmi WhatsApp Business API — aman dari pemblokiran! Tidak hanya WA, bisa juga via SMS dan Email sekaligus. Lengkap dengan laporan berapa persen pesan yang berhasil diterima dan dibaca!",
         "selling_point": "Blast ke ribuan pelanggan via WhatsApp, SMS, dan Email — cukup dari satu dashboard! Harga add-on mulai Rp 263.000/bln atau bundling Indibiz mulai Rp 623.900/bln. Cocok untuk SME (online shop, resto, koperasi, bimbel) yang ingin jangkauan luas tanpa ribet.",
@@ -81,7 +126,17 @@ PRODUCTS = {
             "Dapat bundling dengan solusi digital (OCA, Eazy, Pijar, Netmonk)",
             "Tagihan bulanan flat"
         ],
-        "pricing": "💰 **Harga PROMO (s.d 28 Feb 2026):**\n\n• **50 Mbps:** Rp 320.000/bln\n• **75 Mbps:** Rp 365.000/bln\n• **100 Mbps:** Rp 440.000/bln\n• **150 Mbps:** Rp 540.000/bln\n• **200 Mbps:** Rp 675.000/bln\n• **300 Mbps:** Rp 950.000/bln\n\n📝 PSB: Rp 150.000 (semua paket)\n⚠️ Harga belum termasuk PPN 11%",
+        "pricing": (
+            "💰 **Harga PROMO (s.d 28 Feb 2026):**\n\n"
+            "• **50 Mbps:** Rp 320.000/bln\n"
+            "• **75 Mbps:** Rp 365.000/bln\n"
+            "• **100 Mbps:** Rp 440.000/bln\n"
+            "• **150 Mbps:** Rp 540.000/bln\n"
+            "• **200 Mbps:** Rp 675.000/bln\n"
+            "• **300 Mbps:** Rp 950.000/bln\n\n"
+            "📝 _PSB: Rp 150.000_ (semua paket)\n"
+            "⚠️ _Harga belum termasuk PPN 11%_"
+        ),
         "target": "Small Medium Enterprise (SME), UMKM, Warung/Kedai, Toko Retail, Klinik Kecil, Startup.",
         "use_case": "❓ **Kebutuhan:**\nPak Budi membuka minimarket baru dengan belasan karyawan kasir. Ia sangat butuh WiFi yang stabil khusus untuk memperlancar aplikasi kasir pembayaran online, dan sinkronisasi stok ke Cloud.\n\n💡 **Solusi Indibiz Basic:**\nPaket Indibiz Basic (Rasio 1:2) merupakan pilihan paling akurat dan ekonomis. Aktifitas operasional kasir (*download/browsing*) akan berjalan lancar 24 jam nonstop karena menggunakan sambungan kelas bisnis meskipun harga paket super bersahabat untuk efisiensi budget kas.",
         "selling_point": "Harga paling ekonomis dengan kualitas Telkom, unlimited tanpa kuota, cocok untuk bisnis yang butuh internet stabil tanpa perlu upload speed tinggi. Promo spesial hingga 28 Februari 2026!",
@@ -99,7 +154,17 @@ PRODUCTS = {
             "Dapat bundling dengan solusi digital (OCA, Eazy, Pijar, Netmonk)",
             "Opsi IP Static tersedia (add-on)"
         ],
-        "pricing": "💰 **Harga PROMO (s.d 28 Feb 2026):**\n\n• **50 Mbps:** Rp 355.000/bln\n• **75 Mbps:** Rp 415.000/bln\n• **100 Mbps:** Rp 535.000/bln\n• **150 Mbps:** Rp 620.000/bln\n• **200 Mbps:** Rp 790.000/bln\n• **300 Mbps:** Rp 1.130.000/bln\n\n📝 PSB: Rp 150.000 (semua paket)\n⚠️ Harga belum termasuk PPN 11%",
+        "pricing": (
+            "💰 **Harga PROMO (s.d 28 Feb 2026):**\n\n"
+            "• **50 Mbps:** Rp 355.000/bln\n"
+            "• **75 Mbps:** Rp 415.000/bln\n"
+            "• **100 Mbps:** Rp 535.000/bln\n"
+            "• **150 Mbps:** Rp 620.000/bln\n"
+            "• **200 Mbps:** Rp 790.000/bln\n"
+            "• **300 Mbps:** Rp 1.130.000/bln\n\n"
+            "📝 _PSB: Rp 150.000_ (semua paket)\n"
+            "⚠️ _Harga belum termasuk PPN 11%_"
+        ),
         "target": "Kantor, Startup Tech, Co-working Space, Rumah Sakit/Klinik, Restoran dengan Live Streaming, Sekolah/Kampus, Developer/Programmer.",
         "use_case": "❓ **Kebutuhan:**\nSebuah Perusahaan Agensi Kreatif (seperti tim Video Editor / Startup) sering terhambat atau *lag* saat *video conference* bersama klien, terutama karena harus sembari _upload file_ aset video bergiga-giga byte ke Drive.\n\n💡 **Solusi Indibiz Bisnis (Premium):**\nSolusi mutlak dengan Indibiz Bisnis (Rasio 1:1)! Kecepatan internet dijamin seimbang antara _Download_ dan **_Upload_**. Tim bebas mengunggah ratusan gigabyte data tanpa takut membekukan (*freeze*) jaringa WiFi teman sekantor yang sedang rapat Zoom di waktu yang sama!",
         "selling_point": "Upload speed SAMA CEPAT dengan download (1:1)! Tidak ada lag saat video call, upload file besar, atau backup ke cloud. Investasi terbaik untuk bisnis yang serius dengan produktivitas digital. Promo spesial hingga 28 Februari 2026!",
@@ -351,66 +416,56 @@ SALES_MATERIALS_FILES = {
 # FAQ Internal
 FAQ = [
     {
-        "q": "Bagaimana cara eskalasi gangguan teknis pelanggan?",
-        "a": "Hubungi Helpdesk Teknis Enterprise di 1500xxx atau buat tiket via aplikasi Siska."
+        "q": "🚨 Gimana sih cara lapor kalau produk digital (terutama OCA) lagi error?",
+        "a": "Gampang banget! Langsung aja hubungi tim **TENESA** di Telegram (@Tenesa_Telkom_Bot) atau tim bantuan **L0 DBT DOA** via WhatsApp/Email/Live Chat. Tenang, respons mereka super cepat, maksimal 1 jam komplain langsung ditanggapi!"
     },
     {
-        "q": "Apakah ada diskon khusus untuk pengadaan pemerintah?",
-        "a": "Ya, gunakan skema LKPP/E-katalog. Hubungi tim Government Service untuk detailnya."
+        "q": "⏱️ Berapa lama sih proses aktifin layanan OCA setelah pelanggan deal?",
+        "a": "Cuma butuh waktu maksimal **3 hari kerja** setelah email pelanggan di-invite ke dashboard. Tapi jangan lupa ya, pastikan kamu melampirkan **nama** dan **email aktif** pelanggan yang valid saat order!"
     },
     {
-        "q": "Berapa lama SLA aktivasi IndiBiz?",
-        "a": "Standar SLA adalah 3x24 jam setelah status 'Ready' di sistem. Untuk lokasi sulit akses, maksimal 7x24 jam."
+        "q": "🏷️ Bisa kasih diskon nggak kalau kliennya Pemerintah Daerah/Dinas?",
+        "a": "Pasti bisa! Untuk pengadaan pemerintah (khususnya produk **PIJAR**), transaksinya sudah resmi dan legal lewat jalur **E-Katalog LKPP (APBD)**. Langsung kontak aja tim *Government Service* kita untuk bantu urus lebih lanjut."
+    },
+    {
+        "q": "🤝 Customer mau nyobain dulu (Trial/POC), cara ngajuinnya gimana?",
+        "a": "Bisa banget! Kamu tinggal isi form **POC Request** di portal internal kita. Setelah *Product Manager* kasih *approval*, trial bisa langsung jalan. Syarat utamanya: pastikan profil dan skala bisnis customer memang sesuai target pasar ya!"
+    },
+    {
+        "q": "🌐 Kalau pasang baru koneksi internet IndiBiz, butuh waktu berapa lama?",
+        "a": "Untuk aktivasi internet IndiBiz, standarnya selesai dipasang dalam **3x24 jam** semenjak status pendaftaran 'Ready'. TAPI, kalau lokasinya cukup sulit dijangkau (medan berat), tim teknisi butuh waktu maksimal hingga **7x24 jam**."
     }
 ]
 
-# Kontak PIC
+# Kontak PIC & Dukungan Lanjutan
 PIC_CONTACTS = {
-    "oca_i": "Tim OCA - support@ocaindonesia.co.id",
-    "oca_b": "Tim OCA - support@ocaindonesia.co.id",
-    "pijar": "Tim PIJAR - pijar@telkom.co.id",
-    "netmonk": "Tim Netmonk - info@netmonk.id / +62 811 971 9810",
-    "indibiz_basic": "Call Center 1500250 / my.indibiz.co.id",
-    "indibiz_bisnis": "Call Center 1500250 / my.indibiz.co.id"
+    "oca_i": "🌐 OCA Indonesia (www.ocaindonesia.co.id) | 🛠️ Support L0 DOA",
+    "oca_b": "🌐 OCA Indonesia (www.ocaindonesia.co.id) | 🛠️ Support L0 DOA",
+    "oca_breaker": "🌐 OCA Indonesia (www.ocaindonesia.co.id)",
+    "pijar": "📲 WA Helpdesk PIJAR: +62 812-8899-9576 (Chat Only) | 🌐 www.pijarsekolah.id",
+    "netmonk": "✉️ info@netmonk.id | 📞 +62 811 971 9810 | 🌐 www.netmonk.id",
+    "indibiz_basic": "📞 Call Center: 1500250 | 🌐 my.indibiz.co.id",
+    "indibiz_bisnis": "📞 Call Center: 1500250 | 🌐 my.indibiz.co.id"
 }
 
 # Informasi Call Center & Support
 CALL_CENTER_INFO = """
-📞 **CALL CENTER TELKOM 24/7**
+📞 **PUSAT BANTUAN & CALL CENTER 24/7**
 
-Jika menemui kendala terkait layanan TELKOM, bisa menghubungi ke Call Center 24 jam x 7 hari:
+Jika pelanggan kamu mengalami kendala layanan, jangan panik! Arahkan mereka ke saluran bantuan (Support) resmi berikut ini:
 
-🔹 **Telkom IndiBiz**
-   📞 1500250
-   💬 Atau hubungi Agent kami
+� **1. Internet Putus / Lemot? (IndiBiz Dasar)**
+   📞 Call Center: **1500250**
+   💬 Live Chat melalui website **MyIndibiz**
 
-🔹 **Telkom Enterprise Assurance (TENNESA)**
-   ✉️ tenesa@telkom.co.id
-   📱 081283235566 (WhatsApp)
-   📱 @Tenesa_Telkom_Bot (Telegram)
+🏢 **2. Aplikasi Error / Butuh Bantuan Layanan Korporat? (TENESA)**
+   _Hubungi tim Assurance khusus pelanggan bisnis Telkom:_
+   ✉️ **Email:** tenesa@telkom.co.id
+   📱 **WhatsApp:** 0812-8323-5566
+   📱 **Telegram:** @Tenesa_Telkom_Bot
+
+� **3. Kendala Khusus Produk OCA? (Tim DBT DOA)**
+   _Bisa dituju langsung atau di-forward melalui TENESA:_
+   💬 Melalui layanan WhatsApp / Email / Live Chat OCA
+   ⚡ Respons dijamin super ngebut (SLA Tanggap maks. 1 Jam!)
 """
-
-# FAQ Internal
-FAQ = [
-    {
-        "q": "Bagaimana cara mengajukan POC (Proof of Concept) ke customer?",
-        "a": "Untuk pengajuan POC, Sales harus mengisi form POC Request di portal internal dan mendapatkan approval dari Product Manager terkait. Pastikan kualifikasi customer sudah sesuai."
-    },
-    {
-        "q": "Apakah harga di Pricelist bisa didiskon?",
-        "a": "Ya, diskon bisa diberikan dengan skema tertentu. Diskon <10% approval AM, 10-20% approval Manager, >20% approval GM/VP. Silakan cek kebijakan pricing terbaru."
-    },
-    {
-        "q": "Bagaimana jika customer komplain layanan mati?",
-        "a": "Arahkan customer untuk menghubungi Call Center atau Ticket Support sesuai produknya. Jangan menjanjikan SLA perbaikan pribadi, selalu gunakan jalur resmi (lihat menu Call Center)."
-    },
-    {
-        "q": "Apakah produk OCA bisa integrasi dengan CRM customer?",
-        "a": "Bisa. OCA memiliki API terbuka (Open API). Untuk kebutuhan custom integrasi, silakan hubungi Tim Pre-Sales atau Product Specialist."
-    },
-    {
-        "q": "Berapa lama proses aktivasi layanan setelah PO?",
-        "a": "Standar aktivasi adalah 3-7 hari kerja untuk layanan cloud/SaaS standard. Untuk layanan yang butuh instalasi fisik/on-premise bisa memakan waktu 14-30 hari kerja."
-    }
-]
-
