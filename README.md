@@ -8,21 +8,14 @@ Bot asisten virtual untuk sales internal Telkom Indonesia yang menyediakan infor
 
 ## 🌟 Fitur Utama
 
-### 1. 🔍 **Pencarian Produk**
-Cari produk dengan cepat menggunakan keyword atau kategori
-- **Command:** `/cari [keyword]` 
-  - Contoh: `/cari internet`, `/cari crm`, `/cari video conference`
-- **Menu Kategori:** Internet & Konektivitas, Komunikasi & CRM, Pendidikan, Monitoring
-- **Pencarian Cerdas:** Mencari di nama, deskripsi, fitur, dan target customer
-
-### 2. ⚖️ **Perbandingan Indibiz**
+### 1. ⚖️ **Perbandingan Indibiz**
 Tabel perbandingan lengkap Paket Basic vs Bisnis
 - Perbandingan harga semua tier (50-300 Mbps)
 - Analisis rasio kecepatan (1:2 vs 1:1)
 - Rekomendasi berdasarkan use case
 - Tips closing untuk sales
 
-### 3. 📦 **Daftar Produk Digital**
+### 2. 📦 **Daftar Produk Digital**
 Informasi lengkap (Deskripsi, Fitur, Harga, Use Case) tersinkronisasi data PDF resmi Telkom untuk:
 - **OCA Interaction Lite** - Omnichannel messaging (IG, FB, WA)
 - **OCA Blast Lite** - Broadcast massal (WhatsApp, SMS, Email)
@@ -32,25 +25,22 @@ Informasi lengkap (Deskripsi, Fitur, Harga, Use Case) tersinkronisasi data PDF r
 - **Indibiz Paket Bisnis** - Internet bisnis premium (rasio 1:1)
 - **OCA Breaker** - Notifikasi keamanan email (Data Breach)
 
-### 4. 🎨 **Visual Produk & Brosur Cerdas**
+### 3. 🎨 **Visual Produk & Brosur Cerdas**
 Tampilan gambar/brosur saat membuka detail produk
 - Fitur caching super cepat via `file_id` Telegram (Zero loading delay!)
 - Mengirimkan Proposal PDF, gambar fitur, dan Price list dalam satu klik
 
-### 5. 📚 **Materi Penjualan**
+### 4. 📚 **Materi Penjualan**
 Bot mengirimkan materi penjualan (PDF/gambar) langsung ke chat
 
-### 6. ☎️ **Call Center 24/7**
+### 5. ☎️ **Call Center 24/7**
 Informasi kontak lengkap untuk IndiBiz dan TENNESA
 
-### 7. ❓ **FAQ Internal**
+### 6. ❓ **FAQ Internal**
 Tanya jawab seputar kebijakan sales, POC, diskon, dan teknis
 
-### 8. 📞 **Kontak PIC**
+### 7. 📞 **Kontak PIC**
 Daftar kontak person in charge untuk eskalasi setiap produk
-
-### 9. 📢 **Update Produk**
-Berita terbaru seputar pengembangan produk
 
 ---
 
@@ -76,28 +66,9 @@ Bot ini sudah mendukung instruksi deploy instan `Procfile`.
 
 ## 📖 Panduan Penggunaan
 
-### 🔍 Cara Menggunakan Pencarian
-
-#### **Metode 1: Command Langsung**
-```
-/cari internet        → Indibiz Basic, Indibiz Bisnis
-/cari crm             → OCA Interaction, OCA Blast
-/cari pendidikan      → PIJAR
-/cari monitoring      → Netmonk Hi
-/cari video conference → Indibiz Bisnis
-```
-
-#### **Metode 2: Menu Kategori**
-1. Klik tombol **🔍 Cari Produk** dari menu utama
-2. Pilih kategori:
-   - 🌐 Internet & Konektivitas
-   - 💬 Komunikasi & CRM
-   - 🎓 Pendidikan
-   - 📊 Monitoring & Analytics
-
 ### ⚖️ Cara Menggunakan Perbandingan Indibiz
 
-1. Klik tombol **⚖️ Bandingkan Indibiz** dari menu utama
+1. Klik tombol **⚖️ Perbandingan Indibiz Basic dan Bisnis** dari menu utama
 2. Bot akan menampilkan:
    - Perbedaan rasio kecepatan (1:2 vs 1:1)
    - Tabel harga lengkap semua tier dengan selisih
@@ -115,19 +86,6 @@ Bot ini sudah mendukung instruksi deploy instan `Procfile`.
 "Selisih hanya Rp 95rb/bulan, tapi upload speed 2x lipat!
 Investasi kecil untuk produktivitas maksimal."
 ```
-
-### 🎯 Workflow Rekomendasi untuk Sales
-
-**Skenario: Customer tanya "Ada paket internet untuk kantor?"**
-
-1. Ketik `/cari internet kantor`
-2. Bot tampilkan Indibiz Basic & Bisnis
-3. Klik **⚖️ Bandingkan Indibiz**
-4. Bot tampilkan tabel perbandingan lengkap
-5. Gunakan script closing dari bot
-6. Customer pilih paket → Klik "Lihat Detail" untuk info lengkap
-
-⏱️ **Waktu:** Dari 5 menit → **30 detik** (90% lebih cepat!)
 
 ---
 
