@@ -190,19 +190,14 @@ Edit file `data.py`:
 - Pastikan dependencies sudah terinstall: `pip install -r requirements.txt`
 - Cek token bot sudah benar di `bot.py`
 
-### Pencarian tidak menemukan produk?
-- Coba keyword yang lebih umum (misal: "internet" bukan "internet cepat")
-- Gunakan menu kategori sebagai alternatif
-- Cek ejaan keyword
-
 ### Gambar produk tidak muncul?
-- Cek apakah file gambar ada di folder `Materi/`
+- Cek apakah file gambar ada di subfolder `assets/images` 
 - Pastikan nama file dan path di `data.py` sama persis (case-sensitive)
-- Cek log bot untuk error message
+- Cek log bot (di Railway) untuk error message
 
 ### Tombol tidak muncul?
-- Restart bot dengan double-click `START_BOT.bat`
-- Ketik `/start` di Telegram untuk refresh menu
+- Restart bot dengan double-click `START_BOT.bat` (Lokal) atau klik tombol Restart di terminal Railway
+- Ketik `/start` di Telegram untuk me-refresh menu utama
 
 ---
 
