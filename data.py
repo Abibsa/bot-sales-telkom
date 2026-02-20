@@ -105,6 +105,110 @@ PRODUCTS = {
     }
 }
 
+# Testimoni Pelanggan per Produk
+TESTIMONIALS = {
+    "oca_i": (
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Budi Santoso – Owner Online Shop Fashion, Bandung*\n"
+        "\"Sebelum pakai OCA Interaction, admin saya kewalahan balas chat dari 3 platform sekaligus. "
+        "Sejak pakai OCA, semua terpusat dan respons pelanggan jadi jauh lebih cepat. "
+        "Komplain soal lambat balas hampir nol sekarang!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Rina Dewi – Manajer CS, Toko Elektronik Online*\n"
+        "\"OCA Interaction benar-benar mengubah cara kerja tim kami. "
+        "Unified inbox-nya luar biasa – tidak perlu pindah-pindah aplikasi lagi. "
+        "Produktivitas tim CS kami meningkat signifikan!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Hendra – Founder Startup UMKM Digital, Jakarta*\n"
+        "\"Produk yang tepat untuk bisnis kami yang sedang berkembang. "
+        "Integrasi dengan CRM yang sudah ada berjalan mulus. Sangat direkomendasikan!\""
+    ),
+    "oca_b": (
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Sari Utami – Marketing Manager, Restoran Chain*\n"
+        "\"Kami berhasil kirim promo ke 8.000 pelanggan dalam hitungan menit! "
+        "Delivery rate-nya tinggi dan tidak ada akun yang kena blokir WhatsApp. "
+        "Penjualan weekend kami langsung naik 30% setelah blast pertama!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Doni Prasetyo – Event Organizer, Surabaya*\n"
+        "\"Fitur penjadwalan OCA Blast sangat membantu. "
+        "Kami bisa set blast H-3, H-1, dan hari H event secara otomatis. "
+        "Peserta selalu dapat reminder tepat waktu!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Lestari – Koordinator Akademik, Lembaga Kursus*\n"
+        "\"Notifikasi jadwal kelas, tagihan, dan pengumuman penting kini terkirim otomatis. "
+        "Orang tua siswa sangat terbantu dan kepercayaan ke lembaga kami pun meningkat!\""
+    ),
+    "pijar": (
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Agus Supriyanto – Kepala Sekolah SMAN 5, Depok*\n"
+        "\"Sejak menggunakan PIJAR, waktu yang dihabiskan guru untuk urusan administrasi "
+        "turun drastis. CBT berjalan lancar, tidak ada lagi antrean fotocopy soal, "
+        "dan rapor langsung bisa dilihat orang tua lewat HP!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Bu Fitria – Guru Matematika, SMP Negeri, Semarang*\n"
+        "\"PIJAR benar-benar mengembalikan waktu saya untuk fokus mengajar. "
+        "Nilai otomatis terekap sendiri, absensi tinggal klik, dan laporan belajar siswa "
+        "tersusun rapi tanpa saya perlu lembur lagi!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Dinas Pendidikan Kota Balikpapan* _(185 sekolah terimplementasi)_\n"
+        "\"Dashboard PIJAR memungkinkan kami memantau performansi seluruh sekolah "
+        "dalam satu layar. Data ujian, presensi, dan rapor kini terkonsolidasi "
+        "sehingga pengambilan keputusan berbasis data menjadi jauh lebih mudah!\""
+    ),
+    "netmonk": (
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Arif Wicaksono – IT Manager, Bank Regional, Jawa Tengah*\n"
+        "\"Sebelum Netmonk Hi, kami baru tahu ada cabang yang down setelah ada laporan komplain. "
+        "Sekarang, tim IT kami langsung dapat notifikasi real-time dan masalah bisa "
+        "ditangani sebelum berdampak ke operasional teller!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Dewi Rahayu – Ops Manager, Jaringan Retail Nasional (80 gerai)*\n"
+        "\"Netmonk Hi sangat membantu kami memantau koneksi dari kantor pusat. "
+        "Laporan SLA otomatis juga sangat berguna untuk evaluasi bulanan "
+        "dan negosiasi kontrak layanan internet!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Bimo – Head of Technology, Perusahaan Logistik*\n"
+        "\"Dengan 50+ lokasi gudang di seluruh Indonesia, monitoring manual sudah tidak mungkin. "
+        "Netmonk Hi menjadi andalan kami. Dashboard-nya intuitif dan export Excel-nya "
+        "mempercepat pelaporan ke manajemen!\""
+    ),
+    "indibiz_basic": (
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Pak Yanto – Pemilik Apotek, Yogyakarta*\n"
+        "\"Internet Indibiz Basic 75 Mbps sangat stabil untuk kasir digital kami. "
+        "Tidak pernah putus saat jam sibuk. Harganya juga bersahabat untuk UMKM "
+        "seperti kami. Puas sekali!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Ibu Santi – Owner Warung Makan, Bekasi*\n"
+        "\"Dulu sering gangguan saat transaksi QRIS. Sejak pasang Indibiz Basic, "
+        "semua lancar. Koneksi stabil, pelanggan tidak perlu nunggu lama saat bayar. "
+        "Sangat recommended!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Rudi – Pemilik Toko Pakaian, Bandung*\n"
+        "\"Harga promo yang ditawarkan sangat kompetitif. Internetnya unlimited tanpa FUP, "
+        "jadi saya tidak khawatir kehabisan kuota saat update stok dan upload foto produk "
+        "ke marketplace!\""
+    ),
+    "indibiz_bisnis": (
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Kevin – CTO Startup Teknologi, Jakarta*\n"
+        "\"Upload speed 1:1 adalah game changer untuk tim engineering kami! "
+        "Push ke Git, video call klien luar negeri, dan backup server berjalan "
+        "bersamaan tanpa hambatan. Worth every rupiah!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Diana – Manajer Operasional, Klinik Spesialis, Surabaya*\n"
+        "\"Klinik kami sangat bergantung pada koneksi yang stabil untuk sistem SIMRS "
+        "dan video konsultasi dokter. Indibiz Bisnis 100 Mbps menjawab semua kebutuhan itu. "
+        "Upload dan download sama cepatnya!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Studio Animasi Kreatif, Tangerang*\n"
+        "\"Tim kami sering kirim file render video hingga puluhan GB ke klien. "
+        "Dengan Indibiz Bisnis, proses upload yang biasanya makan berjam-jam "
+        "kini selesai 2x lebih cepat. Produktivitas tim kami melejit!\""
+    ),
+}
+
 # Visual Produk - Gambar/Logo untuk ditampilkan di detail produk
 PRODUCT_IMAGES = {
     "indibiz_basic": {

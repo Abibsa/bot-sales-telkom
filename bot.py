@@ -2,7 +2,7 @@ import logging
 import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
-from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES
+from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS
 
 # -----------------------------------------------------------------------------
 # KONFIGURASI
@@ -124,6 +124,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("🎯 Target Customer", callback_data=f'pd_{product_key}_target')],
                 [InlineKeyboardButton("💡 Use Case / Contoh", callback_data=f'pd_{product_key}_use')],
                 [InlineKeyboardButton("✨ Selling Point", callback_data=f'pd_{product_key}_sell')],
+                [InlineKeyboardButton("💬 Testimoni", callback_data=f'pd_{product_key}_testi')],
                 [InlineKeyboardButton("<< Kembali ke PRODIGI", callback_data='m_products')],
                 get_back_button()
             ]
@@ -186,6 +187,9 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             elif detail_type == 'sell':
                 title = "Selling Point"
                 content = product['selling_point']
+            elif detail_type == 'testi':
+                title = "Testimoni Pelanggan"
+                content = TESTIMONIALS.get(product_key, "_Testimoni untuk produk ini belum tersedia._")
             
             text_response = f"📦 **{product['name']}** - {title}\n\n{content}"
             
