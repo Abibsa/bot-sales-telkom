@@ -241,7 +241,7 @@ TESTIMONIALS = {
     ),
 }
 
-# Visual Produk - Gambar/Logo untuk ditampilkan di detail produk
+# Visual Produk - Gambar untuk ditampilkan di bagian HARGA produk
 PRODUCT_IMAGES = {
     "indibiz_basic": {
         "path": "Materi/indibiz paket basic.jpg",
@@ -251,24 +251,25 @@ PRODUCT_IMAGES = {
         "path": "Materi/indibiz paket bisnis.jpg",
         "caption": "Indibiz Paket Bisnis - Internet Premium 1:1"
     },
-    # Untuk produk lain, tambahkan gambar di folder Materi/ lalu update path di sini
-    # "oca_i": {
-    #     "path": "Materi/oca_interaction_visual.jpg",
-    #     "caption": "OCA Interaction Lite - Multi-channel Messaging"
-    # },
-    # "oca_b": {
-    #     "path": "Materi/oca_blast_visual.jpg",
-    #     "caption": "OCA Blast Lite - Broadcast Messaging"
-    # },
-    # "pijar": {
-    #     "path": "Materi/pijar_visual.jpg",
-    #     "caption": "PIJAR - Platform Pendidikan Digital"
-    # },
-    # "netmonk": {
-    #     "path": "Materi/netmonk_visual.jpg",
-    #     "caption": "Netmonk Hi - Network Monitoring"
-    # }
+    "oca_i": {
+        "path": "Materi/Paket Indibiz X OCA Interaction Lite.png",
+        "caption": "Paket Bundling Indibiz x OCA Interaction Lite"
+    },
 }
+
+# Gambar Profil Produk - ditampilkan saat pertama membuka halaman produk
+PRODUCT_PROFILE_IMAGES = {
+    "oca_i": {
+        "path": "Materi/Profil OCA Interaction Lite.png",
+        "caption": "OCA Interaction Lite - Solusi Multi-Channel Komunikasi"
+    },
+}
+
+# Gambar Perbandingan Paketisasi - untuk OCA Interaction
+OCA_COMPARISON_IMAGES = [
+    "Materi/Perbandingan Paketisasi Oca Interaction (1).png",
+    "Materi/Perbandingan Paketisasi Oca Interaction (2).png",
+]
 
 # Materi Penjualan - Mapping produk ke file PDF
 SALES_MATERIALS_FILES = {
