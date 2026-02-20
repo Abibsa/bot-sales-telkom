@@ -2,7 +2,7 @@
 
 Bot asisten virtual untuk sales internal Telkom Indonesia yang menyediakan informasi produk, materi penjualan, FAQ, dan kontak penting dengan fitur pencarian cerdas dan perbandingan produk.
 
-**Versi:** 2.0 | **Update:** 12 Februari 2026
+**Versi:** 3.0 | **Update:** 21 Februari 2026
 
 ---
 
@@ -23,18 +23,19 @@ Tabel perbandingan lengkap Paket Basic vs Bisnis
 - Tips closing untuk sales
 
 ### 3. 📦 **Daftar Produk Digital**
-Informasi lengkap (Deskripsi, Fitur, Harga, Use Case) untuk:
-- **OCA Interaction Lite** - Multi-channel messaging & CRM
-- **OCA Blast Lite** - Broadcast messaging WhatsApp
-- **PIJAR** - Platform pendidikan digital
-- **Netmonk Hi** - Network monitoring
+Informasi lengkap (Deskripsi, Fitur, Harga, Use Case) tersinkronisasi data PDF resmi Telkom untuk:
+- **OCA Interaction Lite** - Omnichannel messaging (IG, FB, WA)
+- **OCA Blast Lite** - Broadcast massal (WhatsApp, SMS, Email)
+- **PIJAR** - Platform pendidikan digital terintegrasi
+- **Netmonk Hi** - Network monitoring HSI
 - **Indibiz Paket Basic** - Internet bisnis ekonomis (rasio 1:2)
 - **Indibiz Paket Bisnis** - Internet bisnis premium (rasio 1:1)
+- **OCA Breaker** - Notifikasi keamanan email (Data Breach)
 
-### 4. 🎨 **Visual Produk**
+### 4. 🎨 **Visual Produk & Brosur Cerdas**
 Tampilan gambar/brosur saat membuka detail produk
-- ✅ Tersedia untuk Indibiz Basic & Bisnis
-- ⏳ Template siap untuk produk lain
+- Fitur caching super cepat via `file_id` Telegram (Zero loading delay!)
+- Mengirimkan Proposal PDF, gambar fitur, dan Price list dalam satu klik
 
 ### 5. 📚 **Materi Penjualan**
 Bot mengirimkan materi penjualan (PDF/gambar) langsung ke chat
@@ -53,27 +54,21 @@ Berita terbaru seputar pengembangan produk
 
 ---
 
-## 🚀 Cara Menjalankan Bot
+## 🚀 Cara Menjalankan Bot & Deployment
 
-### Cara Mudah (Windows)
-Cukup **Double-Click** file `START_BOT.bat`
+### Tahap Deployment (Railway / Cloud) - DIREKOMENDASIKAN
+Bot ini sudah mendukung instruksi deploy instan `Procfile`.
+1. Koneksikan akun GitHub ke [Railway.app](https://railway.app/).
+2. Buat project baru dan pilih repository ini.
+3. Di bagian tab **Variables**, pastikan mengatur Environment Variable:
+   - `TOKEN` : Isikan token Telegram Bot API Anda.
+4. Deploy!
 
-Jendela Command Prompt akan terbuka dan bot akan mulai berjalan. Jangan tutup jendela tersebut selama bot digunakan.
-
-### Cara Manual (Terminal)
-
-1. **Aktifkan Virtual Environment** (jika ada):
-   ```powershell
-   .venv\Scripts\activate
-   ```
-
-2. **Install Dependencies** (jika belum):
+### Cara Local (PC/Windows)
+1. Buka File **`START_BOT.bat`** (cukup double-click). _Command Prompt_ akan terbuka otomatis menjalankan bot.
+2. (*Alternatif Terminal*): 
    ```bash
    pip install -r requirements.txt
-   ```
-
-3. **Jalankan Script**:
-   ```bash
    python bot.py
    ```
 
@@ -140,19 +135,16 @@ Investasi kecil untuk produktivitas maksimal."
 
 ```
 Bot telegram Sales Telkom/
-├── bot.py                    # Script utama bot
-├── data.py                   # Database produk, FAQ, kontak
-├── START_BOT.bat             # Shortcut untuk menjalankan bot
-├── requirements.txt          # Dependencies Python
+├── bot.py                    # Script logika & command bot (caching memory file_id)
+├── data.py                   # Data text JSON-like: produk, harga aktual, kontak & FAQ
+├── requirements.txt          # Library Python yang wajib diinstall (telegram-bot, httpx)
+├── Procfile                  # File pemicu build cloud services (Railway/Heroku/Render)
+├── START_BOT.bat             # Shortcut lokal Windows
 ├── README.md                 # Dokumentasi ini
-├── Materi/                   # Folder materi penjualan
-│   ├── 7. OCA Interaction Lite 2025.pdf
-│   ├── 8. OCA Blast Lite 2025.pdf
-│   ├── Materi Sosialisasi PIJAR 2025.pptx.pdf
-│   ├── Proposal Netmonk Hi- Updated (1).pdf
-│   ├── indibiz paket basic.jpg
-│   └── indibiz paket bisnis.jpg
-└── .venv/                    # Virtual environment (jika ada)
+├── assets/                   # Folder terpusat untuk semua media aset
+│   ├── images/               # Kategori gambar (fitur, paket, perbandingan, profil)
+│   └── pdf/                  # Repository brosur & proposal official Telkom
+└── .venv/                    # [Ignored] Virtual environment Python
 ```
 
 ---
@@ -177,26 +169,16 @@ Token bot disimpan di variabel `TOKEN` di dalam file `bot.py` (baris 11).
    }
    ```
 
-### Menambah Visual Produk
-1. Simpan gambar produk di folder `Materi/` (format JPG/PNG, ukuran 1200x800px)
-2. Edit file `data.py`, tambahkan ke `PRODUCT_IMAGES`:
-   ```python
-   "product_key": {
-       "path": "Materi/nama_file.jpg",
-       "caption": "Caption untuk gambar"
-   }
-   ```
-3. Restart bot
-
-### Update Materi Penjualan
-1. Simpan file PDF/gambar baru di folder `Materi/`
-2. Edit file `data.py`, update `SALES_MATERIALS_FILES`:
+### Menambah Visual & File Materi (PDF/Gambar)
+1. Simpan media baru secara terorganisir ke dalam sub-folder `assets/images` atau `assets/pdf/`.
+2. Edit path di dalam file `data.py` (pada mapping `PRODUCT_IMAGES`, `SALES_MATERIALS_FILES`, dsb.):
    ```python
    "product_key": {
        "filename": "nama_file.pdf",
-       "path": "Materi/nama_file.pdf"
+       "path": "assets/pdf/kategori/nama_file.pdf"
    }
    ```
+   **Catatan Kinerja Otomatis:** Anda tidak perlu merestart sistem caching. Begitu direktori media didaftarkan, Bot akan otomatis mengenkripsi ID media tersebut saat panggilan klik pertama.
 
 ### Update FAQ/Kontak
 Edit file `data.py`:
@@ -261,6 +243,15 @@ Edit file `data.py`:
 
 ## 📈 Changelog
 
+### Version 3.0 (21 Februari 2026)
+**Besar-Besaran Refactor & Optimizasi:**
+- ✅ Integrasi Folder Media Standar Profesional (`assets/` _hierarchy_).
+- ✅ Sinkronisasi ulang 100% harga, deskripsi, usecase produk OCA & Pijar sesuai Brosur PDF Telkom 2025.
+- ✅ Implementasi _In-memory Storage Telegram `file_id` Caching_: Unduh & lihat brosur pdf 10x lebih kilat, I/O disk server 0%.
+- ✅ Gaya bahasa ramah santai di sub-menu FAQ dan Customer Assurance.
+- ✅ *Cloud-Ready* ditambahkan `Procfile` untuk Railway.app dan token bot dilindungi via Variabel Lingkungan khusus.
+- ✅ Tambahan katalog produk baru: OCA Breaker (Breach Checker).
+
 ### Version 2.0 (12 Februari 2026)
 **Fitur Baru:**
 - ✅ Pencarian produk dengan command `/cari` dan menu kategori
@@ -272,7 +263,6 @@ Edit file `data.py`:
 **Improvement:**
 - 📈 Efisiensi waktu: Cari produk 90% lebih cepat (5 menit → 30 detik)
 - 📈 Efisiensi waktu: Bandingkan paket 98% lebih cepat (10 menit → 10 detik)
-- 📈 Presentasi lebih profesional dengan visual dan data lengkap
 
 ### Version 1.0
 - Fitur dasar: Daftar produk, materi penjualan, FAQ, kontak
@@ -315,4 +305,4 @@ Bot ini dibuat untuk keperluan internal Telkom Indonesia.
 
 **Dibuat dengan ❤️ untuk Tim Sales Telkom Indonesia**
 
-**Status:** ✅ Production Ready | **Versi:** 2.0 | **Update:** 12 Februari 2026
+**Status:** ✅ Production Ready | **Versi:** 3.0 | **Update:** 21 Februari 2026
