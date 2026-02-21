@@ -3,7 +3,7 @@ import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 from telegram.error import BadRequest
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
-from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, PRODUCT_COMPARISON_IMAGES, NETMONK_FEATURE_IMAGES
+from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, PRODUCT_COMPARISON_IMAGES, NETMONK_FEATURE_IMAGES, ANTARES_FEATURE_IMAGES
 
 # -----------------------------------------------------------------------------
 # KONFIGURASI
@@ -275,6 +275,36 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     except Exception as e:
                         logging.error(f"Error sending Netmonk feature images: {e}")
 
+            # Khusus Antares: kirim gambar fitur sebagai foto
+            if detail_type == 'feat' and product_key == 'antares':
+                valid_imgs = [img for img in ANTARES_FEATURE_IMAGES if os.path.exists(img['path'])]
+                if valid_imgs:
+                    try:
+                        for img in valid_imgs:
+                            if img['path'] in FILE_CACHE:
+                                await query.message.reply_photo(
+                                    photo=FILE_CACHE[img['path']],
+                                    caption=img['caption'],
+                                    parse_mode='Markdown'
+                                )
+                            else:
+                                with open(img['path'], 'rb') as f:
+                                    msg = await query.message.reply_photo(
+                                        photo=f,
+                                        caption=img['caption'],
+                                        parse_mode='Markdown'
+                                    )
+                                    FILE_CACHE[img['path']] = msg.photo[-1].file_id
+                        await query.message.reply_text(
+                            text=f"⭐ **{product['name']} - Fitur Utama**\n\nLihat gambar di atas untuk tampilan fitur utama Antares Eazy.",
+                            reply_markup=InlineKeyboardMarkup(keyboard_detail),
+                            parse_mode='Markdown'
+                        )
+                        await query.message.delete()
+                        return
+                    except Exception as e:
+                        logging.error(f"Error sending Antares feature images: {e}")
+
             send_photo = False
             image_path = ""
             comparison_paths = []
@@ -464,7 +494,8 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "1. **OCA Interaction Lite:** Fitur baru Auto-reply AI sudah tersedia.\n"
             "2. **OCA Blast Lite:** Integrasi dengan Instagram Direct sudah live.\n"
             "3. **PIJAR:** Modul baru untuk ujian adaptif (adaptive testing).\n"
-            "4. **Netmonk Hi:** Dashboard baru dengan visualisasi real-time lebih interaktif.\n\n"
+            "4. **Netmonk Hi:** Dashboard baru dengan visualisasi real-time lebih interaktif.\n"
+            "5. **Antares Eazy:** Platform ekosistem IoT pintar dengan Cloud Recording, AI Video Analytics, dan dukungan multi-brand smart devices.\n\n"
             "_Pantau terus menu ini untuk informasi terbaru!_"
         )
         keyboard = [get_back_button()]

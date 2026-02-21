@@ -34,6 +34,7 @@ PDF_OCA_INTERACTION_LITE = PDF_PRODUK_DIR / "oca_interaction_lite_2025.pdf"
 PDF_OCA_BLAST_LITE       = PDF_PRODUK_DIR / "oca_blast_lite_2025.pdf"
 PDF_OCA_BREAKER          = PDF_PRODUK_DIR / "oca_breaker.pdf"
 PDF_PIJAR                = PDF_PRODUK_DIR / "pijar_sosialisasi_2025.pdf"
+PDF_ANTARES_EAZY         = PDF_PRODUK_DIR / "Antares Easy.pdf"
 
 # Proposal penjualan
 PDF_PROPOSAL_NETMONK_HI  = PDF_PROPOSAL_DIR / "proposal_netmonk_hi_updated.pdf"
@@ -45,6 +46,7 @@ PDF_PRODUK_MAP: dict[str, Path] = {
     "oca_breaker"         : PDF_OCA_BREAKER,
     "pijar"               : PDF_PIJAR,
     "netmonk_hi"          : PDF_PROPOSAL_NETMONK_HI,
+    "antares_eazy"        : PDF_ANTARES_EAZY,
 }
 
 
@@ -58,6 +60,7 @@ PROFIL_NETMONK_HI            = IMG_PROFIL_DIR / "profil_netmonk_hi.png"
 PROFIL_OCA_BLAST_LITE        = IMG_PROFIL_DIR / "profil_oca_blast_lite.png"
 PROFIL_OCA_INTERACTION_LITE  = IMG_PROFIL_DIR / "profil_oca_interaction_lite.png"
 PROFIL_PIJAR                 = IMG_PROFIL_DIR / "profil_pijar.png"
+PROFIL_ANTARES_EAZY          = IMG_PROFIL_DIR / "Profil Antares Easy.png"
 
 # Pemetaan kunci produk → gambar profil
 PROFIL_MAP: dict[str, Path] = {
@@ -65,6 +68,7 @@ PROFIL_MAP: dict[str, Path] = {
     "oca_blast_lite"      : PROFIL_OCA_BLAST_LITE,
     "oca_interaction_lite": PROFIL_OCA_INTERACTION_LITE,
     "pijar"               : PROFIL_PIJAR,
+    "antares_eazy"        : PROFIL_ANTARES_EAZY,
 }
 
 
@@ -78,12 +82,14 @@ PAKET_INDIBIZ_OCA_BLAST_LITE        = IMG_PAKET_DIR / "paket_indibiz_oca_blast_l
 PAKET_INDIBIZ_OCA_INTERACTION_LITE  = IMG_PAKET_DIR / "paket_indibiz_oca_interaction_lite.png"
 INDIBIZ_PAKET_BASIC                 = IMG_PAKET_DIR / "indibiz_paket_basic.jpg"
 INDIBIZ_PAKET_BISNIS                = IMG_PAKET_DIR / "indibiz_paket_bisnis.jpg"
+PAKET_ANTARES_EAZY_BUNDLING         = IMG_PAKET_DIR / "Eazy Bundling Connectivity (SCONE & MyIndibiz).png"
 
 PAKET_MAP: dict[str, Path] = {
     "oca_blast_lite"      : PAKET_INDIBIZ_OCA_BLAST_LITE,
     "oca_interaction_lite": PAKET_INDIBIZ_OCA_INTERACTION_LITE,
     "indibiz_basic"       : INDIBIZ_PAKET_BASIC,
     "indibiz_bisnis"      : INDIBIZ_PAKET_BISNIS,
+    "antares_eazy"        : PAKET_ANTARES_EAZY_BUNDLING,
 }
 
 
@@ -109,6 +115,7 @@ PERBANDINGAN_MAP: dict[str, list[Path]] = {
 # ══════════════════════════════════════════════════════════════════════════════
 
 NETMONK_FITUR_DIR = ASSETS_DIR / "images" / "fitur" / "netmonk_hi"
+ANTARES_FITUR_DIR = ASSETS_DIR / "images" / "fitur" / "Antares Easy"
 
 NETMONK_FITUR_IMAGES: list[Path] = [
     NETMONK_FITUR_DIR / "netmonk_hi_01_seamless_login.png",
@@ -122,9 +129,14 @@ NETMONK_FITUR_IMAGES: list[Path] = [
     NETMONK_FITUR_DIR / "netmonk_hi_09_alerting.png",
 ]
 
+ANTARES_FITUR_IMAGES: list[Path] = [
+    ANTARES_FITUR_DIR / "Fitur Antares Easy.png",
+]
+
 # Seluruh fitur per produk (dapat dikembangkan untuk produk lain)
 FITUR_MAP: dict[str, list[Path]] = {
-    "netmonk_hi": NETMONK_FITUR_IMAGES,
+    "netmonk_hi"   : NETMONK_FITUR_IMAGES,
+    "antares_eazy" : ANTARES_FITUR_IMAGES,
 }
 
 

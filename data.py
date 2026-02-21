@@ -183,6 +183,39 @@ PRODUCTS = {
         "target": "UMKM Go Digital, pelaku bisnis yang menggunakan email untuk transaksi online, pelanggan IndiBiz yang ingin perlindungan keamanan data extra.",
         "use_case": "❓ **Tantangan Keamanan Digital UMKM:**\nJutaan data pribadi \u2014 mulai email, password, hingga nomor telepon \u2014 secara rutin tersebar di forum terbuka tanpa sepengetahuan pemiliknya. Banyak pemilik UMKM tidak tahu data mereka sudah bocor hingga mengalami kerugian nyata.\n\n💡 **Solusi OCA Breaker:**\nCukup daftarkan email bisnis Anda dan OCA Breaker bekerja 24 jam! Sistem otomatis memantau jejak digital email Anda dan langsung mengirim notifikasi jika terdeteksi terlibat kebocoran data, lengkap dengan laporan bulanan dan tips perlindungan diri.",
         "selling_point": "Proteksi keamanan data digital yang terjangkau khusus untuk UMKM! Didukung OCA Indonesia (Telkom Group) dengan harga bundling spesial hanya Rp 35.000/bulan. Lebih murah dari secangkir kopi, tapi nilainya tak ternilai untuk keamanan bisnis!",
+    },
+    "antares": {
+        "name": "Antares Eazy (Platform Ekosistem IoT)",
+        "description": "Antares Eazy merupakan platform ekosistem IoT pintar yang terintegrasi dengan berbagai jenis, model & merek perangkat pintar, serta layanan cloud & video analytics yang memberikan fleksibilitas, kemudahan dan kenyamanan dalam mengelola perangkat pintar di lingkungan bisnis Anda dengan harga yang terjangkau. Berfokus mensolusikan berbagai kendala di IoT Ekosistem seperti kurangnya keamanan data, keterbatasan platform untuk multi-brand, dan terbatasnya pengembangan aplikasi untuk device analog.",
+        "features": [
+            "📷 **Smart Devices**\nMendukung berbagai jenis & merek perangkat pintar: IP Camera Indoor/Outdoor, Smart Plug, Smart Lamp, Smart Switch, Smart Extension Socket, IR Remote, Smart Door & Windows Sensor, Smart Breaker. Kompatibel dengan beragam brand partner.",
+            "☁️ **Cloud Recording**\nLayanan penyimpanan video berbasis cloud yang dikelola oleh Telkom. Tersedia 3 paket:\n• Basic (7 hari): Rp 41.000/bln\n• Plus (14 hari): Rp 58.000/bln\n• Protect Plus (30 hari): Rp 96.000/bln",
+            "🤖 **AI Video Analytics**\nAlgoritma mesin canggih untuk memproses video dari kamera pengguna. Layanan tersedia:\n• Intrusion Detection: Rp 150.000/bln\n• Fire & Smoke Detection: Rp 150.000/bln\n• People Counting: Rp 150.000/bln\n• Employee Presence: Rp 150.000/bln",
+            "📱 **Mobile App & Web Monitoring**\nMonitoring secara real-time melalui Web dan Mobile App (iOS & Android) dengan fitur up-to-date. Kontrol & pemantauan, putar ulang rekaman video, manajemen akun tanpa batas, dan web monitoring secara bersamaan.",
+            "🏢 **Manajemen Multi-Cabang**\nManajemen & kategorisasi setiap cabang. Headquarter Office & Management Team bisa melakukan manajemen akun menggunakan fitur Akun Berbagi dengan batasan fitur tertentu per cabang.",
+            "🔧 **Installation & Managed Services**\nLayanan instalasi IP Camera profesional di seluruh Indonesia (Area 1: Jawa/Bali/Madura, Area 2: Sumatra/Kalimantan, Area 3: Sulawesi/NTB/NTT/Papua). Managed Service berlaku 1 tahun termasuk preventive maintenance dan on-call unlimited corrective maintenance.",
+            "🔗 **Integrasi Kamera Eksisting**\nAntares Eazy dapat mengintegrasikan kamera CCTV/IP Camera eksisting tanpa harus mengganti dengan perangkat baru. Mendukung RTSP & ONVIF protocol melalui Antares Eazy Gateway.",
+            "🛡️ **Keamanan Data**\nKeamanan data pengguna Eazy terjamin dengan baik & sesuai dengan Undang-Undang PDP. Pembaharuan & perbaikan aplikasi tidak terbatas. Pusat bantuan 24/7."
+        ],
+        "pricing": (
+            "💰 **Harga Antares Eazy**\n\n"
+            "📷 **Kamera:**\n"
+            "• Rental Eazy Cam: Rp 35.000/bln\n"
+            "• OTC (Beli) Eazy Cam: Rp 346.500\n\n"
+            "☁️ **Cloud Storage:**\n"
+            "• Basic (7 Hari): Rp 41.000/bln\n"
+            "• Plus (14 Hari): Rp 58.000/bln\n"
+            "• Protect Plus (30 Hari): Rp 96.000/bln\n\n"
+            "🤖 **AI Analytics:**\n"
+            "• Intrusion Detection: Rp 150.000/bln\n"
+            "• Fire & Smoke Detection: Rp 150.000/bln\n"
+            "• People Counting: Rp 150.000/bln\n"
+            "• Employee Presence: Rp 150.000/bln\n\n"
+            "⚠️ _Harga sudah termasuk pajak_"
+        ),
+        "target": "Bisnis modern yang membutuhkan ekosistem IoT: Retail & Showroom, Sekolah & Universitas, Hotel & Hospitality, Perkantoran, Puskesmas & Klinik, Gudang & Logistik, Manufaktur & Distribusi, Perumahan & Residence.",
+        "use_case": "❓ **Tantangan Bisnis Saat Ini:**\nBanyak bisnis menghadapi kendala keamanan, pemantauan multi-cabang, dan pengelolaan perangkat IoT dari berbagai merek yang tidak terintegrasi. Kehilangan barang inventaris, respons lambat terhadap kejadian, dan biaya operasional yang tinggi menjadi masalah utama.\n\n💡 **Solusi Antares Eazy:**\nDengan Antares Eazy, bisnis mendapatkan platform IoT terpadu yang meningkatkan keamanan (penurunan 80% kehilangan inventaris), mempercepat waktu respons hingga 67%, dan menurunkan biaya operasional hingga 30%. Semua perangkat pintar multi-brand bisa dikelola dari satu dashboard — dilengkapi AI Video Analytics untuk deteksi cerdas dan Cloud Recording yang aman dikelola Telkom.",
+        "selling_point": "Ekosistem IoT lengkap dengan harga terjangkau! Mulai dari Rp 35.000/bulan untuk rental kamera, kompatibel dengan berbagai merek perangkat pintar, dilengkapi Cloud Recording & AI Video Analytics canggih. Terbukti meningkatkan keamanan 80%, mempercepat respons 67%, dan menurunkan biaya operasional 30%. Bisa integrasikan CCTV eksisting tanpa ganti baru — didukung Telkom dengan keamanan data sesuai UU PDP!",
     }
 }
 
@@ -305,6 +338,23 @@ TESTIMONIALS = {
         "Notifikasinya cepat via WhatsApp, dan saya jadi lebih tenang menjalankan bisnis "
         "karena tahu data email saya terpantau 24 jam!\""
     ),
+    "antares": (
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *SMK Tri Karya – Rental Eazy Cam*\n"
+        "\"Dengan Antares Eazy, pemantauan keamanan sekolah jadi jauh lebih mudah. "
+        "Kamera bisa dipantau dari HP kapan saja, dan cloud recording-nya sangat membantu "
+        "untuk review kejadian. Harga rentalnya juga sangat terjangkau untuk budget sekolah!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *The Eleva Residence – Smart Door Lock*\n"
+        "\"Integrasi perangkat smart device di hunian kami berjalan mulus dengan Antares Eazy. "
+        "Mulai dari smart lock, kamera, hingga smart plug — semua bisa dikontrol dari satu aplikasi. "
+        "Penghuni sangat puas dengan kenyamanan dan keamanannya!\"\n\n"
+        "⭐⭐⭐⭐⭐\n"
+        "🗣 *Hermes Hotel – Eazy Cam OTC*\n"
+        "\"AI Video Analytics-nya luar biasa! Kami bisa mendeteksi intrusion di area terlarang "
+        "dan melakukan people counting untuk mengoptimalkan operasional hotel. "
+        "Semua terpantau real-time dari dashboard web!\""
+    ),
 }
 
 # Visual Produk - Gambar untuk ditampilkan di bagian HARGA produk
@@ -325,6 +375,10 @@ PRODUCT_IMAGES = {
         "path": "assets/images/paket/paket_indibiz_oca_blast_lite.png",
         "caption": "Paket Bundling Indibiz x OCA Blast Lite"
     },
+    "antares": {
+        "path": "assets/images/paket/Eazy Bundling Connectivity (SCONE & MyIndibiz).png",
+        "caption": "Eazy Bundling Connectivity (SCONE & MyIndibiz)"
+    },
 }
 
 # Gambar Profil Produk - ditampilkan saat pertama membuka halaman produk
@@ -344,6 +398,10 @@ PRODUCT_PROFILE_IMAGES = {
     "netmonk": {
         "path": "assets/images/profil/profil_netmonk_hi.png",
         "caption": "Netmonk Hi - Internet Monitoring Real-Time"
+    },
+    "antares": {
+        "path": "assets/images/profil/Profil Antares Easy.png",
+        "caption": "Antares Eazy - Platform Ekosistem IoT Pintar"
     },
 }
 
@@ -381,6 +439,12 @@ NETMONK_FEATURE_IMAGES = [
      "caption": "🔔 **9. Alerting**\nNotifikasi otomatis ke Telegram/Email saat internet mati & hidup kembali."},
 ]
 
+# Gambar Fitur Antares Eazy (dikirim sebagai foto saat klik Fitur)
+ANTARES_FEATURE_IMAGES = [
+    {"path": "assets/images/fitur/Antares Easy/Fitur Antares Easy.png",
+     "caption": "⭐ **Fitur Utama Antares Eazy**\nKontrol & Pemantauan, Putar Ulang Rekaman Video, Manajemen Akun Tanpa Batas, Web Monitoring, Manajemen Multi-Cabang, Cloud Recording, AI Video Analytics, dan Installation Services."},
+]
+
 # Materi Penjualan - Mapping produk ke file PDF
 SALES_MATERIALS_FILES = {
     "oca_i": {
@@ -410,6 +474,10 @@ SALES_MATERIALS_FILES = {
     "oca_breaker": {
         "filename": "oca_breaker.pdf",
         "path": "assets/pdf/produk/oca_breaker.pdf"
+    },
+    "antares": {
+        "filename": "Antares Easy.pdf",
+        "path": "assets/pdf/produk/Antares Easy.pdf"
     }
 }
 
@@ -445,7 +513,8 @@ PIC_CONTACTS = {
     "pijar": "📲 WA Helpdesk PIJAR: +62 812-8899-9576 (Chat Only) | 🌐 www.pijarsekolah.id",
     "netmonk": "✉️ info@netmonk.id | 📞 +62 811 971 9810 | 🌐 www.netmonk.id",
     "indibiz_basic": "📞 Call Center: 1500250 | 🌐 my.indibiz.co.id",
-    "indibiz_bisnis": "📞 Call Center: 1500250 | 🌐 my.indibiz.co.id"
+    "indibiz_bisnis": "📞 Call Center: 1500250 | 🌐 my.indibiz.co.id",
+    "antares": "📲 WA: 6281358899196 | ✉️ astiningsih.novitasari@eazy.co.id | 🌐 Antares Eazy App (iOS & Android)"
 }
 
 # Informasi Call Center & Support
