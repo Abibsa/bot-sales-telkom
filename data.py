@@ -211,6 +211,9 @@ PRODUCTS = {
             "• Fire & Smoke Detection: Rp 150.000/bln\n"
             "• People Counting: Rp 150.000/bln\n"
             "• Employee Presence: Rp 150.000/bln\n\n"
+            "📦 **Eazy Bundling Connectivity:**\n"
+            "Tersedia paket **Eazy Bundling Connectivity (SCONE & MyIndibiz)** terintegrasi untuk kebutuhan bisnis Anda. "
+            "_(Silakan lihat brosur gambar untuk detail lengkap paket bundling_)\n\n"
             "⚠️ _Harga sudah termasuk pajak_"
         ),
         "target": "Bisnis modern yang membutuhkan ekosistem IoT: Retail & Showroom, Sekolah & Universitas, Hotel & Hospitality, Perkantoran, Puskesmas & Klinik, Gudang & Logistik, Manufaktur & Distribusi, Perumahan & Residence.",
