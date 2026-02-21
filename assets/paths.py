@@ -133,6 +133,8 @@ ANTARES_FITUR_IMAGES: list[Path] = [
     ANTARES_FITUR_DIR / "Fitur Antares Easy.png",
 ]
 
+ANTARES_TESTIMONI_DIR = ASSETS_DIR / "images" / "testimoni" / "Antares Easy"
+
 # Seluruh fitur per produk (dapat dikembangkan untuk produk lain)
 FITUR_MAP: dict[str, list[Path]] = {
     "netmonk_hi"   : NETMONK_FITUR_IMAGES,

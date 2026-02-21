@@ -468,6 +468,23 @@ ANTARES_FEATURE_IMAGES = [
      "caption": "⭐ **Fitur Utama Antares Eazy**\nKontrol & Pemantauan, Putar Ulang Rekaman Video, Manajemen Akun Tanpa Batas, Web Monitoring, Manajemen Multi-Cabang, Cloud Recording, AI Video Analytics, dan Installation Services."},
 ]
 
+# Gambar Testimoni Antares Eazy
+ANTARES_TESTIMONIAL_IMAGES = [
+    {"path": "assets/images/testimoni/Antares Easy/SMK Tri Karya - Eazy Cam Rent.png", "caption": "🏫 **SMK Tri Karya**\nMenggunakan Eazy Cam Rent."},
+    {"path": "assets/images/testimoni/Antares Easy/SMK Musda - Eazy Cam Rent.png", "caption": "🏫 **SMK Musda**\nMenggunakan Eazy Cam Rent."},
+    {"path": "assets/images/testimoni/Antares Easy/SMK Yapim Biru-Biru - Eazy Cam Rent.png", "caption": "🏫 **SMK Yapim Biru-Biru**\nMenggunakan Eazy Cam Rent."},
+    {"path": "assets/images/testimoni/Antares Easy/Universitas Suryakencana - Eazy Cam Rent.png", "caption": "🎓 **Universitas Suryakencana**\nMenggunakan Eazy Cam Rent."},
+    {"path": "assets/images/testimoni/Antares Easy/SMAN 1 Kedungwuni - Eazy Cam Rent.png", "caption": "🏫 **SMAN 1 Kedungwuni**\nMenggunakan Eazy Cam Rent."},
+    {"path": "assets/images/testimoni/Antares Easy/Dinas Pendidikan Semarang - Eazy Cam Rent.png", "caption": "🏢 **Dinas Pendidikan Semarang**\nMenggunakan Eazy Cam Rent."},
+    {"path": "assets/images/testimoni/Antares Easy/The Eleva Residence - Smart Door Lock.png", "caption": "🏢 **The Eleva Residence**\nMenggunakan Smart Door Lock, memberikan keamanan dan kenyamanan maksimal bagi penghuni apartment."},
+    {"path": "assets/images/testimoni/Antares Easy/Telkom Office - Smart Device Usage for Energy Efficiency.png", "caption": "🏢 **Telkom Office**\nPenggunaan Smart Device untuk Efisiensi Energi di perkantoran."},
+    {"path": "assets/images/testimoni/Antares Easy/Puskesmas Petaling - Eazy Cam Rent.png", "caption": "🏥 **Puskesmas Petaling**\nPemantauan aktivitas dan keamanan fasilitas kesehatan dengan Eazy Cam Rent."},
+    {"path": "assets/images/testimoni/Antares Easy/Hermes Hotel - Eazy Cam OTC.png", "caption": "🏨 **Hermes Hotel**\nMenggunakan Eazy Cam OTC. Mendukung operasional hotel dengan AI Video Analytics untuk keamanan di area hotel."},
+    {"path": "assets/images/testimoni/Antares Easy/PT Inti Karya OfficeEazy Cam OTC.png", "caption": "🏢 **PT Inti Karya Office**\nImplementasi Eazy Cam OTC untuk keamanan dan operasional kantor."},
+    {"path": "assets/images/testimoni/Antares Easy/PT Tunas Office - Eazy Cam OTC.png", "caption": "🏢 **PT Tunas Office**\nImplementasi Eazy Cam OTC di area perkantoran."},
+    {"path": "assets/images/testimoni/Antares Easy/Aufarasy Office - Eazy Cam OTC.png", "caption": "🏢 **Aufarasy Office**\nPemanfaatan Eazy Cam OTC untuk keamanan operasional."}
+]
+
 # Materi Penjualan - Mapping produk ke file PDF
 SALES_MATERIALS_FILES = {
     "oca_i": {

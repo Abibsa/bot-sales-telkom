@@ -3,7 +3,7 @@ import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 from telegram.error import BadRequest
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
-from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, PRODUCT_COMPARISON_IMAGES, NETMONK_FEATURE_IMAGES, ANTARES_FEATURE_IMAGES
+from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, PRODUCT_COMPARISON_IMAGES, NETMONK_FEATURE_IMAGES, ANTARES_FEATURE_IMAGES, ANTARES_TESTIMONIAL_IMAGES
 
 # -----------------------------------------------------------------------------
 # KONFIGURASI
@@ -304,6 +304,37 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         return
                     except Exception as e:
                         logging.error(f"Error sending Antares feature images: {e}")
+
+            # Khusus Antares: kirim gambar testimoni sebagai media group atau foto individual
+            if detail_type == 'testi' and product_key == 'antares':
+                valid_imgs = [img for img in ANTARES_TESTIMONIAL_IMAGES if os.path.exists(img['path'])]
+                if valid_imgs:
+                    try:
+                        # You can group them 10 by 10 or send individually. Let's send individually to make sure the caption is visible
+                        for img in valid_imgs:
+                            if img['path'] in FILE_CACHE:
+                                await query.message.reply_photo(
+                                    photo=FILE_CACHE[img['path']],
+                                    caption=img['caption'],
+                                    parse_mode='Markdown'
+                                )
+                            else:
+                                with open(img['path'], 'rb') as f:
+                                    msg = await query.message.reply_photo(
+                                        photo=f,
+                                        caption=img['caption'],
+                                        parse_mode='Markdown'
+                                    )
+                                    FILE_CACHE[img['path']] = msg.photo[-1].file_id
+                        await query.message.reply_text(
+                            text=f"⭐ **{product['name']} - Gambaran Success Story & Testimoni**\n\n{content}",
+                            reply_markup=InlineKeyboardMarkup(keyboard_detail),
+                            parse_mode='Markdown'
+                        )
+                        await query.message.delete()
+                        return
+                    except Exception as e:
+                        logging.error(f"Error sending Antares testimonial images: {e}")
 
             send_photo = False
             image_path = ""
