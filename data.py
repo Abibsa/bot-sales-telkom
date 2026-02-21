@@ -236,6 +236,10 @@ TESTIMONIALS = {
         "🗣 *Hendra – Founder Startup UMKM Digital, Jakarta*\n"
         "\"Produk yang tepat untuk bisnis kami yang sedang berkembang. "
         "Integrasi dengan CRM yang sudah ada berjalan mulus. Sangat direkomendasikan!\""
+        "\n\n"
+        "🎬 **Video Testimoni:**\n"
+        "▶️ https://vt.tiktok.com/ZSmud6JFr/\n"
+        "▶️ https://vt.tiktok.com/ZSmudRKPH/"
     ),
     "oca_b": (
         "⭐⭐⭐⭐⭐\n"
@@ -252,6 +256,10 @@ TESTIMONIALS = {
         "🗣 *Lestari – Koordinator Akademik, Lembaga Kursus*\n"
         "\"Notifikasi jadwal kelas, tagihan, dan pengumuman penting kini terkirim otomatis. "
         "Orang tua siswa sangat terbantu dan kepercayaan ke lembaga kami pun meningkat!\""
+        "\n\n"
+        "🎬 **Video Testimoni:**\n"
+        "▶️ https://vt.tiktok.com/ZSmud6JFr/\n"
+        "▶️ https://vt.tiktok.com/ZSmudRKPH/"
     ),
     "pijar": (
         "⭐⭐⭐⭐⭐\n"
@@ -269,6 +277,13 @@ TESTIMONIALS = {
         "\"Dashboard PIJAR memungkinkan kami memantau performansi seluruh sekolah "
         "dalam satu layar. Data ujian, presensi, dan rapor kini terkonsolidasi "
         "sehingga pengambilan keputusan berbasis data menjadi jauh lebih mudah!\""
+        "\n\n"
+        "🎬 **Video Testimoni:**\n"
+        "▶️ https://vt.tiktok.com/ZSmmKC7fW/\n"
+        "▶️ https://vt.tiktok.com/ZSmmEBKxP/\n"
+        "▶️ https://vt.tiktok.com/ZSmmEjwWH/\n"
+        "▶️ https://vt.tiktok.com/ZSmu1u593/\n"
+        "▶️ https://vt.tiktok.com/ZSmudXPNH/"
     ),
     "netmonk": (
         "⭐⭐⭐⭐⭐\n"
@@ -286,6 +301,9 @@ TESTIMONIALS = {
         "\"Dengan 50+ lokasi gudang di seluruh Indonesia, monitoring manual sudah tidak mungkin. "
         "Netmonk Hi menjadi andalan kami. Dashboard-nya intuitif dan export Excel-nya "
         "mempercepat pelaporan ke manajemen!\""
+        "\n\n"
+        "🎬 **Video Testimoni:**\n"
+        "▶️ https://vt.tiktok.com/ZSmmEuUXj/"
     ),
     "indibiz_basic": (
         "⭐⭐⭐⭐⭐\n"
@@ -354,6 +372,11 @@ TESTIMONIALS = {
         "\"AI Video Analytics-nya luar biasa! Kami bisa mendeteksi intrusion di area terlarang "
         "dan melakukan people counting untuk mengoptimalkan operasional hotel. "
         "Semua terpantau real-time dari dashboard web!\""
+        "\n\n"
+        "🎬 **Video Testimoni:**\n"
+        "▶️ https://vt.tiktok.com/ZSmuRU3sR/\n"
+        "▶️ https://vt.tiktok.com/ZSmuRXMLT/\n"
+        "▶️ https://vt.tiktok.com/ZSmu8sFN1/"
     ),
 }
 
