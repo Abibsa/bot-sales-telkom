@@ -24,6 +24,7 @@ Informasi lengkap (Deskripsi, Fitur, Harga, Use Case) tersinkronisasi data PDF r
 - **Indibiz Paket Basic** - Internet bisnis ekonomis (rasio 1:2)
 - **Indibiz Paket Bisnis** - Internet bisnis premium (rasio 1:1)
 - **OCA Breaker** - Notifikasi keamanan email (Data Breach)
+- **Antares Eazy** - Ekosistem IoT Pintar (Cloud Recording & CCTV)
 
 ### 3. 🎨 **Visual Produk & Brosur Cerdas**
 Tampilan gambar/brosur saat membuka detail produk
