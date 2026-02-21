@@ -245,22 +245,6 @@ TESTIMONIALS = {
     ),
 
     "antares": (
-        "⭐⭐⭐⭐⭐\n"
-        "🗣 *SMK Tri Karya – Rental Eazy Cam*\n"
-        "\"Dengan Antares Eazy, pemantauan keamanan sekolah jadi jauh lebih mudah. "
-        "Kamera bisa dipantau dari HP kapan saja, dan cloud recording-nya sangat membantu "
-        "untuk review kejadian. Harga rentalnya juga sangat terjangkau untuk budget sekolah!\"\n\n"
-        "⭐⭐⭐⭐⭐\n"
-        "🗣 *The Eleva Residence – Smart Door Lock*\n"
-        "\"Integrasi perangkat smart device di hunian kami berjalan mulus dengan Antares Eazy. "
-        "Mulai dari smart lock, kamera, hingga smart plug — semua bisa dikontrol dari satu aplikasi. "
-        "Penghuni sangat puas dengan kenyamanan dan keamanannya!\"\n\n"
-        "⭐⭐⭐⭐⭐\n"
-        "🗣 *Hermes Hotel – Eazy Cam OTC*\n"
-        "\"AI Video Analytics-nya luar biasa! Kami bisa mendeteksi intrusion di area terlarang "
-        "dan melakukan people counting untuk mengoptimalkan operasional hotel. "
-        "Semua terpantau real-time dari dashboard web!\""
-        "\n\n"
         "🎬 **Video Testimoni:**\n"
         "▶️ https://vt.tiktok.com/ZSmuRU3sR/\n"
         "▶️ https://vt.tiktok.com/ZSmuRXMLT/\n"
