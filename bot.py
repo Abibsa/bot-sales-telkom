@@ -52,7 +52,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     welcome_message = (
         f"Halo, {user.first_name}! 👋\n\n"
-        "Selamat datang di **Bot Sales Internal Telkom Indonesia**.\n"
+        "Selamat datang di *Bot Sales Internal Telkom Indonesia*.\n"
         "Bot ini menyediakan informasi lengkap mengenai produk digital Telkom untuk mendukung aktivitas penjualan Anda.\n\n"
         "Silakan pilih menu di bawah ini untuk memulai:"
     )
@@ -108,7 +108,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if query.message.photo:
             # Kirim pesan baru jika dari produk dengan visual
             await query.message.reply_text(
-                text="📂 **PRODIGI**\n\nPilih produk untuk melihat informasi lengkap:",
+                text="📂 *PRODIGI*\n\nPilih produk untuk melihat informasi lengkap:",
                 reply_markup=InlineKeyboardMarkup(keyboard),
                 parse_mode='Markdown'
             )
@@ -116,7 +116,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             # Edit pesan jika dari produk tanpa visual
             await query.edit_message_text(
-                text="📂 **PRODIGI**\n\nPilih produk untuk melihat informasi lengkap:",
+                text="📂 *PRODIGI*\n\nPilih produk untuk melihat informasi lengkap:",
                 reply_markup=InlineKeyboardMarkup(keyboard),
                 parse_mode='Markdown'
             )
@@ -145,7 +145,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             keyboard.append([InlineKeyboardButton("<< Kembali ke PRODIGI", callback_data='m_products')])
             keyboard.append(get_back_button())
 
-            text_response = f"📦 **{product_name}**\n\n**Deskripsi:**\n{product['description']}\n\nPilih menu di bawah ini untuk informasi lebih lanjut:"
+            text_response = f"📦 *{product_name}*\n\n*Deskripsi:*\n{product['description']}\n\nPilih menu di bawah ini untuk informasi lebih lanjut:"
 
             # Cek apakah produk punya gambar profil untuk ditampilkan
             profile_sent = False
@@ -238,7 +238,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 content = TESTIMONIALS.get(product_key, "_Testimoni untuk produk ini belum tersedia._")
 
 
-            text_response = f"📦 **{product['name']} - {title}**\n\n{content}"
+            text_response = f"📦 *{product['name']} - {title}*\n\n{content}"
             
             keyboard_detail = [
                 [InlineKeyboardButton(f"<< Kembali ke {product['name']}", callback_data=f'p_{product_key}')],
@@ -266,7 +266,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                     )
                                     FILE_CACHE[img['path']] = msg.photo[-1].file_id
                         await query.message.reply_text(
-                            text=f"⭐ **{product['name']} - Fitur Modul**\n\nSilakan lihat gambar di atas untuk tampilan lengkap setiap modul Netmonk Hi.",
+                            text=f"⭐ *{product['name']} - Fitur Modul*\n\nSilakan lihat gambar di atas untuk tampilan lengkap setiap modul Netmonk Hi.",
                             reply_markup=InlineKeyboardMarkup(keyboard_detail),
                             parse_mode='Markdown'
                         )
@@ -296,7 +296,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                     )
                                     FILE_CACHE[img['path']] = msg.photo[-1].file_id
                         await query.message.reply_text(
-                            text=f"⭐ **{product['name']} - Fitur Utama**\n\nSilakan lihat gambar di atas untuk tampilan fitur utama Antares Eazy.",
+                            text=f"⭐ *{product['name']} - Fitur Utama*\n\nSilakan lihat gambar di atas untuk tampilan fitur utama Antares Eazy.",
                             reply_markup=InlineKeyboardMarkup(keyboard_detail),
                             parse_mode='Markdown'
                         )
@@ -327,7 +327,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                     )
                                     FILE_CACHE[img['path']] = msg.photo[-1].file_id
                         await query.message.reply_text(
-                            text=f"⭐ **{product['name']} - Gambaran Success Story & Testimoni**\n\n{content}",
+                            text=f"⭐ *{product['name']} - Gambaran Success Story & Testimoni*\n\n{content}",
                             reply_markup=InlineKeyboardMarkup(keyboard_detail),
                             parse_mode='Markdown'
                         )
@@ -378,7 +378,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         try:
                             media_group = []
                             for i, path in enumerate(comparison_paths):
-                                caption = f"📊 **Perbandingan Paketisasi {product['name']}** - Halaman {i+1}" if i == 0 else ""
+                                caption = f"📊 *Perbandingan Paketisasi {product['name']}* - Halaman {i+1}" if i == 0 else ""
                                 if path in FILE_CACHE:
                                     media_group.append(InputMediaPhoto(media=FILE_CACHE[path], caption=caption))
                                 else:
@@ -425,7 +425,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # --- MENU PROPOSAL PRODIGI ---
     elif data == 'm_materials':
-        text_response = "📚 **Proposal PRODIGI**\n\nPilih produk untuk mengunduh proposal dalam format PDF:\n"
+        text_response = "📚 *Proposal PRODIGI*\n\nPilih produk untuk mengunduh proposal dalam format PDF:\n"
         
         keyboard = []
         for key, product in PRODUCTS.items():
@@ -468,13 +468,13 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         if ext in ['.jpg', '.jpeg', '.png']:
                             await query.message.reply_photo(
                                 photo=FILE_CACHE[file_path],
-                                caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini sebagai referensi dalam proses penjualan.",
+                                caption=f"📄 *Brosur: {product_name}*\n\nSilakan gunakan materi ini sebagai referensi dalam proses penjualan.",
                                 parse_mode='Markdown'
                             )
                         else:
                             await query.message.reply_document(
                                 document=FILE_CACHE[file_path],
-                                caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan unduh dan pelajari proposal ini sebagai referensi penjualan.",
+                                caption=f"📄 *Proposal PRODIGI: {product_name}*\n\nSilakan unduh dan pelajari proposal ini sebagai referensi penjualan.",
                                 parse_mode='Markdown'
                             )
                     else:
@@ -482,7 +482,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                             if ext in ['.jpg', '.jpeg', '.png']:
                                 msg = await query.message.reply_photo(
                                     photo=file_obj,
-                                    caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini sebagai referensi dalam proses penjualan.",
+                                    caption=f"📄 *Brosur: {product_name}*\n\nSilakan gunakan materi ini sebagai referensi dalam proses penjualan.",
                                     parse_mode='Markdown'
                                 )
                                 FILE_CACHE[file_path] = msg.photo[-1].file_id
@@ -490,7 +490,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                 msg = await query.message.reply_document(
                                     document=file_obj,
                                     filename=material['filename'],
-                                    caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan unduh dan pelajari proposal ini sebagai referensi penjualan.",
+                                    caption=f"📄 *Proposal PRODIGI: {product_name}*\n\nSilakan unduh dan pelajari proposal ini sebagai referensi penjualan.",
                                     parse_mode='Markdown'
                                 )
                                 FILE_CACHE[file_path] = msg.document.file_id
@@ -501,7 +501,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     get_back_button()
                 ]
                 await query.edit_message_text(
-                    text=f"✅ File proposal **{product_name}** telah dikirim.\n\nSilakan periksa pesan di atas untuk mengunduh materi.",
+                    text=f"✅ File proposal *{product_name}* telah dikirim.\n\nSilakan periksa pesan di atas untuk mengunduh materi.",
                     reply_markup=InlineKeyboardMarkup(keyboard),
                     parse_mode='Markdown'
                 )
@@ -513,9 +513,9 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # --- MENU FAQ ---
     elif data == 'm_faq':
-        text_response = "❓ **FAQ Internal (Frequently Asked Questions)**\n\n"
+        text_response = "❓ *FAQ Internal (Frequently Asked Questions)*\n\n"
         for item in FAQ:
-            text_response += f"**Q: {item['q']}**\nA: {item['a']}\n\n"
+            text_response += f"*Q: {item['q']}*\nA: {item['a']}\n\n"
             
         keyboard = [get_back_button()]
         await query.edit_message_text(
@@ -527,12 +527,12 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # --- MENU UPDATE PRODUK ---
     elif data == 'm_updates':
         text_response = (
-            "📢 **Update Produk Terbaru**\n\n"
-            "1. **OCA Interaction Lite:** Fitur Auto-reply AI telah tersedia.\n"
-            "2. **OCA Blast Lite:** Integrasi dengan Instagram Direct telah aktif.\n"
-            "3. **PIJAR:** Modul ujian adaptif (adaptive testing) telah diluncurkan.\n"
-            "4. **Netmonk Hi:** Dashboard dengan visualisasi real-time yang lebih interaktif.\n"
-            "5. **Antares Eazy:** Platform ekosistem IoT terpadu dengan Cloud Recording, AI Video Analytics, dan dukungan multi-brand smart devices.\n\n"
+            "📢 *Update Produk Terbaru*\n\n"
+            "1. *OCA Interaction Lite:* Fitur Auto-reply AI telah tersedia.\n"
+            "2. *OCA Blast Lite:* Integrasi dengan Instagram Direct telah aktif.\n"
+            "3. *PIJAR:* Modul ujian adaptif (adaptive testing) telah diluncurkan.\n"
+            "4. *Netmonk Hi:* Dashboard dengan visualisasi real-time yang lebih interaktif.\n"
+            "5. *Antares Eazy:* Platform ekosistem IoT terpadu dengan Cloud Recording, AI Video Analytics, dan dukungan multi-brand smart devices.\n\n"
             "_Informasi ini diperbarui secara berkala._"
         )
         keyboard = [get_back_button()]
@@ -544,11 +544,11 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # --- MENU KONTAK PIC ---
     elif data == 'm_pic':
-        text_response = "📞 **Kontak PIC Produk**\n\nBerikut daftar PIC yang dapat dihubungi untuk pertanyaan lebih lanjut atau eskalasi:\n\n"
+        text_response = "📞 *Kontak PIC Produk*\n\nBerikut daftar PIC yang dapat dihubungi untuk pertanyaan lebih lanjut atau eskalasi:\n\n"
         for key, contact in PIC_CONTACTS.items():
             # Produk key ke Nama Produk yang nice
             p_name = PRODUCTS.get(key, {}).get('name', key.title())
-            text_response += f"🔹 **{p_name}**: {contact}\n"
+            text_response += f"🔹 *{p_name}*: {contact}\n"
             
         keyboard = [get_back_button()]
         await query.edit_message_text(
@@ -569,10 +569,10 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # --- MENU INTERNET ---
     elif data == 'm_internet':
         internet_text = (
-            "🌐 **Layanan Internet**\n\n"
-            "**Indibiz Paket Basic**\n"
+            "🌐 *Layanan Internet*\n\n"
+            "*Indibiz Paket Basic*\n"
             f"{PRODUCTS['indibiz_basic']['description']}\n\n"
-            "**Indibiz Paket Bisnis**\n"
+            "*Indibiz Paket Bisnis*\n"
             f"{PRODUCTS['indibiz_bisnis']['description']}\n\n"
             "Pilih layanan di bawah ini untuk melihat detail:"
         )
@@ -591,46 +591,46 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # --- MENU PERBANDINGAN INDIBIZ ---
     elif data == 'm_compare_indibiz':
         comparison_text = (
-            "⚖️ **Perbandingan Indibiz Paket Basic vs Bisnis**\n\n"
+            "⚖️ *Perbandingan Indibiz Paket Basic vs Bisnis*\n\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-            "**🔑 PERBEDAAN UTAMA:**\n\n"
-            "📊 **Rasio Kecepatan**\n"
+            "*🔑 PERBEDAAN UTAMA:*\n\n"
+            "📊 *Rasio Kecepatan*\n"
             "• Basic: 1:2 (Upload setengah dari Download)\n"
             "• Bisnis: 1:1 (Upload = Download)\n\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-            "💰 **HARGA PROMO (s.d 28 Feb 2026):**\n\n"
-            "**50 Mbps:**\n"
+            "💰 *HARGA PROMO (s.d 28 Feb 2026):*\n\n"
+            "*50 Mbps:*\n"
             "• Basic: Rp 320.000/bln (upload ~25 Mbps)\n"
             "• Bisnis: Rp 355.000/bln (upload 50 Mbps)\n\n"
-            "**75 Mbps:**\n"
+            "*75 Mbps:*\n"
             "• Basic: Rp 365.000/bln (upload ~37 Mbps)\n"
             "• Bisnis: Rp 415.000/bln (upload 75 Mbps)\n\n"
-            "**100 Mbps:**\n"
+            "*100 Mbps:*\n"
             "• Basic: Rp 440.000/bln (upload ~50 Mbps)\n"
             "• Bisnis: Rp 535.000/bln (upload 100 Mbps)\n\n"
-            "**150 Mbps:**\n"
+            "*150 Mbps:*\n"
             "• Basic: Rp 540.000/bln (upload ~75 Mbps)\n"
             "• Bisnis: Rp 620.000/bln (upload 150 Mbps)\n\n"
-            "**200 Mbps:**\n"
+            "*200 Mbps:*\n"
             "• Basic: Rp 675.000/bln (upload ~100 Mbps)\n"
             "• Bisnis: Rp 790.000/bln (upload 200 Mbps)\n\n"
-            "**300 Mbps:**\n"
+            "*300 Mbps:*\n"
             "• Basic: Rp 950.000/bln (upload ~150 Mbps)\n"
             "• Bisnis: Rp 1.130.000/bln (upload 300 Mbps)\n\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-            "🎯 **REKOMENDASI:**\n\n"
-            "**Pilih BASIC jika:**\n"
+            "🎯 *REKOMENDASI:*\n\n"
+            "*Pilih BASIC jika:*\n"
             "✅ Kebutuhan utama browsing, email, dan transaksi digital\n"
             "✅ Aktivitas upload tidak intensif\n"
             "✅ Efisiensi anggaran menjadi prioritas\n"
             "✅ Segmen UMKM, retail, warung, toko\n\n"
-            "**Pilih BISNIS jika:**\n"
+            "*Pilih BISNIS jika:*\n"
             "✅ Kebutuhan video conference atau meeting online rutin\n"
             "✅ Transfer file berukuran besar ke cloud\n"
             "✅ Hosting server atau aplikasi\n"
             "✅ Perkantoran, startup teknologi, tim developer\n\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-            "💡 **REKOMENDASI PENYAMPAIAN:**\n"
+            "💡 *REKOMENDASI PENYAMPAIAN:*\n"
             "\"Selisih harga antara paket Basic dan Bisnis relatif kecil, namun kapasitas upload meningkat hingga 2x lipat — \n"
             "memberikan nilai tambah yang signifikan untuk produktivitas bisnis pelanggan.\"\n\n"
             "📝 PSB: Rp 150.000 (semua paket)\n"
@@ -660,9 +660,9 @@ async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyword = ' '.join(context.args).lower()
     else:
         await update.message.reply_text(
-            "🔍 **Cara Menggunakan Pencarian:**\n\n"
+            "🔍 *Cara Menggunakan Pencarian:*\n\n"
             "Ketik: `/cari [keyword]`\n\n"
-            "**Contoh:**\n"
+            "*Contoh:*\n"
             "• `/cari internet`\n"
             "• `/cari crm`\n"
             "• `/cari pendidikan`\n"
@@ -694,7 +694,7 @@ async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard.append([InlineKeyboardButton("<< Kembali ke Menu Utama", callback_data='back_main')])
         
         await update.message.reply_text(
-            f"🔍 **Hasil Pencarian: \"{keyword}\"**\n\n"
+            f"🔍 *Hasil Pencarian: \"{keyword}\"*\n\n"
             f"Ditemukan {len(results)} produk yang relevan:\n\n"
             "Pilih produk untuk melihat informasi lengkap:",
             reply_markup=InlineKeyboardMarkup(keyboard),
@@ -702,7 +702,7 @@ async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
     else:
         await update.message.reply_text(
-            f"🔍 **Hasil Pencarian: \"{keyword}\"**\n\n"
+            f"🔍 *Hasil Pencarian: \"{keyword}\"*\n\n"
             "❌ Tidak ditemukan produk yang sesuai dengan kata kunci tersebut.\n\n"
             "Silakan coba kata kunci lain atau gunakan menu yang tersedia untuk menelusuri produk berdasarkan kategori.",
             parse_mode='Markdown'
