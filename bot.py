@@ -53,7 +53,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     welcome_message = (
         f"Halo, {user.first_name}! 👋\n\n"
         "Selamat datang di **Bot Sales Internal Telkom Indonesia**.\n"
-        "Bot ini dirancang untuk membantu rekan sales mempelajari produk digital Telkom dengan cepat.\n\n"
+        "Bot ini menyediakan informasi lengkap mengenai produk digital Telkom untuk mendukung aktivitas penjualan Anda.\n\n"
         "Silakan pilih menu di bawah ini untuk memulai:"
     )
     if update.callback_query:
@@ -108,7 +108,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if query.message.photo:
             # Kirim pesan baru jika dari produk dengan visual
             await query.message.reply_text(
-                text="📂 **PRODIGI**\n\nPilih produk untuk melihat detail lengkap:",
+                text="📂 **PRODIGI**\n\nPilih produk untuk melihat informasi lengkap:",
                 reply_markup=InlineKeyboardMarkup(keyboard),
                 parse_mode='Markdown'
             )
@@ -116,7 +116,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             # Edit pesan jika dari produk tanpa visual
             await query.edit_message_text(
-                text="📂 **PRODIGI**\n\nPilih produk untuk melihat detail lengkap:",
+                text="📂 **PRODIGI**\n\nPilih produk untuk melihat informasi lengkap:",
                 reply_markup=InlineKeyboardMarkup(keyboard),
                 parse_mode='Markdown'
             )
@@ -145,7 +145,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             keyboard.append([InlineKeyboardButton("<< Kembali ke PRODIGI", callback_data='m_products')])
             keyboard.append(get_back_button())
 
-            text_response = f"📦 **{product_name}**\n\n**Deskripsi:**\n{product['description']}\n\nApa yang ingin Anda ketahui tentang produk ini?"
+            text_response = f"📦 **{product_name}**\n\n**Deskripsi:**\n{product['description']}\n\nPilih menu di bawah ini untuk informasi lebih lanjut:"
 
             # Cek apakah produk punya gambar profil untuk ditampilkan
             profile_sent = False
@@ -266,7 +266,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                     )
                                     FILE_CACHE[img['path']] = msg.photo[-1].file_id
                         await query.message.reply_text(
-                            text=f"⭐ **{product['name']} - Fitur Modul**\n\nLihat gambar-gambar di atas untuk tampilan lengkap setiap modul Netmonk Hi.",
+                            text=f"⭐ **{product['name']} - Fitur Modul**\n\nSilakan lihat gambar di atas untuk tampilan lengkap setiap modul Netmonk Hi.",
                             reply_markup=InlineKeyboardMarkup(keyboard_detail),
                             parse_mode='Markdown'
                         )
@@ -296,7 +296,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                     )
                                     FILE_CACHE[img['path']] = msg.photo[-1].file_id
                         await query.message.reply_text(
-                            text=f"⭐ **{product['name']} - Fitur Utama**\n\nLihat gambar di atas untuk tampilan fitur utama Antares Eazy.",
+                            text=f"⭐ **{product['name']} - Fitur Utama**\n\nSilakan lihat gambar di atas untuk tampilan fitur utama Antares Eazy.",
                             reply_markup=InlineKeyboardMarkup(keyboard_detail),
                             parse_mode='Markdown'
                         )
@@ -425,7 +425,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # --- MENU PROPOSAL PRODIGI ---
     elif data == 'm_materials':
-        text_response = "📚 **Proposal PRODIGI**\n\nPilih produk untuk mendapatkan proposal PRODIGI dalam format PDF:\n"
+        text_response = "📚 **Proposal PRODIGI**\n\nPilih produk untuk mengunduh proposal dalam format PDF:\n"
         
         keyboard = []
         for key, product in PRODUCTS.items():
@@ -468,13 +468,13 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         if ext in ['.jpg', '.jpeg', '.png']:
                             await query.message.reply_photo(
                                 photo=FILE_CACHE[file_path],
-                                caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini untuk membantu proses penjualan.",
+                                caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini sebagai referensi dalam proses penjualan.",
                                 parse_mode='Markdown'
                             )
                         else:
                             await query.message.reply_document(
                                 document=FILE_CACHE[file_path],
-                                caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan download dan pelajari proposal ini untuk membantu proses penjualan.",
+                                caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan unduh dan pelajari proposal ini sebagai referensi penjualan.",
                                 parse_mode='Markdown'
                             )
                     else:
@@ -482,7 +482,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                             if ext in ['.jpg', '.jpeg', '.png']:
                                 msg = await query.message.reply_photo(
                                     photo=file_obj,
-                                    caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini untuk membantu proses penjualan.",
+                                    caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini sebagai referensi dalam proses penjualan.",
                                     parse_mode='Markdown'
                                 )
                                 FILE_CACHE[file_path] = msg.photo[-1].file_id
@@ -490,7 +490,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                 msg = await query.message.reply_document(
                                     document=file_obj,
                                     filename=material['filename'],
-                                    caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan download dan pelajari proposal ini untuk membantu proses penjualan.",
+                                    caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan unduh dan pelajari proposal ini sebagai referensi penjualan.",
                                     parse_mode='Markdown'
                                 )
                                 FILE_CACHE[file_path] = msg.document.file_id
@@ -501,7 +501,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     get_back_button()
                 ]
                 await query.edit_message_text(
-                    text=f"✅ File proposal **{product_name}** telah dikirim!\n\nCek pesan di atas untuk mengunduh materi yang ada.",
+                    text=f"✅ File proposal **{product_name}** telah dikirim.\n\nSilakan periksa pesan di atas untuk mengunduh materi.",
                     reply_markup=InlineKeyboardMarkup(keyboard),
                     parse_mode='Markdown'
                 )
@@ -528,12 +528,12 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == 'm_updates':
         text_response = (
             "📢 **Update Produk Terbaru**\n\n"
-            "1. **OCA Interaction Lite:** Fitur baru Auto-reply AI sudah tersedia.\n"
-            "2. **OCA Blast Lite:** Integrasi dengan Instagram Direct sudah live.\n"
-            "3. **PIJAR:** Modul baru untuk ujian adaptif (adaptive testing).\n"
-            "4. **Netmonk Hi:** Dashboard baru dengan visualisasi real-time lebih interaktif.\n"
-            "5. **Antares Eazy:** Platform ekosistem IoT pintar dengan Cloud Recording, AI Video Analytics, dan dukungan multi-brand smart devices.\n\n"
-            "_Pantau terus menu ini untuk informasi terbaru!_"
+            "1. **OCA Interaction Lite:** Fitur Auto-reply AI telah tersedia.\n"
+            "2. **OCA Blast Lite:** Integrasi dengan Instagram Direct telah aktif.\n"
+            "3. **PIJAR:** Modul ujian adaptif (adaptive testing) telah diluncurkan.\n"
+            "4. **Netmonk Hi:** Dashboard dengan visualisasi real-time yang lebih interaktif.\n"
+            "5. **Antares Eazy:** Platform ekosistem IoT terpadu dengan Cloud Recording, AI Video Analytics, dan dukungan multi-brand smart devices.\n\n"
+            "_Informasi ini diperbarui secara berkala._"
         )
         keyboard = [get_back_button()]
         await query.edit_message_text(
@@ -544,7 +544,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # --- MENU KONTAK PIC ---
     elif data == 'm_pic':
-        text_response = "📞 **Kontak PIC Produk**\n\nHubungi PIC berikut jika ada pertanyaan mendalam atau eskalasi:\n\n"
+        text_response = "📞 **Kontak PIC Produk**\n\nBerikut daftar PIC yang dapat dihubungi untuk pertanyaan lebih lanjut atau eskalasi:\n\n"
         for key, contact in PIC_CONTACTS.items():
             # Produk key ke Nama Produk yang nice
             p_name = PRODUCTS.get(key, {}).get('name', key.title())
@@ -620,19 +620,19 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
             "🎯 **REKOMENDASI:**\n\n"
             "**Pilih BASIC jika:**\n"
-            "✅ Bisnis fokus browsing, email, transaksi online\n"
-            "✅ Jarang upload file besar\n"
-            "✅ Budget terbatas\n"
-            "✅ UMKM, retail, warung, toko\n\n"
+            "✅ Kebutuhan utama browsing, email, dan transaksi digital\n"
+            "✅ Aktivitas upload tidak intensif\n"
+            "✅ Efisiensi anggaran menjadi prioritas\n"
+            "✅ Segmen UMKM, retail, warung, toko\n\n"
             "**Pilih BISNIS jika:**\n"
-            "✅ Sering video conference/meeting online\n"
-            "✅ Upload file besar ke cloud\n"
-            "✅ Hosting server/aplikasi\n"
-            "✅ Kantor, startup tech, developer\n\n"
+            "✅ Kebutuhan video conference atau meeting online rutin\n"
+            "✅ Transfer file berukuran besar ke cloud\n"
+            "✅ Hosting server atau aplikasi\n"
+            "✅ Perkantoran, startup teknologi, tim developer\n\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-            "💡 **TIPS CLOSING:**\n"
-            "\"Upgrade ke paket bisnis hanya beda tipis secara harga, tapi upload speed 2x lipat!\n"
-            "Investasi kecil untuk produktivitas maksimal.\"\n\n"
+            "💡 **REKOMENDASI PENYAMPAIAN:**\n"
+            "\"Selisih harga antara paket Basic dan Bisnis relatif kecil, namun kapasitas upload meningkat hingga 2x lipat — \n"
+            "memberikan nilai tambah yang signifikan untuk produktivitas bisnis pelanggan.\"\n\n"
             "📝 PSB: Rp 150.000 (semua paket)\n"
             "⚠️ Harga belum termasuk PPN 11%"
         )
@@ -695,16 +695,16 @@ async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         await update.message.reply_text(
             f"🔍 **Hasil Pencarian: \"{keyword}\"**\n\n"
-            f"Ditemukan {len(results)} produk:\n\n"
-            "Pilih produk untuk melihat detail:",
+            f"Ditemukan {len(results)} produk yang relevan:\n\n"
+            "Pilih produk untuk melihat informasi lengkap:",
             reply_markup=InlineKeyboardMarkup(keyboard),
             parse_mode='Markdown'
         )
     else:
         await update.message.reply_text(
             f"🔍 **Hasil Pencarian: \"{keyword}\"**\n\n"
-            "❌ Tidak ada produk yang cocok dengan keyword tersebut.\n\n"
-            "Coba keyword lain atau gunakan menu yang tersedia di bot untuk melihat kategori.",
+            "❌ Tidak ditemukan produk yang sesuai dengan kata kunci tersebut.\n\n"
+            "Silakan coba kata kunci lain atau gunakan menu yang tersedia untuk menelusuri produk berdasarkan kategori.",
             parse_mode='Markdown'
         )
 
