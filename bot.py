@@ -3,7 +3,7 @@ import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 from telegram.error import BadRequest
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
-from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, PRODUCT_COMPARISON_IMAGES, NETMONK_FEATURE_IMAGES, ANTARES_FEATURE_IMAGES, ANTARES_TESTIMONIAL_IMAGES
+from data import PRODUCTS, SALES_MATERIALS_FILES, FAQ, PIC_CONTACTS, CALL_CENTER_INFO, PRODUCT_IMAGES, TESTIMONIALS, PRODUCT_PROFILE_IMAGES, PRODUCT_COMPARISON_IMAGES, NETMONK_FEATURE_IMAGES, ANTARES_FEATURE_IMAGES, ANTARES_TESTIMONIAL_IMAGES, ANTARES_EASY_PROPOSAL_TEXT
 
 # -----------------------------------------------------------------------------
 # KONFIGURASI
@@ -238,7 +238,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 content = TESTIMONIALS.get(product_key, "_Testimoni untuk produk ini belum tersedia._")
 
 
-            text_response = f"📦 **{product['name']}** - {title}\n\n{content}"
+            text_response = f"📦 **{product['name']} - {title}**\n\n{content}"
             
             keyboard_detail = [
                 [InlineKeyboardButton(f"<< Kembali ke {product['name']}", callback_data=f'p_{product_key}')],
@@ -445,49 +445,55 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         product_key = data[4:]  # Remove 'mat_' prefix
         
         if product_key in SALES_MATERIALS_FILES:
-            material = SALES_MATERIALS_FILES[product_key]
-            product_name = PRODUCTS[product_key]['name']
-            file_path = material['path']
+            materials = SALES_MATERIALS_FILES[product_key]
             
-            # Cek apakah file ada
-            if os.path.exists(file_path):
+            # Jika materi hanya 1 (bentuk dictionary) ubah menjadi list agar bisa diloop
+            if isinstance(materials, dict):
+                materials = [materials]
+                
+            product_name = PRODUCTS[product_key]['name']
+            
+            # Kumpulkan file yang benar-benar ada
+            valid_materials = [m for m in materials if os.path.exists(m['path'])]
+            
+            if valid_materials:
                 await query.answer("Mengirim file... Mohon tunggu sebentar.", show_alert=False)
                 
-                # Kirim file PDF
-                # Kirim file (PDF atau Gambar)
-                _, list_ext = os.path.splitext(file_path)
-                ext = list_ext.lower()
-                
-                if file_path in FILE_CACHE:
-                    if ext in ['.jpg', '.jpeg', '.png']:
-                        await query.message.reply_photo(
-                            photo=FILE_CACHE[file_path],
-                            caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini untuk membantu proses penjualan.",
-                            parse_mode='Markdown'
-                        )
-                    else:
-                        await query.message.reply_document(
-                            document=FILE_CACHE[file_path],
-                            caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan download dan pelajari proposal ini untuk membantu proses penjualan.",
-                            parse_mode='Markdown'
-                        )
-                else:
-                    with open(file_path, 'rb') as file_obj:
+                for material in valid_materials:
+                    file_path = material['path']
+                    _, list_ext = os.path.splitext(file_path)
+                    ext = list_ext.lower()
+                    
+                    if file_path in FILE_CACHE:
                         if ext in ['.jpg', '.jpeg', '.png']:
-                            msg = await query.message.reply_photo(
-                                photo=file_obj,
+                            await query.message.reply_photo(
+                                photo=FILE_CACHE[file_path],
                                 caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini untuk membantu proses penjualan.",
                                 parse_mode='Markdown'
                             )
-                            FILE_CACHE[file_path] = msg.photo[-1].file_id
                         else:
-                            msg = await query.message.reply_document(
-                                document=file_obj,
-                                filename=material['filename'],
+                            await query.message.reply_document(
+                                document=FILE_CACHE[file_path],
                                 caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan download dan pelajari proposal ini untuk membantu proses penjualan.",
                                 parse_mode='Markdown'
                             )
-                            FILE_CACHE[file_path] = msg.document.file_id
+                    else:
+                        with open(file_path, 'rb') as file_obj:
+                            if ext in ['.jpg', '.jpeg', '.png']:
+                                msg = await query.message.reply_photo(
+                                    photo=file_obj,
+                                    caption=f"📄 **Brosur: {product_name}**\n\nSilakan gunakan materi ini untuk membantu proses penjualan.",
+                                    parse_mode='Markdown'
+                                )
+                                FILE_CACHE[file_path] = msg.photo[-1].file_id
+                            else:
+                                msg = await query.message.reply_document(
+                                    document=file_obj,
+                                    filename=material['filename'],
+                                    caption=f"📄 **Proposal PRODIGI: {product_name}**\n\nSilakan download dan pelajari proposal ini untuk membantu proses penjualan.",
+                                    parse_mode='Markdown'
+                                )
+                                FILE_CACHE[file_path] = msg.document.file_id
                 
                 # Kirim pesan konfirmasi
                 keyboard = [
@@ -495,13 +501,13 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     get_back_button()
                 ]
                 await query.edit_message_text(
-                    text=f"✅ File proposal **{product_name}** telah dikirim!\n\nCek pesan di atas untuk download file PDF.",
+                    text=f"✅ File proposal **{product_name}** telah dikirim!\n\nCek pesan di atas untuk mengunduh materi yang ada.",
                     reply_markup=InlineKeyboardMarkup(keyboard),
                     parse_mode='Markdown'
                 )
             else:
-                await query.answer(f"File tidak ditemukan: {file_path}", show_alert=True)
-                logging.error(f"File not found: {file_path}")
+                await query.answer("File tidak ditemukan.", show_alert=True)
+                logging.error(f"Files not found for product: {product_key}")
         else:
             await query.answer("Proposal untuk produk ini belum tersedia.", show_alert=True)
 
@@ -509,7 +515,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == 'm_faq':
         text_response = "❓ **FAQ Internal (Frequently Asked Questions)**\n\n"
         for item in FAQ:
-            text_response += f"Q: {item['q']}\nA: {item['a']}\n\n"
+            text_response += f"**Q: {item['q']}**\nA: {item['a']}\n\n"
             
         keyboard = [get_back_button()]
         await query.edit_message_text(
@@ -656,7 +662,7 @@ async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(
             "🔍 **Cara Menggunakan Pencarian:**\n\n"
             "Ketik: `/cari [keyword]`\n\n"
-            "Contoh:\n"
+            "**Contoh:**\n"
             "• `/cari internet`\n"
             "• `/cari crm`\n"
             "• `/cari pendidikan`\n"
