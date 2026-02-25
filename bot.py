@@ -378,7 +378,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         try:
                             media_group = []
                             for i, path in enumerate(comparison_paths):
-                                caption = f"📊 Perbandingan Paketisasi {product['name']} - Halaman {i+1}" if i == 0 else ""
+                                caption = f"📊 **Perbandingan Paketisasi {product['name']}** - Halaman {i+1}" if i == 0 else ""
                                 if path in FILE_CACHE:
                                     media_group.append(InputMediaPhoto(media=FILE_CACHE[path], caption=caption))
                                 else:

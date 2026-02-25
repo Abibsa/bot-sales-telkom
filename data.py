@@ -118,13 +118,13 @@ PRODUCTS = {
         "name": "Indibiz Paket Basic",
         "description": "Paket internet bisnis dengan rasio kecepatan 1:2 (upload:download) yang dirancang untuk efisiensi biaya bagi Small Medium Enterprise (SME). Menyediakan koneksi unlimited tanpa FUP, sesuai untuk kebutuhan operasional bisnis sehari-hari seperti browsing, email, dan transaksi digital.",
         "features": [
-            "Internet Unlimited tanpa FUP (Fair Usage Policy)",
-            "Rasio kecepatan 1:2 (ekonomis untuk bisnis kecil-menengah)",
-            "Pilihan kecepatan: 50, 75, 100, 150, 200, 300 Mbps",
-            "Termasuk modem WiFi",
-            "Dukungan teknis 24/7 via Call Center 1500250",
-            "Dapat bundling dengan solusi digital (OCA, Eazy, Pijar, Netmonk)",
-            "Tagihan bulanan flat"
+            "🌐 **Internet Unlimited** tanpa FUP (Fair Usage Policy)",
+            "📊 **Rasio Kecepatan 1:2** (ekonomis untuk bisnis kecil-menengah)",
+            "⚡ **Pilihan Kecepatan:** 50, 75, 100, 150, 200, 300 Mbps",
+            "📶 **Termasuk Modem WiFi**",
+            "📞 **Dukungan Teknis 24/7** via Call Center 1500250",
+            "🔗 **Dapat Bundling** dengan solusi digital (OCA, Eazy, Pijar, Netmonk)",
+            "💳 **Tagihan Bulanan Flat**"
         ],
         "pricing": (
             "💰 **Harga PROMO (s.d 28 Feb 2026):**\n\n"
@@ -145,13 +145,13 @@ PRODUCTS = {
         "name": "Indibiz Paket Bisnis",
         "description": "Paket internet bisnis premium dengan rasio kecepatan 1:1 (upload setara download). Dirancang untuk bisnis yang membutuhkan kapasitas upload tinggi seperti video conference, cloud backup, hosting server, maupun transfer data berukuran besar. Koneksi unlimited tanpa FUP.",
         "features": [
-            "Internet Unlimited tanpa FUP",
-            "Rasio kecepatan 1:1 (upload sama cepat dengan download)",
-            "Pilihan kecepatan: 50, 75, 100, 150, 200, 300 Mbps",
-            "Cocok untuk video conference HD, cloud server, backup data",
-            "Termasuk modem WiFi",
-            "Dukungan teknis 24/7 via Call Center 1500250",
-            "Dapat bundling dengan solusi digital (OCA, Eazy, Pijar, Netmonk)"
+            "🌐 **Internet Unlimited** tanpa FUP",
+            "📊 **Rasio Kecepatan 1:1** (upload setara download)",
+            "⚡ **Pilihan Kecepatan:** 50, 75, 100, 150, 200, 300 Mbps",
+            "📹 **Optimal untuk** video conference HD, cloud server, backup data",
+            "📶 **Termasuk Modem WiFi**",
+            "📞 **Dukungan Teknis 24/7** via Call Center 1500250",
+            "🔗 **Dapat Bundling** dengan solusi digital (OCA, Eazy, Pijar, Netmonk)"
         ],
         "pricing": (
             "💰 **Harga PROMO (s.d 28 Feb 2026):**\n\n"
