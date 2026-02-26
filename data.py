@@ -224,26 +224,42 @@ PRODUCTS = {
 # Testimoni Pelanggan per Produk
 TESTIMONIALS = {
     "oca_i": (
-        "🎬 *Video Testimoni:*\n"
+        "🎬 *Video Testimoni:*\n\n"
+        "🏪 *@mirantiarn (TikTok)*\n"
         "▶️ https://vt.tiktok.com/ZSmud6JFr/\n"
+        "💬 _\"dengan adanya OCA semua pesan dari customer aku dan semua sosial media ada di satu dashboard. jadi gak ada chat customer yang terlewat dan nggak kebales\"_\n\n"
         "▶️ https://vt.tiktok.com/ZSmudRKPH/"
     ),
     "oca_b": (
-        "🎬 *Video Testimoni:*\n"
+        "🎬 *Video Testimoni:*\n\n"
+        "🏪 *@mirantiarn (TikTok)*\n"
         "▶️ https://vt.tiktok.com/ZSmud6JFr/\n"
+        "💬 _\"dengan adanya OCA semua pesan dari customer aku dan semua sosial media ada di satu dashboard. jadi gak ada chat customer yang terlewat dan nggak kebales\"_\n\n"
         "▶️ https://vt.tiktok.com/ZSmudRKPH/"
     ),
     "pijar": (
-        "🎬 *Video Testimoni:*\n"
+        "🎬 *Video Testimoni:*\n\n"
+        "🏫 *SMP N 1 Berbah*\n"
         "▶️ https://vt.tiktok.com/ZSmmKC7fW/\n"
+        "💬 _\"setelah menggunakan pijar, kami mengubah seluruh ujian menggunakan pijar. fitur yang bermanfaat saat menggunakan pijar yaitu remote block karena dapat mengantisipasi kecurangan dari anak-anak\"_\n\n"
+        "🏫 *SMP N 1 Cangkringan*\n"
         "▶️ https://vt.tiktok.com/ZSmmEBKxP/\n"
+        "💬 _\"kami menggunakan pijar dalam pelaksanaan pembelajaran. pijar digunakan oleh kami untuk mendata kehadiran, melaksanakan assesment, dan memberikan tugas secara berkala. dan itu membuat kemudahan bagi bapak & ibu guru di SMP N 1 Cangkringan\"_\n\n"
+        "🏫 *SMP N 3 Pakem*\n"
         "▶️ https://vt.tiktok.com/ZSmmEjwWH/\n"
-        "▶️ https://vt.tiktok.com/ZSmu1u593/\n"
-        "▶️ https://vt.tiktok.com/ZSmudXPNH/"
+        "💬 _\"sebelum menggunakan aplikasi pijar, kami mengalami banyak kendala. melalui aplikasi pijar, SMP N 3 Pakem yang memiliki program latihan uji kompetensi di rumah masing-masing dapat diakses dengan mudah oleh anak-anak dan memudahkan guru untuk merekap nilai\"_\n\n"
+        "🏫 *SMP N 1 Paguyaman Pantai*\n"
+        "▶️ https://vt.tiktok.com/ZSmXwo1BS/\n"
+        "💬 _\"sebagai kepala sekolah saya melihat langsung dampak positif dari penggunaan aplikasi pijar khususnya dalam sistem absensi online. data kehadiran bisa lebih akurat dan transparan, bisa dipantau secara real time oleh kepala sekolah dan admin sehingga pengawasan terhadap kedisiplinan gtk jadi lebih efektif\"_\n\n"
+        "🏫 *SMP Muhammadiyah 33 Tomang*\n"
+        "▶️ https://vt.tiktok.com/ZSmudXPNH/\n"
+        "💬 _\"pijar kami menggunakannya untuk assesment, pembelajaran, dan lain lain. alhamdulillah produk telkom yang kita gunakan sangat bermanfaat dan lancar dalam kegiatan pembelajaran dan juga kegiatan ANBK\"_"
     ),
     "netmonk": (
-        "🎬 *Video Testimoni:*\n"
-        "▶️ https://vt.tiktok.com/ZSmmEuUXj/"
+        "🎬 *Video Testimoni:*\n\n"
+        "🏦 *BPR Bina Langgeng Mulia, Solo*\n"
+        "▶️ https://vt.tiktok.com/ZSmmEuUXj/\n"
+        "💬 _\"setelah menggunakan produk telkom yang kami rasakan yaitu kecepatan dan kestabilan sehingga operasional kami dengan kantor-kantor cabang kami berjalan dengan bagus\"_"
     ),
 
     "antares": (
